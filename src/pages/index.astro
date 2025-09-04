@@ -285,6 +285,13 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
       color: #fff; 
       border-bottom: 2px solid #fff;
     }
+
+    /* Location dropdown hover effects */
+    .location-link:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+      color: white !important;
+      transform: translateX(5px);
+    }
     
     .menu-toggle {
       display: none;
@@ -846,12 +853,12 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
             <a href="#" onclick="toggleLocations(event)" style="position: relative;">
               Locations <i class="fas fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i>
             </a>
-            <div id="locations-menu" style="display: none; position: absolute; top: 100%; left: 0; background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,0,0,0.9)); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; backdrop-filter: blur(20px); min-width: 250px; z-index: 1000; padding: 15px 0; margin-top: 10px;">
-              <a href="/connaught-place-tattoo-studio" style="display: block; padding: 8px 20px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Connaught Place</a>
-              <a href="/karol-bagh-tattoo-shop" style="display: block; padding: 8px 20px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Karol Bagh</a>
-              <a href="/khan-market-tattoo-studio" style="display: block; padding: 8px 20px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Khan Market</a>
-              <a href="/greater-kailash-tattoo" style="display: block; padding: 8px 20px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Greater Kailash</a>
-              <a href="/nehru-place-tattoo-services" style="display: block; padding: 8px 20px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Nehru Place</a>
+            <div id="locations-menu" style="display: none; position: absolute; top: 100%; left: 0; background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,0,0,0.9)); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; backdrop-filter: blur(20px); min-width: 250px; z-index: 1000; padding: 15px 0; margin-top: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+              <a href="/connaught-place-tattoo-studio" class="location-link" style="display: block; padding: 12px 20px; color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; border-radius: 8px; margin: 2px 10px;">📍 Connaught Place</a>
+              <a href="/karol-bagh-tattoo-shop" class="location-link" style="display: block; padding: 12px 20px; color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; border-radius: 8px; margin: 2px 10px;">🏪 Karol Bagh</a>
+              <a href="/khan-market-tattoo-studio" class="location-link" style="display: block; padding: 12px 20px; color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; border-radius: 8px; margin: 2px 10px;">👑 Khan Market</a>
+              <a href="/greater-kailash-tattoo" class="location-link" style="display: block; padding: 12px 20px; color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; border-radius: 8px; margin: 2px 10px;">🏡 Greater Kailash</a>
+              <a href="/nehru-place-tattoo-services" class="location-link" style="display: block; padding: 12px 20px; color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; border-radius: 8px; margin: 2px 10px;">💻 Nehru Place</a>
             </div>
           </div>
           <a href="#contact">Book Now</a>
@@ -1222,14 +1229,28 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
     function toggleLocations(event) {
       event.preventDefault();
       const menu = document.getElementById('locations-menu');
-      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+      if (!menu) return;
+      
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'block';
+      }
     }
 
     // Close dropdown when clicking outside
     document.addEventListener('click', function(event) {
       const menu = document.getElementById('locations-menu');
       const trigger = event.target.closest('[onclick*="toggleLocations"]');
-      if (!trigger && menu) {
+      if (!trigger && menu && menu.style.display === 'block') {
+        menu.style.display = 'none';
+      }
+    });
+
+    // Initialize dropdown as hidden on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const menu = document.getElementById('locations-menu');
+      if (menu) {
         menu.style.display = 'none';
       }
     });
