@@ -842,8 +842,18 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
         <nav class="header-nav" aria-label="Primary navigation">
           <a href="#services">Services</a>
           <a href="/pricing-calculator">Price Calculator</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#gallery">Gallery</a>
+          <div style="position: relative; display: inline-block;">
+            <a href="#" onclick="toggleLocations(event)" style="position: relative;">
+              Locations <i class="fas fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i>
+            </a>
+            <div id="locations-menu" style="display: none; position: absolute; top: 100%; left: 0; background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,0,0,0.9)); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; backdrop-filter: blur(20px); min-width: 250px; z-index: 1000; padding: 15px 0; margin-top: 10px;">
+              <a href="/connaught-place-tattoo-studio" style="display: block; padding: 8px 20px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Connaught Place</a>
+              <a href="/karol-bagh-tattoo-shop" style="display: block; padding: 8px 20px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Karol Bagh</a>
+              <a href="/khan-market-tattoo-studio" style="display: block; padding: 8px 20px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Khan Market</a>
+              <a href="/greater-kailash-tattoo" style="display: block; padding: 8px 20px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Greater Kailash</a>
+              <a href="/nehru-place-tattoo-services" style="display: block; padding: 8px 20px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Nehru Place</a>
+            </div>
+          </div>
           <a href="#contact">Book Now</a>
         </nav>
 
@@ -1206,6 +1216,22 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
           this.style.boxShadow = '0 0 0 2px rgba(255, 255, 255, 0.1)';
         }
       });
+    });
+
+    // Location dropdown functionality
+    function toggleLocations(event) {
+      event.preventDefault();
+      const menu = document.getElementById('locations-menu');
+      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('locations-menu');
+      const trigger = event.target.closest('[onclick*="toggleLocations"]');
+      if (!trigger && menu) {
+        menu.style.display = 'none';
+      }
     });
   </script>
 </body>
