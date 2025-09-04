@@ -66,24 +66,38 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
     "offers": [
       {
         "@type": "Offer",
-        "name": "Simple Tattoo Pricing",
+        "name": "Simple Tattoo Design",
         "price": "299",
         "priceCurrency": "INR",
         "description": "Per inch pricing for simple black and grey tattoos"
       },
       {
         "@type": "Offer", 
-        "name": "Detailed Tattoo Pricing",
+        "name": "Complex/Color Tattoo Design",
         "price": "399",
         "priceCurrency": "INR",
-        "description": "Per inch pricing for colored and complex tattoos"
+        "description": "Per inch pricing for complex and colored tattoos"
       },
       {
         "@type": "Offer",
-        "name": "Premium Tattoo Pricing", 
-        "price": "599",
+        "name": "Tattoo Removal - Small", 
+        "price": "699",
         "priceCurrency": "INR",
-        "description": "Per inch pricing for realism and premium artwork"
+        "description": "Tattoo removal for designs up to 2 square inches"
+      },
+      {
+        "@type": "Offer",
+        "name": "Tattoo Removal - Medium", 
+        "price": "999",
+        "priceCurrency": "INR",
+        "description": "Tattoo removal for designs 3-5 square inches"
+      },
+      {
+        "@type": "Offer",
+        "name": "Tattoo Removal - Large", 
+        "price": "1499",
+        "priceCurrency": "INR",
+        "description": "Tattoo removal for designs above 5 square inches"
       }
     ]
   }
@@ -447,8 +461,7 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
               <select class="form-select" id="tattoo-style" required>
                 <option value="">Select tattoo style</option>
                 <option value="simple" data-price="299">Simple Design - ₹299/inch</option>
-                <option value="detailed" data-price="399">Detailed Work - ₹399/inch</option>
-                <option value="premium" data-price="599">Premium Art - ₹599/inch</option>
+                <option value="complex" data-price="399">Complex/Color Design - ₹399/inch</option>
               </select>
             </div>
 
@@ -476,21 +489,24 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="colors">Color Options</label>
-              <select class="form-select" id="colors">
-                <option value="bw">Black & Grey (Standard)</option>
-                <option value="color">Full Color (+₹50/inch)</option>
-                <option value="custom">Custom Colors (+₹100/inch)</option>
+              <label class="form-label" for="examples">Design Examples (Reference)</label>
+              <select class="form-select" id="examples">
+                <option value="">Select design type for reference</option>
+                <option value="butterfly">Butterfly (2×2 in) - Simple</option>
+                <option value="dragon">Dragon (4×3 in) - Complex</option>
+                <option value="rose">Rose (3×3 in) - Simple</option>
+                <option value="mandala">Mandala (6×6 in) - Complex</option>
+                <option value="minimalist">Minimalist Design</option>
+                <option value="portrait">Portrait Work - Complex</option>
+                <option value="custom">Custom Design</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="complexity">Design Complexity</label>
-              <select class="form-select" id="complexity">
-                <option value="basic">Basic (Standard)</option>
-                <option value="medium">Medium Detail (+₹25/inch)</option>
-                <option value="high">High Detail (+₹75/inch)</option>
-                <option value="ultra">Ultra Complex (+₹150/inch)</option>
+              <label class="form-label" for="service-type">Service Type</label>
+              <select class="form-select" id="service-type">
+                <option value="new">New Tattoo</option>
+                <option value="removal">Tattoo Removal</option>
               </select>
             </div>
           </form>
@@ -566,8 +582,8 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
     const sizeSlider = document.getElementById('size-slider');
     const sizeDisplay = document.getElementById('size-display');
     const placementSelect = document.getElementById('placement');
-    const colorsSelect = document.getElementById('colors');
-    const complexitySelect = document.getElementById('complexity');
+    const examplesSelect = document.getElementById('examples');
+    const serviceTypeSelect = document.getElementById('service-type');
     const totalPriceDisplay = document.getElementById('total-price');
     const priceBreakdownDisplay = document.getElementById('price-breakdown');
     const getQuoteBtn = document.getElementById('get-quote-btn');
@@ -577,8 +593,8 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
       size: 3,
       style: '',
       placement: '',
-      colors: 'bw',
-      complexity: 'basic',
+      examples: '',
+      serviceType: 'new',
       total: 897
     };
 
@@ -590,104 +606,104 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
     });
 
     // Update calculations on any change
-    [styleSelect, colorsSelect, complexitySelect, placementSelect].forEach(element => {
+    [styleSelect, examplesSelect, serviceTypeSelect, placementSelect].forEach(element => {
       element.addEventListener('change', calculatePrice);
     });
 
     function calculatePrice() {
-      // Get base price from style
+      const serviceType = serviceTypeSelect.value;
       const selectedStyle = styleSelect.value;
-      if (selectedStyle) {
-        const styleOption = styleSelect.querySelector(`option[value="${selectedStyle}"]`);
-        currentCalculation.basePrice = parseInt(styleOption.dataset.price);
-        currentCalculation.style = selectedStyle;
-      }
-
-      // Calculate additional costs
-      let additionalCost = 0;
       
-      // Color additions
-      const colorValue = colorsSelect.value;
-      if (colorValue === 'color') {
-        additionalCost += 50;
-      } else if (colorValue === 'custom') {
-        additionalCost += 100;
-      }
+      if (serviceType === 'removal') {
+        // Tattoo Removal Pricing (based on square inches)
+        const squareInches = currentCalculation.size * currentCalculation.size;
+        let removalPrice = 0;
+        
+        if (squareInches <= 2) {
+          removalPrice = 699; // Small (up to 2 sq in)
+        } else if (squareInches <= 5) {
+          removalPrice = 999; // Medium (3-5 sq in)
+        } else {
+          removalPrice = 1499; // Large (above 5 sq in)
+        }
+        
+        currentCalculation.total = removalPrice;
+        totalPriceDisplay.textContent = `₹${currentCalculation.total.toLocaleString()}`;
+        
+        let sizeCategory = '';
+        if (squareInches <= 2) sizeCategory = 'Small';
+        else if (squareInches <= 5) sizeCategory = 'Medium';
+        else sizeCategory = 'Large';
+        
+        priceBreakdownDisplay.textContent = `${sizeCategory} tattoo removal (${squareInches.toFixed(1)} sq in)`;
+        
+      } else {
+        // New Tattoo Pricing
+        if (selectedStyle) {
+          const styleOption = styleSelect.querySelector(`option[value="${selectedStyle}"]`);
+          currentCalculation.basePrice = parseInt(styleOption.dataset.price);
+          currentCalculation.style = selectedStyle;
+        }
 
-      // Complexity additions
-      const complexityValue = complexitySelect.value;
-      if (complexityValue === 'medium') {
-        additionalCost += 25;
-      } else if (complexityValue === 'high') {
-        additionalCost += 75;
-      } else if (complexityValue === 'ultra') {
-        additionalCost += 150;
-      }
+        // Calculate total for new tattoo
+        const pricePerInch = currentCalculation.basePrice;
+        currentCalculation.total = Math.round(pricePerInch * currentCalculation.size);
 
-      // Calculate total
-      const pricePerInch = currentCalculation.basePrice + additionalCost;
-      currentCalculation.total = Math.round(pricePerInch * currentCalculation.size);
-
-      // Update displays
-      totalPriceDisplay.textContent = `₹${currentCalculation.total.toLocaleString()}`;
-      
-      let breakdownText = `${currentCalculation.size} inches × ₹${pricePerInch}`;
-      if (selectedStyle) {
-        const styleNames = {
-          'simple': 'Simple Design',
-          'detailed': 'Detailed Work', 
-          'premium': 'Premium Art'
-        };
-        breakdownText += ` (${styleNames[selectedStyle]})`;
+        // Update displays
+        totalPriceDisplay.textContent = `₹${currentCalculation.total.toLocaleString()}`;
+        
+        let breakdownText = `${currentCalculation.size} inches × ₹${pricePerInch}`;
+        if (selectedStyle) {
+          const styleNames = {
+            'simple': 'Simple Design',
+            'complex': 'Complex/Color Design'
+          };
+          breakdownText += ` (${styleNames[selectedStyle]})`;
+        }
+        
+        priceBreakdownDisplay.textContent = breakdownText;
       }
-      
-      priceBreakdownDisplay.textContent = breakdownText;
 
       // Store current calculation for quote
       currentCalculation.placement = placementSelect.value;
-      currentCalculation.colors = colorValue;
-      currentCalculation.complexity = complexityValue;
+      currentCalculation.examples = examplesSelect.value;
+      currentCalculation.serviceType = serviceType;
     }
 
     // WhatsApp Quote Generation
     getQuoteBtn.addEventListener('click', function() {
-      if (!currentCalculation.style) {
+      if (currentCalculation.serviceType === 'new' && !currentCalculation.style) {
         alert('Please select a tattoo style first!');
         return;
       }
 
       const styleNames = {
         'simple': 'Simple Design',
-        'detailed': 'Detailed Work',
-        'premium': 'Premium Art'
+        'complex': 'Complex/Color Design'
       };
 
-      const colorNames = {
-        'bw': 'Black & Grey',
-        'color': 'Full Color',
-        'custom': 'Custom Colors'
-      };
-
-      const complexityNames = {
-        'basic': 'Basic',
-        'medium': 'Medium Detail',
-        'high': 'High Detail',
-        'ultra': 'Ultra Complex'
-      };
-
-      let message = `Hi TattooShopInDelhi.com! I used your pricing calculator and got this estimate:%0A%0A`;
+      let message = `Hi Apex Tattooz! I used your pricing calculator and got this estimate:%0A%0A`;
       message += `💰 *Estimated Price: ₹${currentCalculation.total.toLocaleString()}*%0A%0A`;
       message += `📋 *Details:*%0A`;
-      message += `• Style: ${styleNames[currentCalculation.style]}%0A`;
-      message += `• Size: ${currentCalculation.size} inches%0A`;
-      message += `• Colors: ${colorNames[currentCalculation.colors]}%0A`;
-      message += `• Complexity: ${complexityNames[currentCalculation.complexity]}%0A`;
       
-      if (currentCalculation.placement) {
-        message += `• Placement: ${currentCalculation.placement}%0A`;
+      if (currentCalculation.serviceType === 'removal') {
+        message += `• Service: Tattoo Removal%0A`;
+        message += `• Size: ${currentCalculation.size} inches%0A`;
+      } else {
+        message += `• Service: New Tattoo%0A`;
+        message += `• Style: ${styleNames[currentCalculation.style]}%0A`;
+        message += `• Size: ${currentCalculation.size} inches%0A`;
+        
+        if (currentCalculation.examples) {
+          message += `• Design Type: ${currentCalculation.examples}%0A`;
+        }
+        
+        if (currentCalculation.placement) {
+          message += `• Placement: ${currentCalculation.placement}%0A`;
+        }
       }
       
-      message += `%0A✨ Please confirm this pricing and let me know about booking availability. Thank you!`;
+      message += `%0A✨ Please confirm this pricing from your main site (apextattooz.com) and let me know about booking availability. Thank you!`;
 
       const whatsappURL = `https://wa.me/919821632788?text=${message}`;
       window.open(whatsappURL, '_blank');
