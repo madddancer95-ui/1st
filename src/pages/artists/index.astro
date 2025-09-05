@@ -675,6 +675,16 @@ const artists = Object.entries(artistsData)
           <h3 class="artist-rank">${artist.rank_title}</h3>
           <p class="artist-bio">${artist.short_bio}</p>
           
+          <div class="artist-pricing">
+            <div class="pricing-badge">
+              <span class="pricing-from">From ₹${artist.pricing?.simple || 299}</span>
+              <small>per inch</small>
+            </div>
+            <div class="pricing-details">
+              <small>Simple: ₹${artist.pricing?.simple || 299} • Detailed: ₹${artist.pricing?.detailed || 399} • Premium: ₹${artist.pricing?.premium || 599}</small>
+            </div>
+          </div>
+          
           <div class="artist-buttons">
             ${artist.other_buttons.map(button => {
               if (button.action === 'modal') {
