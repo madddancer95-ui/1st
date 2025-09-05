@@ -142,6 +142,8 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
       height: 100%;
       object-fit: cover;
       z-index: -10;
+      /* Fallback background if video fails */
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
     }
     
     .top-section-overlay {
@@ -830,9 +832,9 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
 <body id="apex-page">
   <div class="top-section-container">
     <!-- Video Background ONLY for Header + Hero -->
-    <video class="top-section-video" autoplay muted loop playsinline poster="" width="1920" height="1080">
+    <video class="top-section-video" autoplay muted loop playsinline preload="metadata" width="1920" height="1080">
       <source src="/best-tattoo-shop-in-delhi-.mp4" type="video/mp4">
-      Your browser does not support the background video.
+      <!-- Fallback for unsupported browsers -->
     </video>
     <div class="top-section-overlay"></div>
     
