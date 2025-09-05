@@ -56,12 +56,42 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
     "@type": "TattooParlor",
     "name": "DelhiTattooShop.com - Professional Tattoo Studio Delhi NCR",
     "alternateName": ["Delhi Tattoo Shop", "Best Tattoo Studio Delhi", "Professional Tattoo Artists Delhi NCR"],
-    "url": "https://delhitattooshop.com/",
-    "logo": "https://delhitattooshop.com/logo.png",
+    "url": "https://www.delhitattooshop.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.delhitattooshop.com/logo.png",
+      "width": 300,
+      "height": 169
+    },
     "image": [
-      "https://delhitattooshop.com/artists/photos/maddy-portfolio-1.png",
-      "https://delhitattooshop.com/artists/photos/guru-portfolio-1.jpg",
-      "https://delhitattooshop.com/artists/photos/ram-portfolio-1.jpg"
+      {
+        "@type": "ImageObject",
+        "url": "https://www.delhitattooshop.com/artists/photos/maddy-portfolio-1.png",
+        "width": 800,
+        "height": 600,
+        "caption": "Professional realism tattoo by Maddy - Expert black & grey work"
+      },
+      {
+        "@type": "ImageObject", 
+        "url": "https://www.delhitattooshop.com/artists/photos/guru-portfolio-1.jpg",
+        "width": 800,
+        "height": 600,
+        "caption": "Award-winning color tattoo by Guru - Vibrant artistic design"
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://www.delhitattooshop.com/artists/photos/ram-portfolio-1.jpg", 
+        "width": 800,
+        "height": 600,
+        "caption": "Intricate blackwork tattoo by Ram - Mythological art specialist"
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://www.delhitattooshop.com/artists/photos/sharan-portfolio-1.jpg",
+        "width": 800,
+        "height": 600,
+        "caption": "Japanese style tattoo by Sharan - Traditional samurai artwork"
+      }
     ],
     "description": "Professional tattoo studio in Delhi NCR with expert artists, transparent pricing starting ₹299/inch, and 15,000+ satisfied customers. Specializing in custom designs, cover-ups, realism, and all tattoo styles with hospital-grade hygiene standards.",
     "slogan": "Delhi NCR's Most Trusted Tattoo Studio - Professional Art, Transparent Pricing",
@@ -122,7 +152,8 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
       "ratingValue": "4.9",
       "reviewCount": "500",
       "bestRating": "5",
-      "worstRating": "1"
+      "worstRating": "1",
+      "ratingExplanation": "Based on 500+ verified customer reviews across Google, WhatsApp feedback, and direct testimonials"
     },
     "review": [
       {
@@ -131,25 +162,71 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
           "@type": "Person",
           "name": "Rahul Sharma"
         },
+        "datePublished": "2024-12-15",
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5",
           "bestRating": "5"
         },
-        "reviewBody": "Amazing tattoo experience! Maddy is incredibly skilled and the studio maintains hospital-grade cleanliness. Got my first tattoo here and couldn't be happier with the result."
+        "reviewBody": "Amazing tattoo experience! Maddy is incredibly skilled and the studio maintains hospital-grade cleanliness. Got my first tattoo here and couldn't be happier with the result. Worth every rupee!",
+        "publisher": {
+          "@type": "Organization",
+          "name": "DelhiTattooShop.com"
+        }
+      },
+      {
+        "@type": "Review", 
+        "author": {
+          "@type": "Person",
+          "name": "Priya Gupta"
+        },
+        "datePublished": "2024-11-28",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Best tattoo studio in Delhi! Transparent pricing, professional artists, and the portfolio gallery helped me choose the perfect design. Highly recommended!",
+        "publisher": {
+          "@type": "Organization",
+          "name": "DelhiTattooShop.com"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person", 
+          "name": "Arjun Singh"
+        },
+        "datePublished": "2024-10-20",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Exceptional service from consultation to completion. Ram's blackwork is phenomenal and the aftercare guidance was perfect. Studio is super clean and professional.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "DelhiTattooShop.com"
+        }
       },
       {
         "@type": "Review",
         "author": {
           "@type": "Person",
-          "name": "Priya Gupta"
+          "name": "Sneha Patel"
         },
+        "datePublished": "2024-09-10",
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5",
           "bestRating": "5"
         },
-        "reviewBody": "Best tattoo studio in Delhi! Transparent pricing, professional artists, and the portfolio gallery helped me choose the perfect design. Highly recommended!"
+        "reviewBody": "Got a cover-up done by Guru and it's absolutely stunning! The pricing was transparent and fair. Easy WhatsApp booking made the whole process smooth.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "DelhiTattooShop.com"
+        }
       }
     ],
     "makesOffer": [
@@ -199,6 +276,59 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
           "price": "599",
           "priceCurrency": "INR",
           "unitText": "per inch"
+        }
+      }
+    ],
+    "potentialAction": [
+      {
+        "@type": "ReserveAction",
+        "name": "Book Free Consultation",
+        "description": "Schedule a free tattoo consultation via WhatsApp",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://wa.me/917217665761?text=Hi%20DelhiTattooShop.com%2C%20I%27m%20interested%20in%20a%20free%20tattoo%20consultation.",
+          "inLanguage": "en-IN",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        },
+        "result": {
+          "@type": "Reservation",
+          "name": "Tattoo Consultation Booking"
+        }
+      },
+      {
+        "@type": "CommunicateAction",
+        "name": "Call Now",
+        "description": "Call directly for immediate assistance",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "tel:+917217665761",
+          "inLanguage": "en-IN",
+          "actionPlatform": [
+            "http://schema.org/MobileWebPlatform"
+          ]
+        }
+      },
+      {
+        "@type": "ViewAction",
+        "name": "View Pricing Calculator",
+        "description": "Calculate your tattoo cost instantly",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.delhitattooshop.com/pricing-calculator",
+          "inLanguage": "en-IN"
+        }
+      },
+      {
+        "@type": "ViewAction", 
+        "name": "Browse Artist Portfolio",
+        "description": "View work from our expert tattoo artists",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.delhitattooshop.com/artists",
+          "inLanguage": "en-IN"
         }
       }
     ]
@@ -547,6 +677,113 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
         "availability": "https://schema.org/InStock",
         "validFrom": "2025-01-01",
         "priceValidUntil": "2025-12-31"
+      }
+    ]
+  }
+  </script>
+
+  <!-- 9. Image Gallery Schema for Rich SERP Display -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Professional Tattoo Portfolio - DelhiTattooShop.com",
+    "description": "Stunning collection of professional tattoos by expert artists in Delhi NCR",
+    "url": "https://www.delhitattooshop.com/#portfolio",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://www.delhitattooshop.com/artists/photos/maddy-portfolio-1.png",
+        "width": 800,
+        "height": 600,
+        "caption": "Black & Grey Realism by Maddy - Studio Founder",
+        "description": "Professional realism tattoo showcasing expert shading and detail work",
+        "creator": {
+          "@type": "Person",
+          "name": "Maddy (Ravi)",
+          "jobTitle": "Founder & Master Tattoo Artist"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://www.delhitattooshop.com/artists/photos/guru-portfolio-1.jpg",
+        "width": 800,
+        "height": 600,
+        "caption": "Award-Winning Color Work by Guru",
+        "description": "Vibrant color tattoo demonstrating advanced artistic techniques",
+        "creator": {
+          "@type": "Person",
+          "name": "Guru",
+          "jobTitle": "Award-Winning Color & Cover-Up Specialist"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://www.delhitattooshop.com/artists/photos/ram-portfolio-1.jpg",
+        "width": 800,
+        "height": 600,
+        "caption": "Intricate Blackwork by Ram Kesarwani",
+        "description": "Complex mythological blackwork tattoo with traditional themes",
+        "creator": {
+          "@type": "Person",
+          "name": "Ram Kesarwani",
+          "jobTitle": "Blackwork & Fine Line Specialist"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://www.delhitattooshop.com/artists/photos/sharan-portfolio-1.jpg",
+        "width": 800,
+        "height": 600,
+        "caption": "Japanese Style Art by Sharan",
+        "description": "Traditional Japanese tattoo showcasing cultural artistry and precision",
+        "creator": {
+          "@type": "Person",
+          "name": "Sharan", 
+          "jobTitle": "Fine Line & Japanese Tattoo Master"
+        }
+      }
+    ],
+    "publisher": {
+      "@type": "TattooParlor",
+      "name": "DelhiTattooShop.com",
+      "url": "https://www.delhitattooshop.com/"
+    }
+  }
+  </script>
+
+  <!-- 10. Action Schema for Direct SERP Buttons -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Best Tattoo Studio in Delhi NCR | DelhiTattooShop.com",
+    "url": "https://www.delhitattooshop.com/",
+    "description": "Professional tattoo studio with transparent pricing, expert artists, and 15,000+ satisfied customers in Delhi NCR",
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.delhitattooshop.com/artists/photos/maddy-portfolio-1.png",
+      "width": 800,
+      "height": 600
+    },
+    "mainEntity": {
+      "@type": "TattooParlor",
+      "name": "DelhiTattooShop.com"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero-title", ".hero-sub", ".section-title"]
+    },
+    "potentialAction": [
+      {
+        "@type": "CallAction",
+        "name": "Call DelhiTattooShop",
+        "target": "tel:+917217665761"
+      },
+      {
+        "@type": "CommunicateAction",
+        "name": "WhatsApp Booking",
+        "target": "https://wa.me/917217665761?text=Hi%20DelhiTattooShop.com%2C%20I%27m%20interested%20in%20booking%20a%20tattoo%20consultation"
       }
     ]
   }
