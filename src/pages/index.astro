@@ -47,19 +47,32 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
   
-  <!-- Schema Markup -->
+  <!-- Comprehensive Schema Markup for SEO Dominance -->
+  
+  <!-- 1. Primary Business Schema - TattooParlor -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TattooParlor",
-    "name": "DelhiTattooShop.com",
+    "name": "DelhiTattooShop.com - Professional Tattoo Studio Delhi NCR",
+    "alternateName": ["Delhi Tattoo Shop", "Best Tattoo Studio Delhi", "Professional Tattoo Artists Delhi NCR"],
     "url": "https://delhitattooshop.com/",
-    "description": "Professional tattoo studio in Delhi NCR with expert artists, transparent pricing starting ₹299/inch, and 15,000+ satisfied customers.",
+    "logo": "https://delhitattooshop.com/logo.png",
+    "image": [
+      "https://delhitattooshop.com/artists/photos/maddy-portfolio-1.png",
+      "https://delhitattooshop.com/artists/photos/guru-portfolio-1.jpg",
+      "https://delhitattooshop.com/artists/photos/ram-portfolio-1.jpg"
+    ],
+    "description": "Professional tattoo studio in Delhi NCR with expert artists, transparent pricing starting ₹299/inch, and 15,000+ satisfied customers. Specializing in custom designs, cover-ups, realism, and all tattoo styles with hospital-grade hygiene standards.",
+    "slogan": "Delhi NCR's Most Trusted Tattoo Studio - Professional Art, Transparent Pricing",
     "telephone": "+91-7217665761",
-    "priceRange": "₹₹",
+    "email": "contact@delhitattooshop.com",
+    "priceRange": "₹299-₹799",
+    "currenciesAccepted": "INR",
+    "paymentAccepted": ["Cash", "UPI", "Card", "Online Payment"],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "GTB Nagar",
+      "streetAddress": "GTB Nagar, Near Metro Station",
       "addressLocality": "Delhi",
       "addressRegion": "Delhi",
       "postalCode": "110009",
@@ -70,6 +83,32 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
       "latitude": 28.6692,
       "longitude": 77.1473
     },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Delhi"
+      },
+      {
+        "@type": "City", 
+        "name": "New Delhi"
+      },
+      {
+        "@type": "City",
+        "name": "Gurgaon"
+      },
+      {
+        "@type": "City",
+        "name": "Noida"
+      },
+      {
+        "@type": "City",
+        "name": "Faridabad"
+      },
+      {
+        "@type": "City",
+        "name": "Ghaziabad"
+      }
+    ],
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -81,9 +120,252 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "500+",
-      "bestRating": "5"
+      "reviewCount": "500",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Rahul Sharma"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Amazing tattoo experience! Maddy is incredibly skilled and the studio maintains hospital-grade cleanliness. Got my first tattoo here and couldn't be happier with the result."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Priya Gupta"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Best tattoo studio in Delhi! Transparent pricing, professional artists, and the portfolio gallery helped me choose the perfect design. Highly recommended!"
+      }
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Simple Tattoo Design",
+          "description": "Black & grey designs, simple line work, text and symbols"
+        },
+        "price": "299",
+        "priceCurrency": "INR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "299",
+          "priceCurrency": "INR",
+          "unitText": "per inch"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Detailed Tattoo Work",
+          "description": "Colored designs, complex artwork, shading & gradients"
+        },
+        "price": "399",
+        "priceCurrency": "INR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "399",
+          "priceCurrency": "INR",
+          "unitText": "per inch"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Premium Art Tattoo",
+          "description": "Realism & portraits, complex color work, cover-up tattoos"
+        },
+        "price": "599",
+        "priceCurrency": "INR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "599",
+          "priceCurrency": "INR",
+          "unitText": "per inch"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- 2. Services Offered Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Professional Tattoo Services Delhi NCR",
+    "provider": {
+      "@type": "TattooParlor",
+      "name": "DelhiTattooShop.com"
+    },
+    "serviceType": "Tattoo Services",
+    "description": "Complete tattoo services including custom designs, cover-ups, touch-ups, and professional consultation with transparent pricing",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Custom Tattoo Design",
+        "description": "Personalized tattoo designs created by expert artists",
+        "price": "299-799",
+        "priceCurrency": "INR"
+      },
+      {
+        "@type": "Offer", 
+        "name": "Cover-up Tattoo",
+        "description": "Professional cover-up services to transform old tattoos",
+        "price": "399-799",
+        "priceCurrency": "INR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Tattoo Touch-up",
+        "description": "Touch-up services for existing tattoos",
+        "price": "299-499",
+        "priceCurrency": "INR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Free Consultation", 
+        "description": "Professional tattoo consultation and design discussion",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    ],
+    "areaServed": {
+      "@type": "State",
+      "name": "Delhi NCR"
     }
+  }
+  </script>
+
+  <!-- 3. Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DelhiTattooShop.com",
+    "url": "https://delhitattooshop.com/",
+    "logo": "https://delhitattooshop.com/logo.png",
+    "foundingDate": "2013",
+    "founder": {
+      "@type": "Person",
+      "name": "Maddy (Ravi)",
+      "jobTitle": "Founder & Master Tattoo Artist"
+    },
+    "numberOfEmployees": "8",
+    "slogan": "Delhi NCR's Most Trusted Tattoo Studio",
+    "description": "Leading tattoo studio in Delhi NCR with 12+ years experience, 15,000+ satisfied customers, and expert artists specializing in all tattoo styles.",
+    "sameAs": [
+      "https://www.instagram.com/delhitattooshop",
+      "https://wa.me/917217665761"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-7217665761",
+      "contactType": "customer service",
+      "availableLanguage": ["Hindi", "English"],
+      "areaServed": "Delhi NCR"
+    }
+  }
+  </script>
+
+  <!-- 4. FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are your tattoo prices in Delhi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our transparent pricing starts at ₹299 per inch for simple designs, ₹399 per inch for detailed work, and ₹599 per inch for premium art like realism and portraits. Free consultation included."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you maintain hygiene standards?",
+        "acceptedAnswer": {
+          "@type": "Answer", 
+          "text": "Yes, we maintain hospital-grade hygiene standards with sterilized equipment, single-use needles, and proper sanitization protocols. Your safety is our top priority."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to book a tattoo consultation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Book instantly via WhatsApp at +91-7217665761 or call directly. We offer free consultations and same-day appointments if you message before 6 PM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What tattoo styles do you specialize in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our expert artists specialize in realism, portraits, Japanese art, blackwork, fine line, mandala, geometric, cover-ups, and custom designs. View our portfolio gallery for examples."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is your tattoo studio located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Located in GTB Nagar, Delhi NCR, near Metro Station. Open daily 11 AM to 9 PM. Easy access from all parts of Delhi, Gurgaon, Noida, and surrounding areas."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- 5. Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://delhitattooshop.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tattoo Services",
+        "item": "https://delhitattooshop.com/#services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Artists",
+        "item": "https://delhitattooshop.com/artists"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Pricing",
+        "item": "https://delhitattooshop.com/pricing-calculator"
+      }
+    ]
   }
   </script>
 
