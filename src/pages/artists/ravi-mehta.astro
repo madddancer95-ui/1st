@@ -1,0 +1,514 @@
+---
+const title = "Ravi Mehta - Master Tattoo Artist | Delhi's Premier Tattoo Studio";
+const description = "Meet Ravi Mehta, Delhi's most sought-after tattoo artist. 15+ years experience, specializing in realism, traditional designs. Book consultation at DelhiTattooShop.com";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="Ravi Mehta tattoo artist Delhi, best tattoo artist Delhi, professional tattoo artist, realism tattoo artist Delhi NCR">
+  <meta name="author" content="DelhiTattooShop.com">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://delhitattooshop.com/artists/ravi-mehta">
+  
+  <!-- Schema.org Person Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ravi Mehta",
+    "jobTitle": "Master Tattoo Artist",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "DelhiTattooShop.com"
+    },
+    "description": "Master tattoo artist with 15+ years experience specializing in realism and traditional designs",
+    "knowsAbout": ["Tattoo Art", "Realism Tattoos", "Traditional Tattoos", "Custom Designs"],
+    "workLocation": {
+      "@type": "Place",
+      "name": "Delhi NCR",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Delhi",
+        "addressCountry": "IN"
+      }
+    }
+  }
+  </script>
+  
+  <link rel="canonical" href="https://delhitattooshop.com/artists/ravi-mehta">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Core Variables */
+    :root {
+      --primary: #fff;
+      --accent-primary: #fff;
+      --text-primary: rgba(255,255,255,0.95);
+      --text-secondary: rgba(255,255,255,0.8);
+      --muted: rgba(255,255,255,0.6);
+      --border: rgba(255,255,255,0.2);
+      --bg-dark: #000;
+      --glass-bg: rgba(255,255,255,0.05);
+      --glass-border: rgba(255,255,255,0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Header Styles */
+    .header-outer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    .glass-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      margin: 0 2rem;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      background: linear-gradient(135deg, #fff, #ccc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .header-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+    }
+
+    .header-nav a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Artist Profile Styles */
+    .artist-hero {
+      padding: 120px 2rem 80px;
+      background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(26,26,26,0.9) 100%);
+      text-align: center;
+      position: relative;
+    }
+
+    .artist-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="tattoo-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23tattoo-pattern)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .artist-profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      border: 3px solid rgba(255,255,255,0.2);
+      margin: 0 auto 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: rgba(255,255,255,0.6);
+      position: relative;
+    }
+
+    .artist-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, #ccc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .artist-title {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .artist-experience {
+      font-size: 1.1rem;
+      color: var(--accent-primary);
+      font-weight: 600;
+    }
+
+    /* Content Sections */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 3rem;
+      margin: 2rem 0;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #fff, #ccc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+    }
+
+    /* Specialties Grid */
+    .specialties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .specialty-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .specialty-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .specialty-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--accent-primary);
+    }
+
+    .specialty-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 15px;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+      display: block;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+    }
+
+    /* CTA Button */
+    .btn-solid {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .btn-solid:hover {
+      background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .glass-header {
+        margin: 0 1rem;
+        padding: 1rem;
+      }
+
+      .header-nav {
+        gap: 1rem;
+      }
+
+      .artist-hero {
+        padding: 100px 1rem 60px;
+      }
+
+      .artist-name {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+
+      .glass-panel {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="header-outer">
+    <div class="glass-header">
+      <a class="brand" href="/" aria-label="DelhiTattooShop.com home">
+        DelhiTattooShop
+      </a>
+      
+      <nav class="header-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/artists" style="color: #fff;">Our Artists</a>
+        <a href="/pricing-calculator">Pricing</a>
+        <a href="#contact">Book Now</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Artist Hero -->
+  <section class="artist-hero">
+    <div class="artist-profile-img">
+      <i class="fas fa-user-artist"></i>
+    </div>
+    <h1 class="artist-name">Ravi Mehta</h1>
+    <p class="artist-title">Master Tattoo Artist & Studio Founder</p>
+    <p class="artist-experience">15+ Years Professional Experience</p>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- About Section -->
+    <section class="section">
+      <div class="glass-panel">
+        <h2 class="section-title">About Ravi</h2>
+        <p class="section-subtitle">Delhi's most trusted tattoo artist with over 15 years of professional experience</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+          <div>
+            <h3 style="color: var(--accent-primary); font-size: 1.5rem; margin-bottom: 1.5rem;">Professional Journey</h3>
+            <p style="margin-bottom: 1.5rem; line-height: 1.8;">
+              Ravi Mehta started his tattoo journey in 2009 and has since become one of Delhi's most sought-after tattoo artists. 
+              With over <strong>5,000+ successful tattoos</strong> and countless satisfied clients, Ravi specializes in 
+              bringing your vision to life with precision and artistry.
+            </p>
+            <p style="margin-bottom: 1.5rem; line-height: 1.8;">
+              Known for his meticulous attention to detail and ability to work across multiple styles, Ravi has built 
+              a reputation for creating <strong>custom designs</strong> that tell unique stories. His work has been 
+              featured in various tattoo magazines and art exhibitions across Delhi NCR.
+            </p>
+          </div>
+          
+          <div>
+            <h3 style="color: var(--accent-primary); font-size: 1.5rem; margin-bottom: 1.5rem;">Philosophy & Approach</h3>
+            <p style="margin-bottom: 1.5rem; line-height: 1.8;">
+              "Every tattoo is a personal story waiting to be told. My job is to listen, understand, and translate 
+              that story into art that will last a lifetime." - Ravi Mehta
+            </p>
+            <p style="line-height: 1.8;">
+              Ravi believes in <strong>collaborative design</strong>, working closely with each client to ensure 
+              their tattoo perfectly represents their vision. His studio maintains the highest standards of 
+              <strong>hygiene and safety</strong>, using only premium equipment and FDA-approved inks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialties -->
+    <section class="section">
+      <div class="glass-panel">
+        <h2 class="section-title">Specializations</h2>
+        <p class="section-subtitle">Master of multiple tattoo styles and techniques</p>
+        
+        <div class="specialties-grid">
+          <div class="specialty-card">
+            <div class="specialty-icon">🎨</div>
+            <h3 class="specialty-title">Realism Tattoos</h3>
+            <p>Photo-realistic portraits, animals, and detailed artwork that captures every nuance and emotion with stunning precision.</p>
+          </div>
+          
+          <div class="specialty-card">
+            <div class="specialty-icon">🌸</div>
+            <h3 class="specialty-title">Traditional Designs</h3>
+            <p>Classic traditional tattoos, Indian motifs, religious symbols, and cultural designs with authentic artistic flair.</p>
+          </div>
+          
+          <div class="specialty-card">
+            <div class="specialty-icon">✨</div>
+            <h3 class="specialty-title">Custom Artwork</h3>
+            <p>Original designs created specifically for you, combining your ideas with professional artistic expertise.</p>
+          </div>
+          
+          <div class="specialty-card">
+            <div class="specialty-icon">🖤</div>
+            <h3 class="specialty-title">Cover-up Specialist</h3>
+            <p>Transform old or unwanted tattoos into beautiful new artwork with expert cover-up and restoration techniques.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section">
+      <div class="glass-panel">
+        <h2 class="section-title">By The Numbers</h2>
+        <p class="section-subtitle">Proven track record of excellence</p>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">5000+</span>
+            <span class="stat-label">Tattoos Completed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">4.9★</span>
+            <span class="stat-label">Client Rating</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Satisfaction Rate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book Consultation -->
+    <section class="section" id="contact">
+      <div class="glass-panel" style="text-align: center;">
+        <h2 class="section-title">Book Your Consultation</h2>
+        <p class="section-subtitle" style="margin-bottom: 2rem;">
+          Ready to create your dream tattoo? Book a free consultation with Ravi today.
+        </p>
+        
+        <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+          <a class="btn-solid" href="https://wa.me/919821632788?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20with%20Ravi%20Mehta%20for%20a%20tattoo" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp Consultation
+          </a>
+          <a class="btn-solid" href="/pricing-calculator" style="background: rgba(255,255,255,0.05);">
+            <i class="fas fa-calculator"></i>
+            Get Price Quote
+          </a>
+        </div>
+        
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+            <strong>Studio Location:</strong> GTB Nagar, Delhi NCR
+          </p>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+            <strong>Working Hours:</strong> Monday - Sunday, 11 AM to 9 PM
+          </p>
+          <p style="color: var(--text-secondary);">
+            <strong>Consultation:</strong> Free consultation • Custom design discussion • Transparent pricing
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

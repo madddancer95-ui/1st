@@ -1,0 +1,706 @@
+---
+const title = "Meet Our Expert Tattoo Artists | Delhi's Premier Tattoo Studio Team";
+const description = "Meet Delhi's most skilled tattoo artists at DelhiTattooShop.com. Professional tattoo artists specializing in realism, traditional, custom designs. Book consultation today.";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="tattoo artists Delhi, professional tattoo artists, best tattoo artists Delhi NCR, custom tattoo artists, realism tattoo artists Delhi">
+  <meta name="author" content="DelhiTattooShop.com">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://delhitattooshop.com/artists">
+  
+  <!-- Schema.org Organization Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DelhiTattooShop.com",
+    "description": "Delhi's premier tattoo studio featuring expert tattoo artists",
+    "url": "https://delhitattooshop.com/artists",
+    "employee": [
+      {
+        "@type": "Person",
+        "name": "Ravi Mehta",
+        "jobTitle": "Master Tattoo Artist",
+        "description": "15+ years experience in realism and traditional tattoos"
+      },
+      {
+        "@type": "Person", 
+        "name": "Priya Singh",
+        "jobTitle": "Fine Line Specialist",
+        "description": "Expert in delicate fine line and minimalist tattoo designs"
+      },
+      {
+        "@type": "Person",
+        "name": "Arjun Sharma", 
+        "jobTitle": "Traditional Art Master",
+        "description": "Specialist in Indian traditional and cultural tattoo designs"
+      }
+    ]
+  }
+  </script>
+  
+  <link rel="canonical" href="https://delhitattooshop.com/artists">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Core Variables */
+    :root {
+      --primary: #fff;
+      --accent-primary: #fff;
+      --text-primary: rgba(255,255,255,0.95);
+      --text-secondary: rgba(255,255,255,0.8);
+      --muted: rgba(255,255,255,0.6);
+      --border: rgba(255,255,255,0.2);
+      --bg-dark: #000;
+      --glass-bg: rgba(255,255,255,0.05);
+      --glass-border: rgba(255,255,255,0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Header Styles */
+    .header-outer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    .glass-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      margin: 0 2rem;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      background: linear-gradient(135deg, #fff, #ccc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .header-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+    }
+
+    .header-nav a:hover,
+    .header-nav a.active {
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 120px 2rem 80px;
+      background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(26,26,26,0.9) 100%);
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="artist-pattern" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M12.5,2.5 L22.5,12.5 L12.5,22.5 L2.5,12.5 Z" stroke="rgba(255,255,255,0.02)" stroke-width="0.5" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23artist-pattern)"/></svg>');
+      opacity: 0.4;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, #ccc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Content Styles */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 3rem;
+      margin: 2rem 0;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #fff, #ccc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+    }
+
+    /* Artists Grid */
+    .artists-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin: 3rem 0;
+    }
+
+    .artist-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .artist-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.02), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .artist-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .artist-card:hover::before {
+      opacity: 1;
+    }
+
+    .artist-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      border: 3px solid rgba(255,255,255,0.2);
+      margin: 0 auto 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: rgba(255,255,255,0.6);
+      position: relative;
+    }
+
+    .artist-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .artist-role {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .artist-specialties {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .artist-specialties li {
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .artist-specialties li::before {
+      content: '✓';
+      color: var(--accent-primary);
+      margin-right: 0.5rem;
+      font-weight: bold;
+    }
+
+    .artist-experience {
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .experience-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .experience-years {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+    }
+
+    .btn-artist {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .btn-artist:hover {
+      background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+      transform: translateY(-2px);
+    }
+
+    .btn-solid {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-solid:hover {
+      background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .glass-header {
+        margin: 0 1rem;
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .header-nav {
+        gap: 1rem;
+      }
+
+      .hero-section {
+        padding: 100px 1rem 60px;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+
+      .glass-panel {
+        padding: 2rem;
+      }
+
+      .artists-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .artist-card {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="header-outer">
+    <div class="glass-header">
+      <a class="brand" href="/" aria-label="DelhiTattooShop.com home">
+        DelhiTattooShop
+      </a>
+      
+      <nav class="header-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/artists" class="active">Our Artists</a>
+        <a href="/pricing-calculator">Pricing</a>
+        <div style="position: relative; display: inline-block;">
+          <a href="#" onclick="toggleLocations(event)" style="position: relative;">
+            Locations <i class="fas fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i>
+          </a>
+          <div id="locations-menu" style="display: none; position: absolute; top: 100%; left: 0; background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,0,0,0.9)); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; backdrop-filter: blur(20px); min-width: 250px; z-index: 1000; padding: 15px 0; margin-top: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <a href="/connaught-place-tattoo-studio" class="location-link" style="display: block; padding: 12px 20px; color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; border-radius: 8px; margin: 2px 10px;">📍 Connaught Place</a>
+            <a href="/karol-bagh-tattoo-shop" class="location-link" style="display: block; padding: 12px 20px; color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; border-radius: 8px; margin: 2px 10px;">🏪 Karol Bagh</a>
+            <a href="/khan-market-tattoo-studio" class="location-link" style="display: block; padding: 12px 20px; color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; border-radius: 8px; margin: 2px 10px;">👑 Khan Market</a>
+            <a href="/greater-kailash-tattoo" class="location-link" style="display: block; padding: 12px 20px; color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; border-radius: 8px; margin: 2px 10px;">🏡 Greater Kailash</a>
+            <a href="/nehru-place-tattoo-services" class="location-link" style="display: block; padding: 12px 20px; color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; border-radius: 8px; margin: 2px 10px;">💻 Nehru Place</a>
+          </div>
+        </div>
+        <a href="#contact">Book Now</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1 class="hero-title">Meet Our Expert Artists</h1>
+    <p class="hero-subtitle">
+      Delhi's most skilled and experienced tattoo artists, each specializing in unique styles and techniques. 
+      Choose the perfect artist for your dream tattoo.
+    </p>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Artists Grid -->
+    <section class="section">
+      <div class="glass-panel">
+        <h2 class="section-title">Our Professional Team</h2>
+        <p class="section-subtitle">Each artist brings years of experience and unique artistic vision</p>
+        
+        <div class="artists-grid">
+          <!-- Ravi Mehta -->
+          <div class="artist-card">
+            <div class="artist-avatar">
+              <i class="fas fa-crown"></i>
+            </div>
+            <h3 class="artist-name">Ravi Mehta</h3>
+            <p class="artist-role">Master Artist & Founder</p>
+            
+            <div class="artist-experience">
+              <div class="experience-label">Professional Experience</div>
+              <div class="experience-years">15+ Years</div>
+            </div>
+            
+            <ul class="artist-specialties">
+              <li>Realism & Portrait Tattoos</li>
+              <li>Traditional Indian Designs</li>
+              <li>Custom Artwork Creation</li>
+              <li>Cover-up Specialist</li>
+            </ul>
+            
+            <a href="/artists/ravi-mehta" class="btn-artist">
+              <i class="fas fa-user"></i>
+              View Profile
+            </a>
+          </div>
+          
+          <!-- Priya Singh -->
+          <div class="artist-card">
+            <div class="artist-avatar">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3 class="artist-name">Priya Singh</h3>
+            <p class="artist-role">Fine Line Specialist</p>
+            
+            <div class="artist-experience">
+              <div class="experience-label">Professional Experience</div>
+              <div class="experience-years">8+ Years</div>
+            </div>
+            
+            <ul class="artist-specialties">
+              <li>Fine Line & Minimalist</li>
+              <li>Delicate Floral Designs</li>
+              <li>Script & Lettering</li>
+              <li>Small Detail Work</li>
+            </ul>
+            
+            <a href="/artists/priya-singh" class="btn-artist">
+              <i class="fas fa-user"></i>
+              View Profile
+            </a>
+          </div>
+          
+          <!-- Arjun Sharma -->
+          <div class="artist-card">
+            <div class="artist-avatar">
+              <i class="fas fa-om"></i>
+            </div>
+            <h3 class="artist-name">Arjun Sharma</h3>
+            <p class="artist-role">Traditional Art Master</p>
+            
+            <div class="artist-experience">
+              <div class="experience-label">Professional Experience</div>
+              <div class="experience-years">12+ Years</div>
+            </div>
+            
+            <ul class="artist-specialties">
+              <li>Indian Traditional Art</li>
+              <li>Religious & Cultural</li>
+              <li>Mandala & Geometric</li>
+              <li>Sanskrit Calligraphy</li>
+            </ul>
+            
+            <a href="/artists/arjun-sharma" class="btn-artist">
+              <i class="fas fa-user"></i>
+              View Profile
+            </a>
+          </div>
+          
+          <!-- Vikash Kumar -->
+          <div class="artist-card">
+            <div class="artist-avatar">
+              <i class="fas fa-dragon"></i>
+            </div>
+            <h3 class="artist-name">Vikash Kumar</h3>
+            <p class="artist-role">Neo-Traditional Expert</p>
+            
+            <div class="artist-experience">
+              <div class="experience-label">Professional Experience</div>
+              <div class="experience-years">10+ Years</div>
+            </div>
+            
+            <ul class="artist-specialties">
+              <li>Neo-Traditional Style</li>
+              <li>Bold Color Work</li>
+              <li>Japanese Designs</li>
+              <li>Large Scale Pieces</li>
+            </ul>
+            
+            <a href="/artists/vikash-kumar" class="btn-artist">
+              <i class="fas fa-user"></i>
+              View Profile
+            </a>
+          </div>
+          
+          <!-- Sneha Patel -->
+          <div class="artist-card">
+            <div class="artist-avatar">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="artist-name">Sneha Patel</h3>
+            <p class="artist-role">Watercolor & Abstract</p>
+            
+            <div class="artist-experience">
+              <div class="experience-label">Professional Experience</div>
+              <div class="experience-years">6+ Years</div>
+            </div>
+            
+            <ul class="artist-specialties">
+              <li>Watercolor Technique</li>
+              <li>Abstract Art</li>
+              <li>Nature & Animals</li>
+              <li>Color Blending Expert</li>
+            </ul>
+            
+            <a href="/artists/sneha-patel" class="btn-artist">
+              <i class="fas fa-user"></i>
+              View Profile
+            </a>
+          </div>
+          
+          <!-- Rohit Gupta -->
+          <div class="artist-card">
+            <div class="artist-avatar">
+              <i class="fas fa-skull"></i>
+            </div>
+            <h3 class="artist-name">Rohit Gupta</h3>
+            <p class="artist-role">Black & Grey Master</p>
+            
+            <div class="artist-experience">
+              <div class="experience-label">Professional Experience</div>
+              <div class="experience-years">9+ Years</div>
+            </div>
+            
+            <ul class="artist-specialties">
+              <li>Black & Grey Realism</li>
+              <li>Portrait Work</li>
+              <li>Chicano Style</li>
+              <li>Memorial Tattoos</li>
+            </ul>
+            
+            <a href="/artists/rohit-gupta" class="btn-artist">
+              <i class="fas fa-user"></i>
+              View Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation CTA -->
+    <section class="section" id="contact">
+      <div class="glass-panel" style="text-align: center;">
+        <h2 class="section-title">Choose Your Artist</h2>
+        <p class="section-subtitle" style="margin-bottom: 2rem;">
+          Not sure which artist is right for your tattoo? Book a free consultation and we'll help you choose the perfect match.
+        </p>
+        
+        <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+          <a class="btn-solid" href="https://wa.me/919821632788?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20to%20choose%20the%20right%20artist%20for%20my%20tattoo" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            Free Artist Consultation
+          </a>
+          <a class="btn-solid" href="/pricing-calculator" style="background: rgba(255,255,255,0.05);">
+            <i class="fas fa-calculator"></i>
+            Get Price Quote
+          </a>
+        </div>
+        
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+            <strong>Why Choose Our Artists?</strong>
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; margin-top: 2rem;">
+            <div>
+              <i class="fas fa-certificate" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+              <p style="color: var(--text-secondary);">Professional Certification</p>
+            </div>
+            <div>
+              <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+              <p style="color: var(--text-secondary);">Hospital-Grade Hygiene</p>
+            </div>
+            <div>
+              <i class="fas fa-award" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+              <p style="color: var(--text-secondary);">Award-Winning Artists</p>
+            </div>
+            <div>
+              <i class="fas fa-handshake" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+              <p style="color: var(--text-secondary);">Personalized Service</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Location dropdown functionality
+    function toggleLocations(event) {
+      event.preventDefault();
+      const menu = document.getElementById('locations-menu');
+      if (!menu) return;
+      
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'block';
+      }
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('locations-menu');
+      const trigger = event.target.closest('[onclick*="toggleLocations"]');
+      if (!trigger && menu && menu.style.display === 'block') {
+        menu.style.display = 'none';
+      }
+    });
+
+    // Initialize dropdown as hidden on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const menu = document.getElementById('locations-menu');
+      if (menu) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
