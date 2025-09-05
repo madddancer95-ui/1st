@@ -369,6 +369,189 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
   }
   </script>
 
+  <!-- 6. Person Schema for Artists -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Expert Tattoo Artists at DelhiTattooShop.com",
+    "description": "Meet our team of professional tattoo artists specializing in various tattoo styles",
+    "itemListElement": [
+      {
+        "@type": "Person",
+        "position": 1,
+        "name": "Maddy (Ravi)",
+        "jobTitle": "Founder & Master Tattoo Artist",
+        "worksFor": {
+          "@type": "TattooParlor",
+          "name": "DelhiTattooShop.com"
+        },
+        "description": "Founder with 12+ years experience, 1000+ tattoos completed, specializing in black & grey realism and fine line work",
+        "knowsAbout": ["Black & Grey Realism", "Fine Line Work", "Portrait Tattoos", "Custom Designs"],
+        "yearsOfExperience": "12",
+        "telephone": "+91-7217665761"
+      },
+      {
+        "@type": "Person",
+        "position": 2,
+        "name": "Guru",
+        "jobTitle": "Award-Winning Color & Cover-Up Specialist",
+        "worksFor": {
+          "@type": "TattooParlor", 
+          "name": "DelhiTattooShop.com"
+        },
+        "description": "Award-winning artist with 8+ years experience, 2000+ tattoos completed, specializing in color realism and cover-ups",
+        "knowsAbout": ["Color Realism", "Black & Grey Work", "Cover-Up Specialist", "Spiritual & Cultural Art"],
+        "yearsOfExperience": "8",
+        "telephone": "+91-7217665761"
+      },
+      {
+        "@type": "Person",
+        "position": 3,
+        "name": "Ram Kesarwani",
+        "jobTitle": "Blackwork & Fine Line Specialist",
+        "worksFor": {
+          "@type": "TattooParlor",
+          "name": "DelhiTattooShop.com"
+        },
+        "description": "Expert in blackwork and mythological themes with 7+ years experience, 1500+ tattoos completed",
+        "knowsAbout": ["Blackwork Tattoos", "Fine Line Art", "Mythological Themes", "Custom Realism"],
+        "yearsOfExperience": "7",
+        "telephone": "+91-7217665761"
+      },
+      {
+        "@type": "Person",
+        "position": 4,
+        "name": "Sharan",
+        "jobTitle": "Fine Line & Japanese Tattoo Master",
+        "worksFor": {
+          "@type": "TattooParlor",
+          "name": "DelhiTattooShop.com"
+        },
+        "description": "Master of Japanese tattoo art and samurai sleeves with 6+ years experience, 1200+ tattoos completed",
+        "knowsAbout": ["Japanese Tattoo Art", "Fine Line & Realism", "Samurai Sleeves", "Anime Characters"],
+        "yearsOfExperience": "6",
+        "telephone": "+91-7217665761"
+      }
+    ]
+  }
+  </script>
+
+  <!-- 7. WebSite Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DelhiTattooShop.com",
+    "alternateName": "Delhi Tattoo Shop",
+    "url": "https://delhitattooshop.com/",
+    "description": "Professional tattoo studio website featuring expert artists, transparent pricing, portfolio gallery, and easy booking system",
+    "publisher": {
+      "@type": "Organization",
+      "name": "DelhiTattooShop.com"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://delhitattooshop.com/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "sameAs": [
+      "https://www.instagram.com/delhitattooshop",
+      "https://wa.me/917217665761"
+    ]
+  }
+  </script>
+
+  <!-- 8. Offer Catalog Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "Tattoo Services & Pricing - DelhiTattooShop.com",
+    "description": "Complete pricing catalog for all tattoo services with transparent per-inch rates",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Simple Tattoo Package",
+        "description": "Perfect for first-time tattoo clients - includes black & grey designs, simple line work, text and symbols",
+        "price": "299",
+        "priceCurrency": "INR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "299",
+          "priceCurrency": "INR",
+          "unitText": "per inch"
+        },
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Simple Tattoo Design",
+          "category": "Tattoo Service"
+        },
+        "seller": {
+          "@type": "TattooParlor",
+          "name": "DelhiTattooShop.com"
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2025-01-01",
+        "priceValidUntil": "2025-12-31"
+      },
+      {
+        "@type": "Offer",
+        "name": "Detailed Tattoo Package",
+        "description": "Most popular choice - includes colored designs, complex artwork, shading & gradients, free consultation",
+        "price": "399", 
+        "priceCurrency": "INR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "399",
+          "priceCurrency": "INR",
+          "unitText": "per inch"
+        },
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Detailed Tattoo Work",
+          "category": "Tattoo Service"
+        },
+        "seller": {
+          "@type": "TattooParlor",
+          "name": "DelhiTattooShop.com"
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2025-01-01",
+        "priceValidUntil": "2025-12-31"
+      },
+      {
+        "@type": "Offer",
+        "name": "Premium Art Package",
+        "description": "Premium service - includes realism & portraits, complex color work, cover-up tattoos, aftercare kit included",
+        "price": "599",
+        "priceCurrency": "INR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "599",
+          "priceCurrency": "INR",
+          "unitText": "per inch"
+        },
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Premium Art Tattoo",
+          "category": "Tattoo Service"
+        },
+        "seller": {
+          "@type": "TattooParlor",
+          "name": "DelhiTattooShop.com"
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2025-01-01",
+        "priceValidUntil": "2025-12-31"
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --accent-primary: #ffffff;
