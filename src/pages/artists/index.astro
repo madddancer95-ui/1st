@@ -436,6 +436,73 @@ const artists = Object.entries(artistsData)
       color: var(--text);
     }
 
+    /* Portfolio Gallery Styles */
+    .portfolio-section {
+      margin: 24px 0;
+    }
+
+    .portfolio-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255,255,255,0.1);
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.05);
+      border-color: rgba(255,255,255,0.3);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Portfolio lightbox overlay */
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 8px;
+      font-size: 11px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .glass-header {
@@ -495,6 +562,15 @@ const artists = Object.entries(artistsData)
         object-fit: contain !important;
         margin-bottom: 12px !important;
         width: auto !important;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      .portfolio-title {
+        font-size: 1.1rem;
       }
     }
   </style>
@@ -561,6 +637,14 @@ const artists = Object.entries(artistsData)
           
           <div class="specialties-grid" id="modalSpecialties">
             <!-- Specialties will be populated -->
+          </div>
+
+          <!-- Portfolio Gallery Section -->
+          <div class="portfolio-section">
+            <h3 class="portfolio-title">🎨 Portfolio Gallery</h3>
+            <div class="portfolio-grid" id="modalPortfolio">
+              <!-- Portfolio images will be populated -->
+            </div>
           </div>
           
           <div class="artist-buttons">
@@ -646,6 +730,17 @@ const artists = Object.entries(artistsData)
           `<div class="specialty-item">${specialty}</div>`
         ).join('');
         
+        // Populate portfolio gallery
+        const portfolioContainer = document.getElementById('modalPortfolio');
+        portfolioContainer.innerHTML = artist.portfolioPhotos.map((photo, index) => 
+          `<div class="portfolio-item" onclick="viewPortfolioImage('${photo}', '${artist.name}', ${index})">
+             <img src="${photo}" alt="${artist.name} portfolio ${index + 1}" loading="lazy">
+             <div class="portfolio-overlay">
+               <i class="fas fa-search-plus"></i> View Full
+             </div>
+           </div>`
+        ).join('');
+        
         // Populate modal buttons
         const buttonsContainer = document.getElementById('modalButtons');
         buttonsContainer.innerHTML = artist.other_buttons.filter(button => button.action !== 'modal').map(button => {
@@ -676,6 +771,13 @@ const artists = Object.entries(artistsData)
       const modal = document.getElementById('artistModal');
       modal.classList.remove('show');
       document.body.style.overflow = 'auto';
+    }
+
+    // Portfolio image viewer function
+    function viewPortfolioImage(imageSrc, artistName, index) {
+      // Create a simple lightbox effect by opening in new tab for now
+      // In future, we could add a full lightbox modal
+      window.open(imageSrc, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
     }
     
     // Close modal when clicking outside
