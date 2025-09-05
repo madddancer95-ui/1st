@@ -826,6 +826,110 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
     .glass-hero * {
       animation: fadeInUp 0.8s ease forwards;
     }
+
+    /* Portfolio Showcase Styles */
+    .portfolio-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      aspect-ratio: 1.618 / 1; /* Golden ratio for optimal visual appeal */
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      padding: 20px;
+      color: white;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      transform: translateY(0);
+    }
+
+    .portfolio-overlay span {
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .portfolio-overlay small {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .portfolio-showcase {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
+      }
+      
+      .portfolio-item {
+        aspect-ratio: 1.2 / 1; /* Slightly less tall on mobile */
+      }
+      
+      .portfolio-overlay {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .portfolio-showcase {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      
+      .portfolio-item {
+        aspect-ratio: 1 / 1; /* Square on very small screens */
+      }
+      
+      .portfolio-overlay {
+        padding: 12px;
+      }
+      
+      .portfolio-overlay span {
+        font-size: 0.95rem;
+      }
+      
+      .portfolio-overlay small {
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 
@@ -978,6 +1082,151 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Showcase Section -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2 class="section-title">Our Artists' Best Work</h2>
+        <p class="section-sub">See why 15,000+ customers trust our Delhi NCR tattoo artists. Real tattoos from our studio.</p>
+        
+        <div class="portfolio-showcase">
+          <!-- Maddy's Work -->
+          <div class="portfolio-item">
+            <img src="/artists/photos/maddy-portfolio-1.png" alt="Black & grey realism tattoo by Maddy" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Maddy - Founder</span>
+              <small>Black & Grey Realism</small>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="/artists/photos/maddy-portfolio-2.jpg" alt="Fine line tattoo by Maddy" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Maddy - Founder</span>
+              <small>Fine Line Work</small>
+            </div>
+          </div>
+
+          <!-- Guru's Work -->
+          <div class="portfolio-item">
+            <img src="/artists/photos/guru-portfolio-1.jpg" alt="Color realism tattoo by Guru" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Guru</span>
+              <small>Color Realism</small>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="/artists/photos/guru-portfolio-2.jpg" alt="Cover-up tattoo by Guru" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Guru</span>
+              <small>Cover-Up Specialist</small>
+            </div>
+          </div>
+
+          <!-- Ram's Work -->
+          <div class="portfolio-item">
+            <img src="/artists/photos/ram-portfolio-1.jpg" alt="Blackwork tattoo by Ram" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Ram Kesarwani</span>
+              <small>Blackwork</small>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="/artists/photos/ram-portfolio-2.jpg" alt="Mythological tattoo by Ram" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Ram Kesarwani</span>
+              <small>Mythological Art</small>
+            </div>
+          </div>
+
+          <!-- Sharan's Work -->
+          <div class="portfolio-item">
+            <img src="/artists/photos/sharan-portfolio-1.jpg" alt="Japanese tattoo by Sharan" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Sharan</span>
+              <small>Japanese Art</small>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="/artists/photos/sharan-portfolio-2.jpg" alt="Samurai tattoo by Sharan" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Sharan</span>
+              <small>Samurai Sleeves</small>
+            </div>
+          </div>
+
+          <!-- Goutam's Work -->
+          <div class="portfolio-item">
+            <img src="/artists/photos/goutam-portfolio-1.jpg" alt="Spiritual tattoo by Goutam" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Goutam</span>
+              <small>Spiritual Art</small>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="/artists/photos/goutam-portfolio-2.jpg" alt="Historical portrait by Goutam" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Goutam</span>
+              <small>Historical Portraits</small>
+            </div>
+          </div>
+
+          <!-- Vishal's Work -->
+          <div class="portfolio-item">
+            <img src="/artists/photos/vishal-portfolio-1.jpg" alt="Mandala tattoo by Vishal" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Vishal Gour</span>
+              <small>Mandala & Geometric</small>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="/artists/photos/vishal-portfolio-2.jpg" alt="Deity tattoo by Vishal" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Vishal Gour</span>
+              <small>Deity Art</small>
+            </div>
+          </div>
+
+          <!-- Sohil's Work -->
+          <div class="portfolio-item">
+            <img src="/artists/photos/sohil-portfolio-1.jpg" alt="Fine line tattoo by Sohil" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Sohil Khan</span>
+              <small>Fine Line</small>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="/artists/photos/sohil-portfolio-2.jpg" alt="Portrait tattoo by Sohil" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Sohil Khan</span>
+              <small>Custom Portraits</small>
+            </div>
+          </div>
+
+          <!-- Ajit's Work -->
+          <div class="portfolio-item">
+            <img src="/artists/photos/ajit-portfolio-1.jpg" alt="Realism tattoo by Ajit" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Ajit</span>
+              <small>Portrait Realism</small>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="/artists/photos/ajit-portfolio-2.jpg" alt="Memorial tattoo by Ajit" loading="lazy">
+            <div class="portfolio-overlay">
+              <span>Ajit</span>
+              <small>Memorial Pieces</small>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="/artists" class="btn-solid">
+            <i class="fas fa-users"></i>
+            Meet All Our Artists
+          </a>
         </div>
       </div>
     </section>
