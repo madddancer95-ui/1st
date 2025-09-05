@@ -6,6 +6,14 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{title}</title>
@@ -934,6 +942,11 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
 </head>
 
 <body id="apex-page">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <div class="top-section-container">
     <!-- Video Background ONLY for Header + Hero -->
     <video class="top-section-video" autoplay muted loop playsinline preload="metadata" width="1920" height="1080">
@@ -1504,6 +1517,88 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
       const menu = document.getElementById('locations-menu');
       if (menu) {
         menu.style.display = 'none';
+      }
+    });
+
+    // Google Tag Manager Event Tracking
+    function gtmTrack(eventName, eventData = {}) {
+      if (typeof window !== 'undefined' && window.dataLayer) {
+        window.dataLayer.push({
+          'event': eventName,
+          ...eventData
+        });
+      }
+    }
+
+    // Track WhatsApp clicks
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('[href*="wa.me"]')) {
+        gtmTrack('whatsapp_click', {
+          'event_category': 'engagement',
+          'event_label': 'whatsapp_consultation'
+        });
+      }
+    });
+
+    // Track phone clicks
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('[href^="tel:"]')) {
+        gtmTrack('phone_click', {
+          'event_category': 'engagement',
+          'event_label': 'direct_call'
+        });
+      }
+    });
+
+    // Track pricing calculator clicks
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('[href*="pricing-calculator"]')) {
+        gtmTrack('pricing_calculator_click', {
+          'event_category': 'engagement',
+          'event_label': 'pricing_tool'
+        });
+      }
+    });
+
+    // Track artist page clicks
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('[href*="artists"]')) {
+        gtmTrack('artists_page_click', {
+          'event_category': 'navigation',
+          'event_label': 'view_artists'
+        });
+      }
+    });
+
+    // Track location page clicks
+    document.addEventListener('click', function(e) {
+      const locationLink = e.target.closest('.location-link');
+      if (locationLink) {
+        const locationName = locationLink.textContent.trim();
+        gtmTrack('location_click', {
+          'event_category': 'navigation',
+          'event_label': locationName
+        });
+      }
+    });
+
+    // Track portfolio image clicks
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.portfolio-item')) {
+        gtmTrack('portfolio_click', {
+          'event_category': 'engagement',
+          'event_label': 'portfolio_view'
+        });
+      }
+    });
+
+    // Track form submissions
+    document.addEventListener('submit', function(e) {
+      if (e.target.tagName === 'FORM') {
+        gtmTrack('form_submit', {
+          'event_category': 'lead_generation',
+          'event_label': 'consultation_form'
+        });
       }
     });
   </script>
