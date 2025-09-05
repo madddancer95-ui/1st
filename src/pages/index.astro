@@ -1526,6 +1526,23 @@ const description = "Professional tattoo studio in Delhi NCR. ₹299/inch transp
       }
     }
 
+    // GTM Status Check - Shows alert when page loads
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        if (typeof window.dataLayer !== 'undefined' && window.dataLayer.length > 0) {
+          console.log('✅ GTM SUCCESS: Google Tag Manager is working!');
+          console.log('📊 DataLayer:', window.dataLayer);
+          console.log('🎯 Container: GTM-K4DMPN4P detected');
+          
+          // Optional: Show visual confirmation (remove this line if you don't want the alert)
+          // alert('✅ GTM Working! Check console for details.');
+        } else {
+          console.log('❌ GTM FAILED: Google Tag Manager not detected');
+          console.log('🔍 Check if GTM script loaded properly');
+        }
+      }, 2000); // Wait 2 seconds for GTM to initialize
+    });
+
     // Track WhatsApp clicks
     document.addEventListener('click', function(e) {
       if (e.target.closest('[href*="wa.me"]')) {
