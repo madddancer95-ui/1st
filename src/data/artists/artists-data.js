@@ -114,7 +114,7 @@ export const artistsData = {
     },
     
     contact: {
-      whatsapp: "919821632788",
+      whatsapp: "919821632788", // Studio founder - main number
       instagram: "@maddytattooz",
       email: "maddy@delhitattooshop.com"
     },
@@ -174,7 +174,7 @@ export const artistsData = {
     },
     
     contact: {
-      whatsapp: "917217665762",
+      whatsapp: "917217665762", // Senior artist - direct line
       instagram: "@gurutattooz",
       email: "guru@delhitattooshop.com"
     },
@@ -234,7 +234,7 @@ export const artistsData = {
     },
     
     contact: {
-      whatsapp: "919821632788",
+      whatsapp: "919821632789", // Ram's direct line
       instagram: "@ramtattooz",
       email: "ram@delhitattooshop.com"
     },
@@ -294,7 +294,7 @@ export const artistsData = {
     },
     
     contact: {
-      whatsapp: "919821632788",
+      whatsapp: "919821632790", // Sharan's direct line
       instagram: "@sharantattooz",
       email: "sharan@delhitattooshop.com"
     },
@@ -354,7 +354,7 @@ export const artistsData = {
     },
     
     contact: {
-      whatsapp: "919821632788",
+      whatsapp: "919821632791", // Goutam's direct line
       instagram: "@goutamtattooz",
       email: "goutam@delhitattooshop.com"
     },
@@ -414,7 +414,7 @@ export const artistsData = {
     },
     
     contact: {
-      whatsapp: "919821632788",
+      whatsapp: "919821632792", // Vishal's direct line
       instagram: "@vishaltattooz",
       email: "vishal@delhitattooshop.com"
     },
@@ -474,7 +474,7 @@ export const artistsData = {
     },
     
     contact: {
-      whatsapp: "919821632788",
+      whatsapp: "919821632793", // Sohil's direct line
       instagram: "@sohiltattooz",
       email: "sohil@delhitattooshop.com"
     },
@@ -534,7 +534,7 @@ export const artistsData = {
     },
     
     contact: {
-      whatsapp: "919821632788",
+      whatsapp: "919821632794", // Ajit's direct line
       instagram: "@ajittattooz",
       email: "ajit@delhitattooshop.com"
     },
