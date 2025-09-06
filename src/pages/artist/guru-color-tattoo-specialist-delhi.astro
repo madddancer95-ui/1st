@@ -1,0 +1,551 @@
+---
+const title = "Guru - Award-Winning Color Tattoo Artist Delhi | Vibrant Realism Specialist";
+const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-winning artist known for vibrant color realism, impossible cover-ups & artistic masterpieces. Book consultation at DelhiTattooShop.com!";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script src="/gtm.js" is:inline></script>
+  <!-- End Google Tag Manager -->
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="keywords" content="Guru tattoo artist Delhi, color tattoo specialist Delhi, vibrant tattoo artist Delhi NCR, award winning tattoo artist Delhi, color realism tattoo Delhi, best color tattoo artist Delhi, artistic tattoo Delhi, cover up specialist Delhi, professional color tattoo Delhi">
+  
+  <!-- Enhanced SEO Meta Tags -->
+  <meta name="author" content="Guru - Professional Color Tattoo Artist">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://delhitattooshop.com/artist/guru-color-tattoo-specialist-delhi">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content="https://delhitattooshop.com/artist/guru-color-tattoo-specialist-delhi">
+  <meta property="og:image" content="https://delhitattooshop.com/artists/photos/guru-portfolio-1.jpg">
+  <meta property="profile:first_name" content="Guru">
+  
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="/artists/photos/guru-profile.jpg">
+  <link rel="preload" as="image" href="/artists/photos/guru-portfolio-1.jpg">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f8f4ff 0%, #e8e8ff 100%);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #4B0082 0%, #8A2BE2 100%);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    
+    .artist-hero {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: center;
+      margin: 3rem 0;
+    }
+    
+    .artist-profile {
+      text-align: center;
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
+      border: 3px solid #FF6347;
+    }
+    
+    .artist-profile img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid #FF6347;
+    }
+    
+    .artist-info h1 {
+      font-size: 2.5rem;
+      color: #4B0082;
+      margin-bottom: 1rem;
+    }
+    
+    .specialization-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+      justify-content: center;
+    }
+    
+    .tag {
+      background: linear-gradient(135deg, #FF6347, #FF4500);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .award-badge {
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      color: #8B4513;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-weight: bold;
+      margin: 1rem 0;
+      display: inline-block;
+      box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
+    }
+    
+    .portfolio-section {
+      margin: 4rem 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #4B0082;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, #FF6347, #FF4500);
+      margin: 0.5rem auto;
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .portfolio-item {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .portfolio-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+    }
+    
+    .portfolio-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    
+    .portfolio-caption {
+      padding: 1.2rem;
+      text-align: center;
+    }
+    
+    .portfolio-caption h3 {
+      color: #4B0082;
+      margin-bottom: 0.5rem;
+    }
+    
+    .color-highlight {
+      background: linear-gradient(135deg, #FFE4E1, #F0E68C);
+      padding: 2rem;
+      border-radius: 20px;
+      margin: 3rem 0;
+      border-left: 5px solid #FF6347;
+    }
+    
+    .stats-section {
+      background: white;
+      padding: 3rem 0;
+      margin: 3rem 0;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    
+    .stat-item {
+      padding: 1rem;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #FF6347;
+    }
+    
+    .contact-section {
+      background: linear-gradient(135deg, #4B0082 0%, #8A2BE2 100%);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+      border-radius: 20px;
+      margin: 3rem 0;
+    }
+    
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, #FF6347, #FF4500);
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(255, 99, 71, 0.4);
+    }
+    
+    .testimonial-section {
+      margin: 4rem 0;
+      text-align: center;
+    }
+    
+    .testimonial {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      margin: 1rem 0;
+      font-style: italic;
+      border-left: 4px solid #FF6347;
+    }
+    
+    .technique-section {
+      background: linear-gradient(135deg, #FFF8DC, #FFFACD);
+      padding: 3rem 0;
+      margin: 3rem 0;
+      border-radius: 20px;
+    }
+    
+    .technique-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .technique-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .artist-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .artist-info h1 {
+        font-size: 2rem;
+      }
+      
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="header">
+    <div class="container">
+      <h1>Meet Delhi's Award-Winning Color Tattoo Master</h1>
+      <p>Guru - Bringing Vibrant Art to Life | Professional Color Specialist | DelhiTattooShop.com</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="artist-hero">
+      <div class="artist-profile">
+        <img src="/artists/photos/guru-profile.jpg" alt="Guru - Award-Winning Color Tattoo Artist Delhi" loading="eager">
+        <h2>Guru</h2>
+        <p><strong>Master Color Artist</strong></p>
+        <div class="award-badge">🏆 Award-Winning Artist</div>
+        <div class="specialization-tags">
+          <span class="tag">Color Realism</span>
+          <span class="tag">Vibrant Art</span>
+          <span class="tag">Cover-Up Magic</span>
+          <span class="tag">Artistic Design</span>
+        </div>
+      </div>
+      
+      <div class="artist-info">
+        <h1>The Color Wizard of Delhi NCR</h1>
+        <p style="font-size: 1.2rem; line-height: 1.8; color: #555; margin-bottom: 2rem;">
+          Look, when people think about color tattoos in Delhi, they think about Guru. This guy has this incredible ability to make colors pop like you've never seen before. Like, his work doesn't just look good - it literally glows on your skin.
+        </p>
+        
+        <p style="font-size: 1.1rem; line-height: 1.7; color: #666; margin-bottom: 1.5rem;">
+          What makes Guru special? He understands how different skin tones work with various colors. You know how some artists just use the same approach for everyone? Not Guru. He customizes every single color blend for your exact skin tone, making sure those colors stay vibrant for years.
+        </p>
+        
+        <div class="color-highlight">
+          <h3 style="color: #4B0082; margin-bottom: 1rem;">🎨 Guru's Color Mastery:</h3>
+          <ul style="text-align: left; color: #555;">
+            <li>✓ Award-winning color theory expertise</li>
+            <li>✓ Custom color mixing for each client's skin tone</li>
+            <li>✓ Transforms "impossible" cover-ups into masterpieces</li>
+            <li>✓ 500+ vibrant tattoos with lasting color brilliance</li>
+            <li>✓ Uses premium imported pigments for fade-resistance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="technique-section">
+      <h2 class="section-title">Guru's Signature Techniques</h2>
+      <div class="technique-grid">
+        <div class="technique-card">
+          <h3 style="color: #FF6347;">🌈 Color Layering</h3>
+          <p>Multiple color layers create depth and vibrancy that lasts decades, not just years.</p>
+        </div>
+        <div class="technique-card">
+          <h3 style="color: #FF6347;">🎯 Skin Tone Analysis</h3>
+          <p>Custom color selection based on your unique skin undertones for perfect harmony.</p>
+        </div>
+        <div class="technique-card">
+          <h3 style="color: #FF6347;">🔄 Cover-Up Transformation</h3>
+          <p>Turning old, faded tattoos into vibrant masterpieces using advanced color theory.</p>
+        </div>
+        <div class="technique-card">
+          <h3 style="color: #FF6347;">✨ Color Preservation</h3>
+          <p>Special techniques and aftercare to maintain color brilliance for maximum longevity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-section">
+    <div class="container">
+      <h2 class="section-title">Color Excellence by Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <p>Color Tattoos Completed</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">95%</div>
+          <p>Cover-Up Success Rate</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <p>Awards Won</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6+</div>
+          <p>Years Experience</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="portfolio-section">
+      <h2 class="section-title">Guru's Vibrant Portfolio</h2>
+      <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: #666;">
+        Each piece showcases why Guru is considered Delhi's premier color specialist. The vibrancy speaks for itself.
+      </p>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="/artists/photos/guru-portfolio-1.jpg" alt="Award-winning vibrant color tattoo by Guru - Artistic masterpiece" loading="lazy">
+          <div class="portfolio-caption">
+            <h3>Award-Winning Color Work</h3>
+            <p>Vibrant realism with incredible depth and color saturation</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="/artists/photos/guru-portfolio-2.jpg" alt="Color cover-up transformation by Guru - Before and after magic" loading="lazy">
+          <div class="portfolio-caption">
+            <h3>Cover-Up Transformation</h3>
+            <p>Impossible cover-up turned into stunning artistic masterpiece</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="/artists/photos/guru-portfolio-3.jpg" alt="Colorful artistic tattoo design by Guru - Creative excellence" loading="lazy">
+          <div class="portfolio-caption">
+            <h3>Creative Color Design</h3>
+            <p>Original artistic concepts with perfect color harmony</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="/artists/photos/guru-portfolio-4.jpg" alt="Realistic color portrait by Guru - Photographic quality" loading="lazy">
+          <div class="portfolio-caption">
+            <h3>Color Portrait Realism</h3>
+            <p>Photorealistic portraits with lifelike color accuracy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="testimonial-section">
+      <h2 class="section-title">What Clients Say About Guru's Work</h2>
+      
+      <div class="testimonial">
+        <p>"Guru transformed my old, ugly tattoo into something incredible. The colors are so vibrant, people stop me on the street to ask about it. Best investment ever!"</p>
+        <strong>- Sneha R., Delhi</strong>
+      </div>
+      
+      <div class="testimonial">
+        <p>"I thought my dark old tattoo was impossible to cover, but Guru proved me wrong. The way he uses colors is pure magic. Award-winning work for sure!"</p>
+        <strong>- Vikash K., Ghaziabad</strong>
+      </div>
+      
+      <div class="testimonial">
+        <p>"The attention to color detail is unmatched. Guru spent hours making sure every shade was perfect for my skin tone. The result is absolutely stunning!"</p>
+        <strong>- Kavya M., Noida</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="contact-section">
+      <h2>Ready for Award-Winning Color Work?</h2>
+      <p style="font-size: 1.2rem; margin: 1rem 0;">
+        Book your consultation with Guru to discuss color tattoo ideas, cover-ups, or artistic designs. Free color mockups available.
+      </p>
+      
+      <div style="margin-top: 2rem;">
+        <a href="https://wa.me/917217665761?text=Hi,%20I%20want%20to%20book%20a%20consultation%20with%20Guru%20for%20a%20color%20tattoo" class="btn-primary">
+          🎨 Book Color Consultation
+        </a>
+        <a href="tel:+917217665761" class="btn-primary">
+          📞 Call Now
+        </a>
+        <a href="/" class="btn-primary">
+          🏠 Visit Studio
+        </a>
+      </div>
+      
+      <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.9;">
+        DelhiTattooShop.com | GTB Nagar, Delhi | Color Consultations Available Daily
+      </p>
+    </div>
+  </div>
+
+  <!-- Schema Markup for Guru's Profile -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Guru",
+    "jobTitle": "Master Color Tattoo Artist",
+    "worksFor": {
+      "@type": "TattooParlor",
+      "name": "DelhiTattooShop.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "GTB Nagar",
+        "addressRegion": "Delhi",
+        "addressCountry": "IN"
+      }
+    },
+    "url": "https://delhitattooshop.com/artist/guru-color-tattoo-specialist-delhi",
+    "image": "https://delhitattooshop.com/artists/photos/guru-profile.jpg",
+    "description": "Award-winning color tattoo specialist with 6+ years experience in vibrant realism, cover-ups, and artistic color tattoos in Delhi NCR.",
+    "knowsAbout": [
+      "Color Realism Tattoos",
+      "Vibrant Color Tattoo Art",
+      "Cover-Up Transformations",
+      "Artistic Tattoo Design",
+      "Color Theory for Tattoos",
+      "Skin Tone Color Matching"
+    ],
+    "award": [
+      "Award-Winning Color Artist",
+      "500+ Color Tattoos Completed",
+      "95% Cover-Up Success Rate"
+    ],
+    "telephone": "+91-7217665761",
+    "sameAs": [
+      "https://wa.me/917217665761"
+    ]
+  }
+  </script>
+
+  <!-- Portfolio Schema for Guru -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Guru's Color Tattoo Portfolio - Award-Winning Vibrant Work",
+    "description": "Stunning collection of color realism, cover-ups, and artistic tattoos by Delhi's premier color specialist",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://delhitattooshop.com/artists/photos/guru-portfolio-1.jpg",
+        "caption": "Award-Winning Vibrant Color Realism",
+        "creator": {
+          "@type": "Person",
+          "name": "Guru"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://delhitattooshop.com/artists/photos/guru-portfolio-2.jpg",
+        "caption": "Impossible Cover-Up Transformation",
+        "creator": {
+          "@type": "Person",
+          "name": "Guru"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

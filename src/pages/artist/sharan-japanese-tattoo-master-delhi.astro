@@ -1,0 +1,631 @@
+---
+const title = "Sharan - Japanese Tattoo Master Delhi | Traditional Samurai & Irezumi Specialist";
+const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Traditional Irezumi, Samurai sleeves, Dragon art & authentic Japanese tattoo styles. Expert at DelhiTattooShop.com!";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script src="/gtm.js" is:inline></script>
+  <!-- End Google Tag Manager -->
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="keywords" content="Sharan Japanese tattoo artist Delhi, Irezumi tattoo specialist Delhi, Samurai tattoo artist Delhi, Japanese dragon tattoo Delhi, traditional Japanese tattoo Delhi NCR, authentic Irezumi Delhi, Japanese sleeve tattoo Delhi, koi fish tattoo Delhi, cherry blossom tattoo Delhi">
+  
+  <!-- Enhanced SEO Meta Tags -->
+  <meta name="author" content="Sharan - Professional Japanese Tattoo Artist">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://delhitattooshop.com/artist/sharan-japanese-tattoo-master-delhi">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content="https://delhitattooshop.com/artist/sharan-japanese-tattoo-master-delhi">
+  <meta property="og:image" content="https://delhitattooshop.com/artists/photos/sharan-portfolio-1.jpg">
+  <meta property="profile:first_name" content="Sharan">
+  
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="/artists/photos/sharan-profile.jpg">
+  <link rel="preload" as="image" href="/artists/photos/sharan-portfolio-1.jpg">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #2d1b1b 0%, #4a2c2c 50%, #1a1a1a 100%);
+      color: white;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #000000 100%);
+      color: #FFD700;
+      padding: 2rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="wave" patternUnits="userSpaceOnUse" width="30" height="10"><path d="M0 5q7.5-5 15 0t15 0" stroke="%23FFD700" stroke-width="0.3" fill="none" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23wave)"/></svg>');
+      z-index: 1;
+    }
+    
+    .header .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .artist-hero {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: center;
+      margin: 3rem 0;
+    }
+    
+    .artist-profile {
+      text-align: center;
+      background: linear-gradient(135deg, #2d1b1b 0%, #4a2c2c 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+      border: 3px solid #DC143C;
+      position: relative;
+    }
+    
+    .artist-profile::before {
+      content: '🐉';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2d1b1b;
+      padding: 5px 10px;
+      font-size: 1.5rem;
+    }
+    
+    .artist-profile img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid #DC143C;
+    }
+    
+    .artist-info h1 {
+      font-size: 2.5rem;
+      color: #FFD700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    
+    .specialization-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+      justify-content: center;
+    }
+    
+    .tag {
+      background: linear-gradient(135deg, #DC143C, #8B0000);
+      color: #FFD700;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid #FFD700;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    
+    .master-badge {
+      background: linear-gradient(135deg, #FF6347, #DC143C);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-weight: bold;
+      margin: 1rem 0;
+      display: inline-block;
+      box-shadow: 0 3px 10px rgba(220, 20, 60, 0.4);
+      border: 2px solid #FFD700;
+    }
+    
+    .portfolio-section {
+      margin: 4rem 0;
+      background: rgba(45, 27, 27, 0.8);
+      padding: 3rem 0;
+      border-radius: 20px;
+      border: 2px solid #8B0000;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #FFD700;
+      position: relative;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, #DC143C, #8B0000);
+      margin: 0.5rem auto;
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .portfolio-item {
+      background: linear-gradient(135deg, #4a2c2c 0%, #2d1b1b 100%);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+      position: relative;
+      border: 2px solid #8B0000;
+    }
+    
+    .portfolio-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(220, 20, 60, 0.3);
+      border-color: #DC143C;
+    }
+    
+    .portfolio-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    
+    .portfolio-caption {
+      padding: 1.2rem;
+      text-align: center;
+    }
+    
+    .portfolio-caption h3 {
+      color: #FFD700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .portfolio-caption p {
+      color: #cccccc;
+    }
+    
+    .japanese-highlight {
+      background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(220, 20, 60, 0.2));
+      padding: 2rem;
+      border-radius: 20px;
+      margin: 3rem 0;
+      border: 2px solid #DC143C;
+      position: relative;
+    }
+    
+    .japanese-highlight::before {
+      content: '⛩️';
+      position: absolute;
+      top: -15px;
+      left: 30px;
+      background: #2d1b1b;
+      padding: 5px 10px;
+      font-size: 1.5rem;
+    }
+    
+    .stats-section {
+      background: linear-gradient(135deg, #4a2c2c 0%, #2d1b1b 100%);
+      padding: 3rem 0;
+      margin: 3rem 0;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      border: 2px solid #8B0000;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    
+    .stat-item {
+      padding: 1rem;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #DC143C;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    
+    .contact-section {
+      background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+      border-radius: 20px;
+      margin: 3rem 0;
+      border: 3px solid #FFD700;
+    }
+    
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      color: #8B0000;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+      border: 2px solid #8B0000;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+      background: linear-gradient(135deg, #FFA500, #FFD700);
+    }
+    
+    .testimonial-section {
+      margin: 4rem 0;
+      text-align: center;
+    }
+    
+    .testimonial {
+      background: linear-gradient(135deg, #4a2c2c 0%, #2d1b1b 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      margin: 1rem 0;
+      font-style: italic;
+      border-left: 4px solid #DC143C;
+      color: #cccccc;
+    }
+    
+    .technique-section {
+      background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(220, 20, 60, 0.1));
+      padding: 3rem 0;
+      margin: 3rem 0;
+      border-radius: 20px;
+      border: 2px solid #8B0000;
+    }
+    
+    .technique-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .technique-card {
+      background: linear-gradient(135deg, #4a2c2c 0%, #2d1b1b 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      border: 2px solid #8B0000;
+    }
+    
+    .technique-card h3 {
+      color: #FFD700;
+      margin-bottom: 1rem;
+    }
+    
+    .technique-card p {
+      color: #cccccc;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        background: #2d1b1b;
+      }
+      
+      .artist-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .artist-info h1 {
+        font-size: 2rem;
+      }
+      
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="header">
+    <div class="container">
+      <h1>Delhi's Master of Traditional Japanese Tattoo Art</h1>
+      <p>Sharan - Authentic Irezumi & Samurai Specialist | DelhiTattooShop.com</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="artist-hero">
+      <div class="artist-profile">
+        <img src="/artists/photos/sharan-profile.jpg" alt="Sharan - Master Japanese Tattoo Artist Delhi" loading="eager">
+        <h2 style="color: #FFD700;">Sharan</h2>
+        <p><strong style="color: #DC143C;">Japanese Art Master</strong></p>
+        <div class="master-badge">🎌 Irezumi Specialist</div>
+        <div class="specialization-tags">
+          <span class="tag">Traditional Irezumi</span>
+          <span class="tag">Samurai Art</span>
+          <span class="tag">Dragon Sleeves</span>
+          <span class="tag">Koi Fish</span>
+        </div>
+      </div>
+      
+      <div class="artist-info">
+        <h1>The Samurai of Ink in Delhi</h1>
+        <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+          Look, when you want authentic Japanese tattoo work in Delhi, there's only one name that comes to mind - Sharan. This guy has studied traditional Irezumi techniques like no one else in the city. His understanding of Japanese culture and symbolism is incredible.
+        </p>
+        
+        <p style="font-size: 1.1rem; line-height: 1.7; color: #cccccc; margin-bottom: 1.5rem;">
+          What sets Sharan apart? He doesn't just copy Japanese designs - he understands the deep cultural meaning behind every dragon scale, every cherry blossom, every wave pattern. That's why his work feels so authentic and powerful.
+        </p>
+        
+        <div class="japanese-highlight">
+          <h3 style="color: #FFD700; margin-bottom: 1rem;">🐉 Sharan's Japanese Mastery:</h3>
+          <ul style="text-align: left; color: #cccccc;">
+            <li>✓ Traditional Irezumi techniques and compositions</li>
+            <li>✓ Authentic Samurai and warrior artwork</li>
+            <li>✓ Full-sleeve Japanese dragon masterpieces</li>
+            <li>✓ Koi fish, cherry blossom, and wave motifs</li>
+            <li>✓ Cultural accuracy in every design element</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="technique-section">
+      <h2 class="section-title">Traditional Japanese Techniques</h2>
+      <div class="technique-grid">
+        <div class="technique-card">
+          <h3>⚔️ Samurai Composition</h3>
+          <p>Authentic warrior poses and armor details based on historical Japanese art traditions.</p>
+        </div>
+        <div class="technique-card">
+          <h3>🐉 Dragon Flow</h3>
+          <p>Dynamic dragon movements that follow traditional Irezumi body mapping and energy flow.</p>
+        </div>
+        <div class="technique-card">
+          <h3>🌊 Wave Patterns</h3>
+          <p>Classic Hokusai-inspired wave work with perfect proportions and movement.</p>
+        </div>
+        <div class="technique-card">
+          <h3>🌸 Symbolic Elements</h3>
+          <p>Cherry blossoms, koi fish, and clouds with authentic Japanese cultural meaning.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-section">
+    <div class="container">
+      <h2 class="section-title">Japanese Art Excellence</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">200+</div>
+          <p style="color: #cccccc;">Japanese Tattoos</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <p style="color: #cccccc;">Full Sleeves</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4+</div>
+          <p style="color: #cccccc;">Years Specialization</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <p style="color: #cccccc;">Authentic Style</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="portfolio-section">
+      <h2 class="section-title">Sharan's Japanese Masterpieces</h2>
+      <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: #cccccc;">
+        Each piece represents authentic Japanese tattoo tradition brought to life in Delhi. Art that honors the samurai spirit.
+      </p>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="/artists/photos/sharan-portfolio-1.jpg" alt="Traditional Japanese samurai tattoo by Sharan - Authentic Irezumi artwork" loading="lazy">
+          <div class="portfolio-caption">
+            <h3>Traditional Samurai Art</h3>
+            <p>Authentic warrior composition with historical accuracy and cultural respect</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="/artists/photos/sharan-portfolio-2.jpg" alt="Japanese dragon sleeve tattoo by Sharan - Traditional Irezumi style" loading="lazy">
+          <div class="portfolio-caption">
+            <h3>Dragon Sleeve Masterpiece</h3>
+            <p>Full-sleeve dragon with traditional flow and powerful presence</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="/artists/photos/sharan-portfolio-3.jpg" alt="Koi fish and wave Japanese tattoo by Sharan - Traditional motifs" loading="lazy">
+          <div class="portfolio-caption">
+            <h3>Koi & Wave Tradition</h3>
+            <p>Classic Japanese motifs with perfect proportions and symbolic meaning</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="/artists/photos/sharan-portfolio-4.jpg" alt="Cherry blossom Japanese tattoo by Sharan - Cultural artwork" loading="lazy">
+          <div class="portfolio-caption">
+            <h3>Cherry Blossom Artistry</h3>
+            <p>Delicate cultural symbols with traditional Japanese aesthetic principles</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="testimonial-section">
+      <h2 class="section-title">Samurai Spirit Testimonials</h2>
+      
+      <div class="testimonial">
+        <p>"Sharan's Japanese work is absolutely authentic. My dragon sleeve gets compliments everywhere I go. The cultural accuracy and artistic skill are unmatched in Delhi."</p>
+        <strong style="color: #FFD700;">- Akash T., Delhi</strong>
+      </div>
+      
+      <div class="testimonial">
+        <p>"I wanted a traditional samurai piece that honored Japanese culture. Sharan delivered beyond my dreams. Every detail is historically accurate and beautifully executed."</p>
+        <strong style="color: #FFD700;">- Rohini S., Gurgaon</strong>
+      </div>
+      
+      <div class="testimonial">
+        <p>"The level of understanding Sharan has about Japanese art is incredible. My koi fish tattoo isn't just beautiful - it's spiritually meaningful and culturally respectful."</p>
+        <strong style="color: #FFD700;">- Manish K., Faridabad</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="contact-section">
+      <h2>Ready for Authentic Japanese Art?</h2>
+      <p style="font-size: 1.2rem; margin: 1rem 0;">
+        Book your consultation with Sharan to discuss traditional Irezumi, samurai art, or Japanese sleeve designs. Cultural authenticity guaranteed.
+      </p>
+      
+      <div style="margin-top: 2rem;">
+        <a href="https://wa.me/917217665761?text=Hi,%20I%20want%20to%20book%20a%20consultation%20with%20Sharan%20for%20a%20Japanese%20tattoo" class="btn-primary">
+          🎌 Book Japanese Consultation
+        </a>
+        <a href="tel:+917217665761" class="btn-primary">
+          📞 Call Now
+        </a>
+        <a href="/" class="btn-primary">
+          🏠 Visit Studio
+        </a>
+      </div>
+      
+      <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.9;">
+        DelhiTattooShop.com | Authentic Japanese Art in Delhi | Traditional Consultations Available
+      </p>
+    </div>
+  </div>
+
+  <!-- Schema Markup for Sharan's Profile -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sharan",
+    "jobTitle": "Master Japanese & Irezumi Tattoo Artist",
+    "worksFor": {
+      "@type": "TattooParlor",
+      "name": "DelhiTattooShop.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "GTB Nagar",
+        "addressRegion": "Delhi",
+        "addressCountry": "IN"
+      }
+    },
+    "url": "https://delhitattooshop.com/artist/sharan-japanese-tattoo-master-delhi",
+    "image": "https://delhitattooshop.com/artists/photos/sharan-profile.jpg",
+    "description": "Master Japanese tattoo artist specializing in traditional Irezumi, Samurai art, dragon sleeves, and authentic Japanese cultural designs with 4+ years experience.",
+    "knowsAbout": [
+      "Traditional Irezumi Tattoos",
+      "Japanese Samurai Art",
+      "Dragon Sleeve Tattoos",
+      "Koi Fish Tattoo Art",
+      "Cherry Blossom Tattoos",
+      "Japanese Wave Patterns",
+      "Cultural Japanese Symbolism",
+      "Traditional Japanese Composition"
+    ],
+    "award": [
+      "Irezumi Specialist",
+      "200+ Japanese Tattoos",
+      "Master of Samurai Art"
+    ],
+    "telephone": "+91-7217665761",
+    "sameAs": [
+      "https://wa.me/917217665761"
+    ]
+  }
+  </script>
+
+  <!-- Japanese Art Portfolio Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Sharan's Japanese Tattoo Portfolio - Authentic Irezumi & Samurai Art",
+    "description": "Traditional Japanese tattoo art including Samurai, dragons, koi fish, and cultural motifs with authentic Irezumi techniques",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://delhitattooshop.com/artists/photos/sharan-portfolio-1.jpg",
+        "caption": "Traditional Japanese Samurai Warrior Art",
+        "creator": {
+          "@type": "Person",
+          "name": "Sharan"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://delhitattooshop.com/artists/photos/sharan-portfolio-2.jpg",
+        "caption": "Authentic Dragon Sleeve Irezumi",
+        "creator": {
+          "@type": "Person",
+          "name": "Sharan"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
