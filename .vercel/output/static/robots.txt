@@ -1,0 +1,43 @@
+User-agent: *
+Allow: /
+
+# Allow important pages
+Allow: /artists/
+Allow: /pricing-calculator/
+Allow: /connaught-place-tattoo-studio/
+Allow: /karol-bagh-tattoo-shop/
+Allow: /khan-market-tattoo-studio/
+Allow: /greater-kailash-tattoo/
+Allow: /nehru-place-tattoo-services/
+
+# Block admin and development files
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://delhitattooshop.com/sitemap.xml
+
+# Crawl delay for bots
+Crawl-delay: 1
+
+# Special instructions for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

@@ -7,7 +7,7 @@ const description = "Delhi's #1 Professional Tattoo Studio. ₹299/inch transpar
 <html lang="en">
 <head>
   <!-- Google Tag Manager -->
-  <script src="/gtm.js"></script>
+  <script src="/gtm.js" is:inline></script>
   <!-- End Google Tag Manager -->
   
   <meta charset="utf-8">
@@ -95,11 +95,21 @@ const description = "Delhi's #1 Professional Tattoo Studio. ₹299/inch transpar
   <meta name="geo.position" content="28.6692;77.1473">
   <meta name="ICBM" content="28.6692, 77.1473">
   
+  <!-- Critical Image Preloads for Core Web Vitals -->
+  <link rel="preload" as="image" href="/artists/photos/maddy-portfolio-1-800w.webp" type="image/webp" media="(max-width: 1024px)">
+  <link rel="preload" as="image" href="/artists/photos/maddy-portfolio-1.webp" type="image/webp" media="(min-width: 1025px)">
+  
+  <!-- Performance Resource Hints -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"></noscript>
   
   <!-- Comprehensive Schema Markup for SEO Dominance -->
   
@@ -1613,11 +1623,21 @@ const description = "Delhi's #1 Professional Tattoo Studio. ₹299/inch transpar
       border-color: rgba(255,255,255,0.2);
     }
 
-    .portfolio-item img {
+    .portfolio-item img,
+    .portfolio-item picture {
       width: 100%;
       height: 100%;
+      display: block;
+    }
+
+    .portfolio-item img {
       object-fit: cover;
       transition: transform 0.3s ease;
+      /* Prevent layout shift */
+      font-family: 'object-fit: cover;';
+      /* Better image decoding performance */
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: optimize-contrast;
     }
 
     .portfolio-item:hover img {
@@ -1860,14 +1880,42 @@ const description = "Delhi's #1 Professional Tattoo Studio. ₹299/inch transpar
         <div class="portfolio-showcase">
           <!-- Maddy's Work -->
           <div class="portfolio-item">
-            <img src="/artists/photos/maddy-portfolio-1.png" alt="Black & grey realism tattoo by Maddy" loading="lazy">
+            <picture>
+              <source 
+                srcset="/artists/photos/maddy-portfolio-1-400w.webp 400w, 
+                        /artists/photos/maddy-portfolio-1-800w.webp 800w, 
+                        /artists/photos/maddy-portfolio-1.webp 1212w" 
+                sizes="(max-width: 768px) 400px, (max-width: 1024px) 800px, 1212px"
+                type="image/webp">
+              <img 
+                src="/artists/photos/maddy-portfolio-1.png" 
+                alt="Black & grey realism tattoo by Maddy" 
+                loading="lazy"
+                width="1212"
+                height="900"
+                srcset="/artists/photos/maddy-portfolio-1.png 1212w">
+            </picture>
             <div class="portfolio-overlay">
               <span>Maddy - Founder</span>
               <small>Black & Grey Realism</small>
             </div>
           </div>
           <div class="portfolio-item">
-            <img src="/artists/photos/maddy-portfolio-2.jpg" alt="Fine line tattoo by Maddy" loading="lazy">
+            <picture>
+              <source 
+                srcset="/artists/photos/maddy-portfolio-2-400w.webp 400w, 
+                        /artists/photos/maddy-portfolio-2-800w.webp 800w, 
+                        /artists/photos/maddy-portfolio-2.webp 1080w" 
+                sizes="(max-width: 768px) 400px, (max-width: 1024px) 800px, 1080px"
+                type="image/webp">
+              <img 
+                src="/artists/photos/maddy-portfolio-2.jpg" 
+                alt="Fine line tattoo by Maddy" 
+                loading="lazy"
+                width="1080"
+                height="1350"
+                srcset="/artists/photos/maddy-portfolio-2.jpg 1080w">
+            </picture>
             <div class="portfolio-overlay">
               <span>Maddy - Founder</span>
               <small>Fine Line Work</small>
