@@ -40,12 +40,23 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
       box-sizing: border-box;
     }
     
+    :root {
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255,255,255,0.8);
+      --muted: rgba(255,255,255,0.6);
+      --border: rgba(255,255,255,0.1);
+      --glass-bg: rgba(255,255,255,0.012);
+      --accent-primary: #ffffff;
+      --accent-secondary: rgba(255,255,255,0.9);
+    }
+    
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
-      color: #333;
-      background: linear-gradient(135deg, #2d1b1b 0%, #4a2c2c 50%, #1a1a1a 100%);
-      color: white;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
     }
     
     .container {
@@ -55,28 +66,18 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
     }
     
     .header {
-      background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #000000 100%);
-      color: #FFD700;
+      background: 
+        linear-gradient(135deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006)),
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.008), transparent 60%);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(15px);
+      color: var(--text-primary);
       padding: 2rem 0;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="wave" patternUnits="userSpaceOnUse" width="30" height="10"><path d="M0 5q7.5-5 15 0t15 0" stroke="%23FFD700" stroke-width="0.3" fill="none" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23wave)"/></svg>');
-      z-index: 1;
-    }
-    
-    .header .container {
-      position: relative;
-      z-index: 2;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .artist-hero {
@@ -89,23 +90,15 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
     
     .artist-profile {
       text-align: center;
-      background: linear-gradient(135deg, #2d1b1b 0%, #4a2c2c 100%);
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
-      border: 3px solid #DC143C;
-      position: relative;
-    }
-    
-    .artist-profile::before {
-      content: '🐉';
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #2d1b1b;
-      padding: 5px 10px;
-      font-size: 1.5rem;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .artist-profile img {
@@ -114,14 +107,14 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 1rem;
-      border: 4px solid #DC143C;
+      border: 3px solid var(--border);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     }
     
     .artist-info h1 {
       font-size: 2.5rem;
-      color: #FFD700;
+      color: var(--text-primary);
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     }
     
     .specialization-tags {
@@ -133,51 +126,49 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
     }
     
     .tag {
-      background: linear-gradient(135deg, #DC143C, #8B0000);
-      color: #FFD700;
+      background: rgba(255,255,255,0.1);
+      color: var(--text-primary);
       padding: 0.3rem 0.8rem;
       border-radius: 20px;
       font-size: 0.9rem;
       font-weight: 500;
-      border: 1px solid #FFD700;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
     }
     
     .master-badge {
-      background: linear-gradient(135deg, #FF6347, #DC143C);
-      color: white;
+      background: rgba(255,255,255,0.15);
+      color: var(--accent-primary);
       padding: 0.5rem 1rem;
       border-radius: 25px;
       font-weight: bold;
       margin: 1rem 0;
       display: inline-block;
-      box-shadow: 0 3px 10px rgba(220, 20, 60, 0.4);
-      border: 2px solid #FFD700;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02);
     }
     
     .portfolio-section {
       margin: 4rem 0;
-      background: rgba(45, 27, 27, 0.8);
-      padding: 3rem 0;
-      border-radius: 20px;
-      border: 2px solid #8B0000;
     }
     
     .section-title {
       font-size: 2rem;
       text-align: center;
       margin-bottom: 2rem;
-      color: #FFD700;
+      color: var(--text-primary);
       position: relative;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     }
     
     .section-title::after {
       content: '';
       display: block;
       width: 80px;
-      height: 3px;
-      background: linear-gradient(to right, #DC143C, #8B0000);
+      height: 2px;
+      background: var(--border);
       margin: 0.5rem auto;
     }
     
@@ -189,19 +180,26 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
     }
     
     .portfolio-item {
-      background: linear-gradient(135deg, #4a2c2c 0%, #2d1b1b 100%);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
       transition: all 0.3s ease;
       position: relative;
-      border: 2px solid #8B0000;
     }
     
     .portfolio-item:hover {
       transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 15px 40px rgba(220, 20, 60, 0.3);
-      border-color: #DC143C;
+      box-shadow: 
+        0 15px 40px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255,255,255,0.05),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
     }
     
     .portfolio-item img {
@@ -216,40 +214,39 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
     }
     
     .portfolio-caption h3 {
-      color: #FFD700;
+      color: var(--text-primary);
       margin-bottom: 0.5rem;
     }
     
     .portfolio-caption p {
-      color: #cccccc;
+      color: var(--text-secondary);
     }
     
     .japanese-highlight {
-      background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(220, 20, 60, 0.2));
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 20px;
       margin: 3rem 0;
-      border: 2px solid #DC143C;
-      position: relative;
-    }
-    
-    .japanese-highlight::before {
-      content: '⛩️';
-      position: absolute;
-      top: -15px;
-      left: 30px;
-      background: #2d1b1b;
-      padding: 5px 10px;
-      font-size: 1.5rem;
+      border-left: 5px solid var(--accent-primary);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .stats-section {
-      background: linear-gradient(135deg, #4a2c2c 0%, #2d1b1b 100%);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 3rem 0;
       margin: 3rem 0;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      border: 2px solid #8B0000;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .stats-grid {
@@ -266,37 +263,48 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
     .stat-number {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #DC143C;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      color: var(--accent-primary);
     }
     
     .contact-section {
-      background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
-      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      color: var(--text-primary);
       padding: 3rem 0;
       text-align: center;
       border-radius: 20px;
       margin: 3rem 0;
-      border: 3px solid #FFD700;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .btn-primary {
       display: inline-block;
-      background: linear-gradient(135deg, #FFD700, #FFA500);
-      color: #8B0000;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      color: var(--text-primary);
       padding: 1rem 2rem;
       text-decoration: none;
       border-radius: 10px;
       font-weight: 600;
       margin: 0.5rem;
       transition: all 0.3s ease;
-      border: 2px solid #8B0000;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02);
     }
     
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
-      background: linear-gradient(135deg, #FFA500, #FFD700);
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 
+        0 12px 40px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255,255,255,0.05);
     }
     
     .testimonial-section {
@@ -305,22 +313,32 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
     }
     
     .testimonial {
-      background: linear-gradient(135deg, #4a2c2c 0%, #2d1b1b 100%);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
       margin: 1rem 0;
       font-style: italic;
-      border-left: 4px solid #DC143C;
-      color: #cccccc;
+      border-left: 4px solid var(--accent-primary);
+      color: var(--text-secondary);
     }
     
     .technique-section {
-      background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(220, 20, 60, 0.1));
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 3rem 0;
       margin: 3rem 0;
       border-radius: 20px;
-      border: 2px solid #8B0000;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .technique-grid {
@@ -330,27 +348,28 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
     }
     
     .technique-card {
-      background: linear-gradient(135deg, #4a2c2c 0%, #2d1b1b 100%);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 15px;
       text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-      border: 2px solid #8B0000;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .technique-card h3 {
-      color: #FFD700;
+      color: var(--accent-primary);
       margin-bottom: 1rem;
     }
     
     .technique-card p {
-      color: #cccccc;
+      color: var(--text-secondary);
     }
     
     @media (max-width: 768px) {
-      body {
-        background: #2d1b1b;
-      }
       
       .artist-hero {
         grid-template-columns: 1fr;
@@ -384,8 +403,8 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
     <div class="artist-hero">
       <div class="artist-profile">
         <img src="/artists/photos/sharan-profile.jpg" alt="Sharan - Master Japanese Tattoo Artist Delhi" loading="eager">
-        <h2 style="color: #FFD700;">Sharan</h2>
-        <p><strong style="color: #DC143C;">Japanese Art Master</strong></p>
+        <h2>Sharan</h2>
+        <p><strong>Japanese Art Master</strong></p>
         <div class="master-badge">🎌 Irezumi Specialist</div>
         <div class="specialization-tags">
           <span class="tag">Traditional Irezumi</span>
@@ -397,17 +416,17 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
       
       <div class="artist-info">
         <h1>The Samurai of Ink in Delhi</h1>
-        <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem;">
           Look, when you want authentic Japanese tattoo work in Delhi, there's only one name that comes to mind - Sharan. This guy has studied traditional Irezumi techniques like no one else in the city. His understanding of Japanese culture and symbolism is incredible.
         </p>
         
-        <p style="font-size: 1.1rem; line-height: 1.7; color: #cccccc; margin-bottom: 1.5rem;">
+        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.5rem;">
           What sets Sharan apart? He doesn't just copy Japanese designs - he understands the deep cultural meaning behind every dragon scale, every cherry blossom, every wave pattern. That's why his work feels so authentic and powerful.
         </p>
         
         <div class="japanese-highlight">
-          <h3 style="color: #FFD700; margin-bottom: 1rem;">🐉 Sharan's Japanese Mastery:</h3>
-          <ul style="text-align: left; color: #cccccc;">
+          <h3 style="color: var(--accent-primary); margin-bottom: 1rem;">🐉 Sharan's Japanese Mastery:</h3>
+          <ul style="text-align: left; color: var(--text-secondary);">
             <li>✓ Traditional Irezumi techniques and compositions</li>
             <li>✓ Authentic Samurai and warrior artwork</li>
             <li>✓ Full-sleeve Japanese dragon masterpieces</li>
@@ -449,19 +468,19 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
       <div class="stats-grid">
         <div class="stat-item">
           <div class="stat-number">200+</div>
-          <p style="color: #cccccc;">Japanese Tattoos</p>
+          <p style="color: var(--text-secondary);">Japanese Tattoos</p>
         </div>
         <div class="stat-item">
           <div class="stat-number">50+</div>
-          <p style="color: #cccccc;">Full Sleeves</p>
+          <p style="color: var(--text-secondary);">Full Sleeves</p>
         </div>
         <div class="stat-item">
           <div class="stat-number">4+</div>
-          <p style="color: #cccccc;">Years Specialization</p>
+          <p style="color: var(--text-secondary);">Years Specialization</p>
         </div>
         <div class="stat-item">
           <div class="stat-number">100%</div>
-          <p style="color: #cccccc;">Authentic Style</p>
+          <p style="color: var(--text-secondary);">Authentic Style</p>
         </div>
       </div>
     </div>
@@ -470,7 +489,7 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
   <div class="container">
     <div class="portfolio-section">
       <h2 class="section-title">Sharan's Japanese Masterpieces</h2>
-      <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: #cccccc;">
+      <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: var(--text-secondary);">
         Each piece represents authentic Japanese tattoo tradition brought to life in Delhi. Art that honors the samurai spirit.
       </p>
       
@@ -516,17 +535,17 @@ const description = "Meet Sharan, Delhi's premier Japanese tattoo specialist. Tr
       
       <div class="testimonial">
         <p>"Sharan's Japanese work is absolutely authentic. My dragon sleeve gets compliments everywhere I go. The cultural accuracy and artistic skill are unmatched in Delhi."</p>
-        <strong style="color: #FFD700;">- Akash T., Delhi</strong>
+        <strong>- Akash T., Delhi</strong>
       </div>
       
       <div class="testimonial">
         <p>"I wanted a traditional samurai piece that honored Japanese culture. Sharan delivered beyond my dreams. Every detail is historically accurate and beautifully executed."</p>
-        <strong style="color: #FFD700;">- Rohini S., Gurgaon</strong>
+        <strong>- Rohini S., Gurgaon</strong>
       </div>
       
       <div class="testimonial">
         <p>"The level of understanding Sharan has about Japanese art is incredible. My koi fish tattoo isn't just beautiful - it's spiritually meaningful and culturally respectful."</p>
-        <strong style="color: #FFD700;">- Manish K., Faridabad</strong>
+        <strong>- Manish K., Faridabad</strong>
       </div>
     </div>
   </div>

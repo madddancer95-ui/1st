@@ -41,12 +41,23 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
       box-sizing: border-box;
     }
     
+    :root {
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255,255,255,0.8);
+      --muted: rgba(255,255,255,0.6);
+      --border: rgba(255,255,255,0.1);
+      --glass-bg: rgba(255,255,255,0.012);
+      --accent-primary: #ffffff;
+      --accent-secondary: rgba(255,255,255,0.9);
+    }
+    
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
-      color: #333;
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-      color: white;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
     }
     
     .container {
@@ -56,28 +67,18 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
     }
     
     .header {
-      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #8B4513 100%);
-      color: #FFD700;
+      background: 
+        linear-gradient(135deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006)),
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.008), transparent 60%);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(15px);
+      color: var(--text-primary);
       padding: 2rem 0;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="tribal" patternUnits="userSpaceOnUse" width="20" height="20"><path d="M0 0l10 10M10 0l-10 10" stroke="%23FFD700" stroke-width="0.2" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23tribal)"/></svg>');
-      z-index: 1;
-    }
-    
-    .header .container {
-      position: relative;
-      z-index: 2;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .artist-hero {
@@ -90,23 +91,15 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
     
     .artist-profile {
       text-align: center;
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
-      border: 3px solid #FFD700;
-      position: relative;
-    }
-    
-    .artist-profile::before {
-      content: '🕉️';
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #1a1a1a;
-      padding: 5px 10px;
-      font-size: 1.5rem;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .artist-profile img {
@@ -115,14 +108,14 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 1rem;
-      border: 4px solid #FFD700;
+      border: 3px solid var(--border);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     }
     
     .artist-info h1 {
       font-size: 2.5rem;
-      color: #FFD700;
+      color: var(--text-primary);
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
     
     .specialization-tags {
@@ -134,48 +127,49 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
     }
     
     .tag {
-      background: linear-gradient(135deg, #8B4513, #A0522D);
-      color: #FFD700;
+      background: rgba(255,255,255,0.1);
+      color: var(--text-primary);
       padding: 0.3rem 0.8rem;
       border-radius: 20px;
       font-size: 0.9rem;
       font-weight: 500;
-      border: 1px solid #FFD700;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
     }
     
     .cultural-badge {
-      background: linear-gradient(135deg, #FF6347, #DC143C);
-      color: white;
+      background: rgba(255,255,255,0.15);
+      color: var(--accent-primary);
       padding: 0.5rem 1rem;
       border-radius: 25px;
       font-weight: bold;
       margin: 1rem 0;
       display: inline-block;
-      box-shadow: 0 3px 10px rgba(255, 99, 71, 0.3);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02);
     }
     
     .portfolio-section {
       margin: 4rem 0;
-      background: rgba(26, 26, 26, 0.8);
-      padding: 3rem 0;
-      border-radius: 20px;
     }
     
     .section-title {
       font-size: 2rem;
       text-align: center;
       margin-bottom: 2rem;
-      color: #FFD700;
+      color: var(--text-primary);
       position: relative;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
     
     .section-title::after {
       content: '';
       display: block;
       width: 80px;
-      height: 3px;
-      background: linear-gradient(to right, #FFD700, #FFA500);
+      height: 2px;
+      background: var(--border);
       margin: 0.5rem auto;
     }
     
@@ -187,19 +181,26 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
     }
     
     .portfolio-item {
-      background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
       transition: all 0.3s ease;
       position: relative;
-      border: 2px solid #8B4513;
     }
     
     .portfolio-item:hover {
       transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
-      border-color: #FFD700;
+      box-shadow: 
+        0 15px 40px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255,255,255,0.05),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
     }
     
     .portfolio-item img {
@@ -214,40 +215,39 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
     }
     
     .portfolio-caption h3 {
-      color: #FFD700;
+      color: var(--text-primary);
       margin-bottom: 0.5rem;
     }
     
     .portfolio-caption p {
-      color: #cccccc;
+      color: var(--text-secondary);
     }
     
     .mythology-highlight {
-      background: linear-gradient(135deg, rgba(139, 69, 19, 0.3), rgba(160, 82, 45, 0.3));
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 20px;
       margin: 3rem 0;
-      border: 2px solid #FFD700;
-      position: relative;
-    }
-    
-    .mythology-highlight::before {
-      content: '🔱';
-      position: absolute;
-      top: -15px;
-      left: 30px;
-      background: #1a1a1a;
-      padding: 5px 10px;
-      font-size: 1.5rem;
+      border-left: 5px solid var(--accent-primary);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .stats-section {
-      background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 3rem 0;
       margin: 3rem 0;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      border: 2px solid #8B4513;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .stats-grid {
@@ -264,37 +264,48 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
     .stat-number {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #FFD700;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      color: var(--accent-primary);
     }
     
     .contact-section {
-      background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
-      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      color: var(--text-primary);
       padding: 3rem 0;
       text-align: center;
       border-radius: 20px;
       margin: 3rem 0;
-      border: 3px solid #FFD700;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .btn-primary {
       display: inline-block;
-      background: linear-gradient(135deg, #FFD700, #FFA500);
-      color: #1a1a1a;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      color: var(--text-primary);
       padding: 1rem 2rem;
       text-decoration: none;
       border-radius: 10px;
       font-weight: 600;
       margin: 0.5rem;
       transition: all 0.3s ease;
-      border: 2px solid #8B4513;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02);
     }
     
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
-      background: linear-gradient(135deg, #FFA500, #FFD700);
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 
+        0 12px 40px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255,255,255,0.05);
     }
     
     .testimonial-section {
@@ -303,22 +314,32 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
     }
     
     .testimonial {
-      background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
       margin: 1rem 0;
       font-style: italic;
-      border-left: 4px solid #FFD700;
-      color: #cccccc;
+      border-left: 4px solid var(--accent-primary);
+      color: var(--text-secondary);
     }
     
     .technique-section {
-      background: linear-gradient(135deg, rgba(139, 69, 19, 0.2), rgba(160, 82, 45, 0.2));
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 3rem 0;
       margin: 3rem 0;
       border-radius: 20px;
-      border: 2px solid #8B4513;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .technique-grid {
@@ -328,27 +349,28 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
     }
     
     .technique-card {
-      background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 15px;
       text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      border: 2px solid #8B4513;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .technique-card h3 {
-      color: #FFD700;
+      color: var(--accent-primary);
       margin-bottom: 1rem;
     }
     
     .technique-card p {
-      color: #cccccc;
+      color: var(--text-secondary);
     }
     
     @media (max-width: 768px) {
-      body {
-        background: #1a1a1a;
-      }
       
       .artist-hero {
         grid-template-columns: 1fr;
@@ -382,8 +404,8 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
     <div class="artist-hero">
       <div class="artist-profile">
         <img src="/artists/photos/ram-profile.jpg" alt="Ram Kesarwani - Master Blackwork & Mythology Tattoo Artist Delhi" loading="eager">
-        <h2 style="color: #FFD700;">Ram Kesarwani</h2>
-        <p><strong style="color: #FFA500;">Cultural Art Specialist</strong></p>
+        <h2>Ram Kesarwani</h2>
+        <p><strong>Cultural Art Specialist</strong></p>
         <div class="cultural-badge">🏛️ Heritage Artist</div>
         <div class="specialization-tags">
           <span class="tag">Blackwork Master</span>
@@ -395,17 +417,17 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
       
       <div class="artist-info">
         <h1>The Guardian of Indian Tattoo Traditions</h1>
-        <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem;">
           You know what makes Ram special? This guy doesn't just create tattoos - he preserves our cultural heritage on skin. Like, when you see his work, you're looking at thousands of years of Indian mythology and art traditions brought to life.
         </p>
         
-        <p style="font-size: 1.1rem; line-height: 1.7; color: #cccccc; margin-bottom: 1.5rem;">
+        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.5rem;">
           Ram has this incredible understanding of Hindu mythology that goes beyond just copying designs. He studies the stories, the symbolism, the cultural meaning behind every element. That's why his Shiva, Ganesha, and mythological pieces feel so powerful and authentic.
         </p>
         
         <div class="mythology-highlight">
-          <h3 style="color: #FFD700; margin-bottom: 1rem;">🕉️ Ram's Cultural Expertise:</h3>
-          <ul style="text-align: left; color: #cccccc;">
+          <h3 style="color: var(--accent-primary); margin-bottom: 1rem;">🕉️ Ram's Cultural Expertise:</h3>
+          <ul style="text-align: left; color: var(--text-secondary);">
             <li>✓ Deep knowledge of Hindu mythology and symbolism</li>
             <li>✓ Intricate blackwork with traditional Indian motifs</li>
             <li>✓ Authentic tribal and cultural art interpretation</li>
@@ -447,19 +469,19 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
       <div class="stats-grid">
         <div class="stat-item">
           <div class="stat-number">300+</div>
-          <p style="color: #cccccc;">Mythology Tattoos</p>
+          <p style="color: var(--text-secondary);">Mythology Tattoos</p>
         </div>
         <div class="stat-item">
           <div class="stat-number">5+</div>
-          <p style="color: #cccccc;">Years Specialization</p>
+          <p style="color: var(--text-secondary);">Years Specialization</p>
         </div>
         <div class="stat-item">
           <div class="stat-number">25+</div>
-          <p style="color: #cccccc;">Deity Designs</p>
+          <p style="color: var(--text-secondary);">Deity Designs</p>
         </div>
         <div class="stat-item">
           <div class="stat-number">100%</div>
-          <p style="color: #cccccc;">Cultural Accuracy</p>
+          <p style="color: var(--text-secondary);">Cultural Accuracy</p>
         </div>
       </div>
     </div>
@@ -468,7 +490,7 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
   <div class="container">
     <div class="portfolio-section">
       <h2 class="section-title">Ram's Sacred Portfolio</h2>
-      <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: #cccccc;">
+      <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: var(--text-secondary);">
         Each piece represents deep cultural understanding and masterful blackwork technique. Art that honors tradition.
       </p>
       
@@ -514,17 +536,17 @@ const description = "Meet Ram Kesarwani, Delhi's premier blackwork and mythologi
       
       <div class="testimonial">
         <p>"Ram's understanding of Hindu mythology is incredible. My Shiva tattoo isn't just art - it's spiritually accurate and deeply meaningful. Truly blessed work."</p>
-        <strong style="color: #FFD700;">- Rajesh P., Delhi</strong>
+        <strong>- Rajesh P., Delhi</strong>
       </div>
       
       <div class="testimonial">
         <p>"The level of detail in the blackwork is insane. Every line has meaning, every pattern tells a story. Ram is preserving our culture through his art."</p>
-        <strong style="color: #FFD700;">- Arjun S., Faridabad</strong>
+        <strong>- Arjun S., Faridabad</strong>
       </div>
       
       <div class="testimonial">
         <p>"I wanted a Ganesha tattoo that was culturally respectful and accurate. Ram delivered beyond expectations. The symbolism is perfect, the execution flawless."</p>
-        <strong style="color: #FFD700;">- Deepika M., Ghaziabad</strong>
+        <strong>- Deepika M., Ghaziabad</strong>
       </div>
     </div>
   </div>

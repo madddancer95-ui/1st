@@ -195,18 +195,36 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
       padding: 0 20px;
     }
 
-    /* Header Styles */
+    /* Header Styles - Matching Homepage Glass Header */
     .header-simple {
-      padding: 20px 0;
-      background: rgba(255,255,255,0.02);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 0;
     }
 
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .glass-header {
+      width: 100%; 
+      max-width: var(--max-width);
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem; 
+      border-radius: 16px;
+      background: 
+        linear-gradient(135deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006)),
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.008), transparent 60%);
+      border: 1px solid rgba(255,255,255,0.025);
+      backdrop-filter: blur(15px);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05),
+        inset 0 -1px 0 rgba(0,0,0,0.1);
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .brand {
@@ -220,22 +238,27 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
     .back-home {
       color: var(--text-secondary);
       text-decoration: none;
-      padding: 8px 16px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      padding: 12px 24px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50px;
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
-      background: rgba(255,255,255,0.05);
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      font-weight: 500;
+      font-size: 14px;
     }
 
     .back-home:hover {
-      background: rgba(255,255,255,0.1);
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
       color: var(--text-primary);
+      border-color: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(255,255,255,0.1);
     }
 
     /* Main Content */
     .main-content {
-      padding: 40px 0 80px;
+      padding: 120px 0 80px;
     }
 
     .page-title {
@@ -490,13 +513,11 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
 </head>
 
 <body>
-  <!-- Simple Header -->
+  <!-- Glass Header -->
   <header class="header-simple">
-    <div class="container">
-      <div class="header-content">
-        <a href="/" class="brand">DelhiTattooShop</a>
-        <a href="/" class="back-home">← Back to Home</a>
-      </div>
+    <div class="glass-header">
+      <a href="/" class="brand">DelhiTattooShop</a>
+      <a href="/" class="back-home">← Back to Home</a>
     </div>
   </header>
 
@@ -617,15 +638,15 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
         <!-- Pricing Tiers -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
           <!-- Simple Pricing -->
-          <div class="calculator-panel" style="border: 2px solid #32CD32; background: rgba(50, 205, 50, 0.05);">
-            <h3 style="color: #32CD32; text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+          <div class="calculator-panel" style="border: 2px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.05);">
+            <h3 style="color: var(--accent-primary); text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
               <i class="fas fa-leaf"></i> Simple Design
             </h3>
             <div style="text-align: center; margin-bottom: 1.5rem;">
-              <span style="font-size: 2.5rem; font-weight: bold; color: #32CD32;">₹299</span>
+              <span style="font-size: 2.5rem; font-weight: bold; color: var(--accent-primary);">₹299</span>
               <span style="color: var(--text-secondary); display: block; font-size: 1rem;">per inch</span>
             </div>
-            <h4 style="color: #32CD32; margin-bottom: 1rem;">What's Included:</h4>
+            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">What's Included:</h4>
             <ul style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
               <li>✓ Basic black & grey designs</li>
               <li>✓ Simple line work</li>
@@ -634,7 +655,7 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
               <li>✓ Touch-up within 30 days</li>
               <li>✓ Free aftercare kit (₹1,200 value)</li>
             </ul>
-            <h4 style="color: #32CD32; margin-bottom: 1rem;">Perfect For:</h4>
+            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">Perfect For:</h4>
             <ul style="color: var(--text-secondary); line-height: 1.6;">
               <li>• First-time tattoos</li>
               <li>• Minimalist designs</li>
@@ -644,15 +665,16 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
           </div>
 
           <!-- Detailed Pricing -->
-          <div class="calculator-panel" style="border: 2px solid #FF8C00; background: rgba(255, 140, 0, 0.05);">
-            <h3 style="color: #FF8C00; text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+          <div class="calculator-panel" style="border: 2px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.08);">
+            <div style="background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1)); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); text-align: center;">Most Popular</div>
+            <h3 style="color: var(--accent-primary); text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
               <i class="fas fa-star"></i> Detailed Design
             </h3>
             <div style="text-align: center; margin-bottom: 1.5rem;">
-              <span style="font-size: 2.5rem; font-weight: bold; color: #FF8C00;">₹399</span>
+              <span style="font-size: 2.5rem; font-weight: bold; color: var(--accent-primary);">₹399</span>
               <span style="color: var(--text-secondary); display: block; font-size: 1rem;">per inch</span>
             </div>
-            <h4 style="color: #FF8C00; margin-bottom: 1rem;">What's Included:</h4>
+            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">What's Included:</h4>
             <ul style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
               <li>✓ Detailed black & grey work</li>
               <li>✓ Complex shading techniques</li>
@@ -662,7 +684,7 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
               <li>✓ Touch-up within 45 days</li>
               <li>✓ Free aftercare kit (₹1,200 value)</li>
             </ul>
-            <h4 style="color: #FF8C00; margin-bottom: 1rem;">Perfect For:</h4>
+            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">Perfect For:</h4>
             <ul style="color: var(--text-secondary); line-height: 1.6;">
               <li>• Mandala designs</li>
               <li>• Portrait tattoos</li>
@@ -672,15 +694,15 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
           </div>
 
           <!-- Premium Pricing -->
-          <div class="calculator-panel" style="border: 2px solid #DAA520; background: rgba(218, 165, 32, 0.05);">
-            <h3 style="color: #DAA520; text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+          <div class="calculator-panel" style="border: 2px solid rgba(255,255,255,0.5); background: rgba(255,255,255,0.12);">
+            <h3 style="color: var(--accent-primary); text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
               <i class="fas fa-crown"></i> Premium Design
             </h3>
             <div style="text-align: center; margin-bottom: 1.5rem;">
-              <span style="font-size: 2.5rem; font-weight: bold; color: #DAA520;">₹599</span>
+              <span style="font-size: 2.5rem; font-weight: bold; color: var(--accent-primary);">₹599</span>
               <span style="color: var(--text-secondary); display: block; font-size: 1rem;">per inch</span>
             </div>
-            <h4 style="color: #DAA520; margin-bottom: 1rem;">What's Included:</h4>
+            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">What's Included:</h4>
             <ul style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
               <li>✓ Full color artwork</li>
               <li>✓ Photorealistic portraits</li>
@@ -691,7 +713,7 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
               <li>✓ Touch-up within 60 days</li>
               <li>✓ Premium aftercare kit (₹1,800 value)</li>
             </ul>
-            <h4 style="color: #DAA520; margin-bottom: 1rem;">Perfect For:</h4>
+            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">Perfect For:</h4>
             <ul style="color: var(--text-secondary); line-height: 1.6;">
               <li>• Color realism</li>
               <li>• Japanese traditional</li>
@@ -775,28 +797,28 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
 
         <!-- Payment Options -->
         <div style="text-align: center; margin-top: 3rem;">
-          <h3 style="color: #DAA520; margin-bottom: 2rem;">💳 Flexible Payment Options</h3>
+          <h3 style="color: var(--accent-primary); margin-bottom: 2rem;">💳 Flexible Payment Options</h3>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-            <div class="calculator-panel" style="background: rgba(255, 215, 0, 0.05); border: 1px solid rgba(255, 215, 0, 0.3);">
-              <h4 style="color: #DAA520; margin-bottom: 1rem;">
+            <div class="calculator-panel" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);">
+              <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">
                 <i class="fas fa-money-bill-wave"></i> Cash Payment
               </h4>
               <p style="color: var(--text-secondary);">5% discount on total bill</p>
             </div>
-            <div class="calculator-panel" style="background: rgba(255, 215, 0, 0.05); border: 1px solid rgba(255, 215, 0, 0.3);">
-              <h4 style="color: #DAA520; margin-bottom: 1rem;">
+            <div class="calculator-panel" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);">
+              <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">
                 <i class="fas fa-mobile-alt"></i> UPI/Digital
               </h4>
               <p style="color: var(--text-secondary);">Instant payment, no extra charges</p>
             </div>
-            <div class="calculator-panel" style="background: rgba(255, 215, 0, 0.05); border: 1px solid rgba(255, 215, 0, 0.3);">
-              <h4 style="color: #DAA520; margin-bottom: 1rem;">
+            <div class="calculator-panel" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);">
+              <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">
                 <i class="fas fa-credit-card"></i> Card Payment
               </h4>
               <p style="color: var(--text-secondary);">All major cards accepted</p>
             </div>
-            <div class="calculator-panel" style="background: rgba(255, 215, 0, 0.05); border: 1px solid rgba(255, 215, 0, 0.3);">
-              <h4 style="color: #DAA520; margin-bottom: 1rem;">
+            <div class="calculator-panel" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);">
+              <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">
                 <i class="fas fa-calendar-alt"></i> EMI Options
               </h4>
               <p style="color: var(--text-secondary);">Available for tattoos above ₹10,000</p>

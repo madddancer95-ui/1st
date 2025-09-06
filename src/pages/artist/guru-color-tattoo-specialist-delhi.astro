@@ -40,11 +40,23 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
       box-sizing: border-box;
     }
     
+    :root {
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255,255,255,0.8);
+      --muted: rgba(255,255,255,0.6);
+      --border: rgba(255,255,255,0.1);
+      --glass-bg: rgba(255,255,255,0.012);
+      --accent-primary: #ffffff;
+      --accent-secondary: rgba(255,255,255,0.9);
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
-      color: #333;
-      background: linear-gradient(135deg, #f8f4ff 0%, #e8e8ff 100%);
+      color: var(--text-primary);
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
     }
     
     .container {
@@ -54,10 +66,18 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
     }
     
     .header {
-      background: linear-gradient(135deg, #4B0082 0%, #8A2BE2 100%);
-      color: white;
+      background: 
+        linear-gradient(135deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006)),
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.008), transparent 60%);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(15px);
+      color: var(--text-primary);
       padding: 2rem 0;
       text-align: center;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .artist-hero {
@@ -70,11 +90,15 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
     
     .artist-profile {
       text-align: center;
-      background: white;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
-      border: 3px solid #FF6347;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .artist-profile img {
@@ -83,12 +107,13 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 1rem;
-      border: 4px solid #FF6347;
+      border: 3px solid var(--border);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     }
     
     .artist-info h1 {
       font-size: 2.5rem;
-      color: #4B0082;
+      color: var(--text-primary);
       margin-bottom: 1rem;
     }
     
@@ -101,23 +126,29 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
     }
     
     .tag {
-      background: linear-gradient(135deg, #FF6347, #FF4500);
-      color: white;
+      background: rgba(255,255,255,0.1);
+      color: var(--text-primary);
       padding: 0.3rem 0.8rem;
       border-radius: 20px;
       font-size: 0.9rem;
       font-weight: 500;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
     }
     
     .award-badge {
-      background: linear-gradient(135deg, #FFD700, #FFA500);
-      color: #8B4513;
+      background: rgba(255,255,255,0.15);
+      color: var(--accent-primary);
       padding: 0.5rem 1rem;
       border-radius: 25px;
       font-weight: bold;
       margin: 1rem 0;
       display: inline-block;
-      box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02);
     }
     
     .portfolio-section {
@@ -128,7 +159,7 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
       font-size: 2rem;
       text-align: center;
       margin-bottom: 2rem;
-      color: #4B0082;
+      color: var(--text-primary);
       position: relative;
     }
     
@@ -136,8 +167,8 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
       content: '';
       display: block;
       width: 80px;
-      height: 3px;
-      background: linear-gradient(to right, #FF6347, #FF4500);
+      height: 2px;
+      background: var(--border);
       margin: 0.5rem auto;
     }
     
@@ -149,17 +180,26 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
     }
     
     .portfolio-item {
-      background: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
       transition: all 0.3s ease;
       position: relative;
     }
     
     .portfolio-item:hover {
       transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+      box-shadow: 
+        0 15px 40px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255,255,255,0.05),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
     }
     
     .portfolio-item img {
@@ -174,24 +214,35 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
     }
     
     .portfolio-caption h3 {
-      color: #4B0082;
+      color: var(--text-primary);
       margin-bottom: 0.5rem;
     }
     
     .color-highlight {
-      background: linear-gradient(135deg, #FFE4E1, #F0E68C);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 20px;
       margin: 3rem 0;
-      border-left: 5px solid #FF6347;
+      border-left: 5px solid var(--accent-primary);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .stats-section {
-      background: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 3rem 0;
       margin: 3rem 0;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .stats-grid {
@@ -208,33 +259,48 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
     .stat-number {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #FF6347;
+      color: var(--accent-primary);
     }
     
     .contact-section {
-      background: linear-gradient(135deg, #4B0082 0%, #8A2BE2 100%);
-      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      color: var(--text-primary);
       padding: 3rem 0;
       text-align: center;
       border-radius: 20px;
       margin: 3rem 0;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .btn-primary {
       display: inline-block;
-      background: linear-gradient(135deg, #FF6347, #FF4500);
-      color: white;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      color: var(--text-primary);
       padding: 1rem 2rem;
       text-decoration: none;
       border-radius: 10px;
       font-weight: 600;
       margin: 0.5rem;
       transition: all 0.3s ease;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02);
     }
     
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 20px rgba(255, 99, 71, 0.4);
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 
+        0 12px 40px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255,255,255,0.05);
     }
     
     .testimonial-section {
@@ -243,20 +309,32 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
     }
     
     .testimonial {
-      background: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
       margin: 1rem 0;
       font-style: italic;
-      border-left: 4px solid #FF6347;
+      border-left: 4px solid var(--accent-primary);
+      color: var(--text-secondary);
     }
     
     .technique-section {
-      background: linear-gradient(135deg, #FFF8DC, #FFFACD);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 3rem 0;
       margin: 3rem 0;
       border-radius: 20px;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     .technique-grid {
@@ -266,11 +344,16 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
     }
     
     .technique-card {
-      background: white;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 15px;
       text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.05);
     }
     
     @media (max-width: 768px) {
@@ -319,17 +402,17 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
       
       <div class="artist-info">
         <h1>The Color Wizard of Delhi NCR</h1>
-        <p style="font-size: 1.2rem; line-height: 1.8; color: #555; margin-bottom: 2rem;">
+        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem;">
           Look, when people think about color tattoos in Delhi, they think about Guru. This guy has this incredible ability to make colors pop like you've never seen before. Like, his work doesn't just look good - it literally glows on your skin.
         </p>
         
-        <p style="font-size: 1.1rem; line-height: 1.7; color: #666; margin-bottom: 1.5rem;">
+        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--muted); margin-bottom: 1.5rem;">
           What makes Guru special? He understands how different skin tones work with various colors. You know how some artists just use the same approach for everyone? Not Guru. He customizes every single color blend for your exact skin tone, making sure those colors stay vibrant for years.
         </p>
         
         <div class="color-highlight">
-          <h3 style="color: #4B0082; margin-bottom: 1rem;">🎨 Guru's Color Mastery:</h3>
-          <ul style="text-align: left; color: #555;">
+          <h3 style="color: var(--accent-primary); margin-bottom: 1rem;">🎨 Guru's Color Mastery:</h3>
+          <ul style="text-align: left; color: var(--text-secondary);">
             <li>✓ Award-winning color theory expertise</li>
             <li>✓ Custom color mixing for each client's skin tone</li>
             <li>✓ Transforms "impossible" cover-ups into masterpieces</li>
@@ -346,20 +429,20 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
       <h2 class="section-title">Guru's Signature Techniques</h2>
       <div class="technique-grid">
         <div class="technique-card">
-          <h3 style="color: #FF6347;">🌈 Color Layering</h3>
-          <p>Multiple color layers create depth and vibrancy that lasts decades, not just years.</p>
+          <h3 style="color: var(--accent-primary);">🌈 Color Layering</h3>
+          <p style="color: var(--text-secondary);">Multiple color layers create depth and vibrancy that lasts decades, not just years.</p>
         </div>
         <div class="technique-card">
-          <h3 style="color: #FF6347;">🎯 Skin Tone Analysis</h3>
-          <p>Custom color selection based on your unique skin undertones for perfect harmony.</p>
+          <h3 style="color: var(--accent-primary);">🎯 Skin Tone Analysis</h3>
+          <p style="color: var(--text-secondary);">Custom color selection based on your unique skin undertones for perfect harmony.</p>
         </div>
         <div class="technique-card">
-          <h3 style="color: #FF6347;">🔄 Cover-Up Transformation</h3>
-          <p>Turning old, faded tattoos into vibrant masterpieces using advanced color theory.</p>
+          <h3 style="color: var(--accent-primary);">🔄 Cover-Up Transformation</h3>
+          <p style="color: var(--text-secondary);">Turning old, faded tattoos into vibrant masterpieces using advanced color theory.</p>
         </div>
         <div class="technique-card">
-          <h3 style="color: #FF6347;">✨ Color Preservation</h3>
-          <p>Special techniques and aftercare to maintain color brilliance for maximum longevity.</p>
+          <h3 style="color: var(--accent-primary);">✨ Color Preservation</h3>
+          <p style="color: var(--text-secondary);">Special techniques and aftercare to maintain color brilliance for maximum longevity.</p>
         </div>
       </div>
     </div>
@@ -371,19 +454,19 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
       <div class="stats-grid">
         <div class="stat-item">
           <div class="stat-number">500+</div>
-          <p>Color Tattoos Completed</p>
+          <p style="color: var(--text-secondary);">Color Tattoos Completed</p>
         </div>
         <div class="stat-item">
           <div class="stat-number">95%</div>
-          <p>Cover-Up Success Rate</p>
+          <p style="color: var(--text-secondary);">Cover-Up Success Rate</p>
         </div>
         <div class="stat-item">
           <div class="stat-number">3</div>
-          <p>Awards Won</p>
+          <p style="color: var(--text-secondary);">Awards Won</p>
         </div>
         <div class="stat-item">
           <div class="stat-number">6+</div>
-          <p>Years Experience</p>
+          <p style="color: var(--text-secondary);">Years Experience</p>
         </div>
       </div>
     </div>
@@ -392,7 +475,7 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
   <div class="container">
     <div class="portfolio-section">
       <h2 class="section-title">Guru's Vibrant Portfolio</h2>
-      <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: #666;">
+      <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: var(--text-secondary);">
         Each piece showcases why Guru is considered Delhi's premier color specialist. The vibrancy speaks for itself.
       </p>
       
@@ -401,7 +484,7 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
           <img src="/artists/photos/guru-portfolio-1.jpg" alt="Award-winning vibrant color tattoo by Guru - Artistic masterpiece" loading="lazy">
           <div class="portfolio-caption">
             <h3>Award-Winning Color Work</h3>
-            <p>Vibrant realism with incredible depth and color saturation</p>
+            <p style="color: var(--text-secondary);">Vibrant realism with incredible depth and color saturation</p>
           </div>
         </div>
         
@@ -409,7 +492,7 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
           <img src="/artists/photos/guru-portfolio-2.jpg" alt="Color cover-up transformation by Guru - Before and after magic" loading="lazy">
           <div class="portfolio-caption">
             <h3>Cover-Up Transformation</h3>
-            <p>Impossible cover-up turned into stunning artistic masterpiece</p>
+            <p style="color: var(--text-secondary);">Impossible cover-up turned into stunning artistic masterpiece</p>
           </div>
         </div>
         
@@ -417,7 +500,7 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
           <img src="/artists/photos/guru-portfolio-3.jpg" alt="Colorful artistic tattoo design by Guru - Creative excellence" loading="lazy">
           <div class="portfolio-caption">
             <h3>Creative Color Design</h3>
-            <p>Original artistic concepts with perfect color harmony</p>
+            <p style="color: var(--text-secondary);">Original artistic concepts with perfect color harmony</p>
           </div>
         </div>
         
@@ -425,7 +508,7 @@ const description = "Meet Guru, Delhi's premier color tattoo specialist. Award-w
           <img src="/artists/photos/guru-portfolio-4.jpg" alt="Realistic color portrait by Guru - Photographic quality" loading="lazy">
           <div class="portfolio-caption">
             <h3>Color Portrait Realism</h3>
-            <p>Photorealistic portraits with lifelike color accuracy</p>
+            <p style="color: var(--text-secondary);">Photorealistic portraits with lifelike color accuracy</p>
           </div>
         </div>
       </div>
