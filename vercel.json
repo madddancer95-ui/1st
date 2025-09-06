@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "src/pages/**/*.astro": {
-      "memory": 1024
-    }
-  },
   "build": {
     "env": {
       "VERCEL_FORCE_REBUILD": "true",
@@ -27,6 +22,12 @@
           "value": "nosniff"
         }
       ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/tattoo-pain-guide-delhi",
+      "destination": "/tattoo-pain-guide-delhi/"
     }
   ],
   "domains": [
