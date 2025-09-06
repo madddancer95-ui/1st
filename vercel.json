@@ -1,37 +1,10 @@
 {
   "build": {
     "env": {
-      "VERCEL_FORCE_REBUILD": "true",
-      "DEPLOYMENT_TRIGGER": "true"
+      "VERCEL_FORCE_REBUILD": "1",
+      "BUILD_TIMESTAMP": "2025-09-06-12-50"
     }
   },
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        }
-      ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/tattoo-pain-guide-delhi",
-      "destination": "/tattoo-pain-guide-delhi/"
-    }
-  ],
-  "domains": [
-    "delhitattooshop.com",
-    "www.delhitattooshop.com"
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
