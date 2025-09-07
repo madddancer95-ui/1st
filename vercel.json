@@ -1,11 +1,20 @@
 {
   "build": {
     "env": {
-      "VERCEL_FORCE_REBUILD": "2", 
-      "BUILD_TIMESTAMP": "2025-09-07-23-49",
-      "FORCE_DEPLOY": "CRITICAL_LIVE_UPDATE_NOW",
-      "CACHE_BUST": "FORCE_REBUILD_$(date +%s)"
+      "VERCEL_FORCE_REBUILD": "3",
+      "BUILD_TIMESTAMP": "2025-09-07-23-55",
+      "FORCE_DEPLOY": "GITHUB_DIRECT_CONNECTION",
+      "CACHE_BUST": "REBUILD_NOW"
     }
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  },
+  "github": {
+    "autoAlias": true,
+    "autoJobCancelation": true
   },
   "cleanUrls": true,
   "trailingSlash": false
