@@ -1,10 +1,13 @@
 {
+  "version": 2,
+  "name": "delhitattooshop-live", 
+  "alias": ["delhitattooshop.com", "www.delhitattooshop.com"],
   "build": {
     "env": {
-      "VERCEL_FORCE_REBUILD": "3",
-      "BUILD_TIMESTAMP": "2025-09-07-23-55",
-      "FORCE_DEPLOY": "GITHUB_DIRECT_CONNECTION",
-      "CACHE_BUST": "REBUILD_NOW"
+      "VERCEL_FORCE_REBUILD": "4",
+      "BUILD_TIMESTAMP": "2025-09-08-00-50",
+      "DOMAIN_TRANSFER": "LIVE_NOW", 
+      "CACHE_BUST": "DOMAIN_SWITCH"
     }
   },
   "git": {
@@ -13,6 +16,7 @@
     }
   },
   "github": {
+    "repo": "madddancer95-ui/1st",
     "autoAlias": true,
     "autoJobCancelation": true
   },
