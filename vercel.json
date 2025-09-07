@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "delhitattooshop-live", 
-  "alias": ["delhitattooshop.com", "www.delhitattooshop.com"],
+  "alias": ["www.delhitattooshop.com", "delhitattooshop.com"],
   "build": {
     "env": {
       "VERCEL_FORCE_REBUILD": "99",
