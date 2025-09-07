@@ -2,7 +2,8 @@
   "build": {
     "env": {
       "VERCEL_FORCE_REBUILD": "1",
-      "BUILD_TIMESTAMP": "2025-09-06-12-50"
+      "BUILD_TIMESTAMP": "2025-09-07-23-21",
+      "FORCE_DEPLOY": "LIVE_UPDATE_ARTISTS_PAGE"
     }
   },
   "cleanUrls": true,
