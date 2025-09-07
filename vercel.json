@@ -1,7 +1,20 @@
 {
   "version": 2,
   "name": "delhitattooshop-live", 
-  "alias": ["www.delhitattooshop.com", "delhitattooshop.com"],
+  "alias": ["delhitattooshop.com", "www.delhitattooshop.com"],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://www.delhitattooshop.com/:path*",
+      "statusCode": 301,
+      "has": [
+        {
+          "type": "host",
+          "value": "delhitattooshop.com"
+        }
+      ]
+    }
+  ],
   "build": {
     "env": {
       "VERCEL_FORCE_REBUILD": "99",
