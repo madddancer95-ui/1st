@@ -1559,7 +1559,7 @@ const description = "15,000+ tattoos. ₹299/inch transparent pricing. Delhi's t
       const additionalReviews = document.getElementById('additionalReviews');
       const btn = document.getElementById('moreReviewsBtn');
       
-      if (additionalReviews.style.display === 'none') {
+      if (additionalReviews.style.display === 'none' || additionalReviews.style.display === '') {
         additionalReviews.style.display = 'block';
         btn.textContent = 'Show Less Reviews';
       } else {
