@@ -1396,162 +1396,178 @@ const description = "15,000+ tattoos. ₹299/inch transparent pricing. Delhi's t
     </div>
   </section>
 
-  <!-- REAL GOOGLE REVIEWS SECTION -->
+  <!-- CUSTOMER REVIEWS SECTION -->
   <section class="container" style="margin-bottom: 80px;">
     <header style="text-align: center; margin-bottom: 50px;">
-      <h2 class="section-title">647+ REAL GOOGLE REVIEWS</h2>
-      <p class="section-sub">Don't just take our word for it. See what our customers say about their experience.<br>Real reviews from real people who got inked at our studio.</p>
+      <h2 class="section-title">WHAT OUR CUSTOMERS SAY</h2>
+      <p class="section-sub">Real reviews from people who got their tattoos done at our studio</p>
       
-      <!-- Overall Rating -->
-      <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 30px;">
-        <div style="font-size: 3rem; font-weight: bold; color: #FFD700;">4.9</div>
-        <div>
-          <div style="color: #FFD700; font-size: 1.5rem; margin-bottom: 5px;">★★★★★</div>
-          <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Based on 647+ Google Reviews</div>
-        </div>
+      <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 20px;">
+        <div style="color: var(--accent-primary); font-size: 1.2rem;">★★★★★</div>
+        <div style="color: var(--accent-primary); font-weight: 600;">4.9/5</div>
+        <div style="color: var(--muted);">• 647+ Google Reviews</div>
       </div>
     </header>
     
-    <!-- Reviews Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px;">
+    <!-- Featured Reviews -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px;">
       
-      <!-- Review 1 - Kirti (Female) -->
-      <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+      <!-- Featured Review 1 -->
+      <div style="background: var(--glass-bg); padding: 30px; border-radius: var(--glass-radius); border: 1px solid var(--glass-border); backdrop-filter: blur(var(--glass-blur));">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
           <div>
-            <h4 style="color: rgba(255,255,255,0.9); margin-bottom: 5px;">Kirti Koli</h4>
-            <div style="color: #FFD700; font-size: 1rem;">★★★★★</div>
+            <h4 style="color: var(--accent-primary); margin-bottom: 5px; font-size: 1.1rem;">Rose James</h4>
+            <div style="color: var(--accent-primary); font-size: 0.9rem;">★★★★★</div>
           </div>
-          <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">3 months ago</div>
+          <div style="color: var(--muted); font-size: 0.8rem;">6 months ago</div>
         </div>
-        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-style: italic;">
-          "Apex Tattooz is hands down the best tattoo studio in Delhi! From the moment I walked in, the vibe was welcoming and the artists were super talented. They helped me customize my design and the end result is just amazing. Can't wait to get my next one here!"
-        </p>
+        <div style="color: var(--text-secondary); line-height: 1.5;" id="review1">
+          I got my tattoo at Apex Tattoos after 11 years, and I couldn't be happier! The artists are incredibly skilled, and they really took the time to understand what I wanted...
+          <span style="color: var(--accent-primary); cursor: pointer; margin-left: 5px;" onclick="expandReview1()">Read More</span>
+        </div>
+        <div style="color: var(--text-secondary); line-height: 1.5; display: none;" id="review1-full">
+          I got my tattoo at Apex Tattoos after 11 years, and I couldn't be happier! The artists are incredibly skilled, and they really took the time to understand what I wanted. It turned out better than I could have imagined. I'll definitely be back!
+          <span style="color: var(--accent-primary); cursor: pointer; margin-left: 5px;" onclick="collapseReview1()">Show Less</span>
+        </div>
       </div>
 
-      <!-- Review 2 - Rose James (Female) -->
-      <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+      <!-- Featured Review 2 -->
+      <div style="background: var(--glass-bg); padding: 30px; border-radius: var(--glass-radius); border: 1px solid var(--glass-border); backdrop-filter: blur(var(--glass-blur));">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
           <div>
-            <h4 style="color: rgba(255,255,255,0.9); margin-bottom: 5px;">Rose James</h4>
-            <div style="color: #FFD700; font-size: 1rem;">★★★★★</div>
+            <h4 style="color: var(--accent-primary); margin-bottom: 5px; font-size: 1.1rem;">Kirti Koli</h4>
+            <div style="color: var(--accent-primary); font-size: 0.9rem;">★★★★★</div>
           </div>
-          <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">6 months ago</div>
+          <div style="color: var(--muted); font-size: 0.8rem;">3 months ago</div>
         </div>
-        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-style: italic;">
-          "I got my tattoo at Apex Tattoos after 11 years, and I couldn't be happier! The artists are incredibly skilled, and they really took the time to understand what I wanted. It turned out better than I could have imagined. I'll definitely be back!"
-        </p>
-      </div>
-
-      <!-- Review 3 - Garima Aggarwal (Female) -->
-      <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-          <div>
-            <h4 style="color: rgba(255,255,255,0.9); margin-bottom: 5px;">Garima Aggarwal</h4>
-            <div style="color: #FFD700; font-size: 1rem;">★★★★★</div>
-          </div>
-          <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">3 months ago</div>
+        <div style="color: var(--text-secondary); line-height: 1.5;" id="review2">
+          Apex Tattooz is hands down the best tattoo studio in Delhi! From the moment I walked in, the vibe was welcoming and the artists were super talented...
+          <span style="color: var(--accent-primary); cursor: pointer; margin-left: 5px;" onclick="expandReview2()">Read More</span>
         </div>
-        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-style: italic;">
-          "Apex Tattooz is full with talented artists who deliver outstanding work. The studio's hygiene and professionalism are top-notch. Highly recommended for anyone looking for quality tattoos!"
-        </p>
-      </div>
-
-      <!-- Review 4 - Priyanka Arora (Female) -->
-      <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-          <div>
-            <h4 style="color: rgba(255,255,255,0.9); margin-bottom: 5px;">Priyanka Arora</h4>
-            <div style="color: #FFD700; font-size: 1rem;">★★★★★</div>
-          </div>
-          <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">3 months ago</div>
+        <div style="color: var(--text-secondary); line-height: 1.5; display: none;" id="review2-full">
+          Apex Tattooz is hands down the best tattoo studio in Delhi! From the moment I walked in, the vibe was welcoming and the artists were super talented. They helped me customize my design and the end result is just amazing. Can't wait to get my next one here!
+          <span style="color: var(--accent-primary); cursor: pointer; margin-left: 5px;" onclick="collapseReview2()">Show Less</span>
         </div>
-        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-style: italic;">
-          "Apex Tattooz's artists are true artists who pour their heart and soul into every piece. My tattoo is a masterpiece that I'll love forever, thanks to their talent and dedication."
-        </p>
-      </div>
-
-      <!-- Review 5 - Bhumika Ridlan (Female) -->
-      <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-          <div>
-            <h4 style="color: rgba(255,255,255,0.9); margin-bottom: 5px;">Bhumika Ridlan</h4>
-            <div style="color: #FFD700; font-size: 1rem;">★★★★★</div>
-          </div>
-          <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">5 months ago</div>
-        </div>
-        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-style: italic;">
-          "Getting a tattoo is permanent, so you need the right artist — and Apex Tattoo Studio delivers beyond expectations. The detailing, the smooth finish, and the artistic vision they bring to life are unreal."
-        </p>
-      </div>
-
-      <!-- Review 6 - Kirti Rajput (Female) -->
-      <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-          <div>
-            <h4 style="color: rgba(255,255,255,0.9); margin-bottom: 5px;">Kirti Rajput</h4>
-            <div style="color: #FFD700; font-size: 1rem;">★★★★★</div>
-          </div>
-          <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">3 months ago</div>
-        </div>
-        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-style: italic;">
-          "This tattoo meant a lot to me emotionally, and the team at Apex Tattooz handled it with so much care and understanding. The design turned out better than I imagined. Thank you!"
-        </p>
-      </div>
-
-      <!-- Review 7 - Gauri (Female) -->
-      <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-          <div>
-            <h4 style="color: rgba(255,255,255,0.9); margin-bottom: 5px;">Gauri</h4>
-            <div style="color: #FFD700; font-size: 1rem;">★★★★★</div>
-          </div>
-          <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">3 months ago</div>
-        </div>
-        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-style: italic;">
-          "They fixed my basement tattoo disaster. Didn't shame me, just said 'we got u'. Now have majestic phoenix. Dark wings cover old mistakes - poetic AF."
-        </p>
-      </div>
-
-      <!-- Review 8 - Vikas Singh (Male) -->
-      <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-          <div>
-            <h4 style="color: rgba(255,255,255,0.9); margin-bottom: 5px;">Vikas Singh</h4>
-            <div style="color: #FFD700; font-size: 1rem;">★★★★★</div>
-          </div>
-          <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">3 months ago</div>
-        </div>
-        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-style: italic;">
-          "Apex Tattooz Delhi offers a unique blend of artistic brilliance and hygienic professionalism. Their use of premium-quality ink and adherence to safety protocols truly set them apart."
-        </p>
-      </div>
-
-      <!-- Review 9 - Raju (Male) -->
-      <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-          <div>
-            <h4 style="color: rgba(255,255,255,0.9); margin-bottom: 5px;">Raju Raju</h4>
-            <div style="color: #FFD700; font-size: 1rem;">★★★★★</div>
-          </div>
-          <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">4 months ago</div>
-        </div>
-        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-style: italic;">
-          "Had an awesome experience with Apex Tattooz. The tattoo turned out perfect, and they made sure I was comfortable every step of the way. These people have become my permanent friends!"
-        </p>
       </div>
       
     </div>
 
-    <!-- View More Reviews Button -->
-    <div style="text-align: center; margin-top: 40px;">
-      <a href="https://g.page/r/CQSJZjFkZ8gREBM/review" target="_blank" rel="noopener" 
-         style="display: inline-block; padding: 15px 30px; background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; 
-                font-weight: 600; border-radius: 50px; text-decoration: none; transition: all 0.3s ease;">
-        View All 647+ Google Reviews
-      </a>
+    <!-- More Reviews Button -->
+    <div style="text-align: center;">
+      <button onclick="showMoreReviews()" id="moreReviewsBtn" style="padding: 12px 25px; background: var(--glass-bg); color: var(--accent-primary); border: 1px solid var(--glass-border); border-radius: 25px; cursor: pointer; font-weight: 500; backdrop-filter: blur(10px);">
+        Read More Reviews
+      </button>
     </div>
+
+    <!-- Hidden Additional Reviews -->
+    <div id="additionalReviews" style="display: none; margin-top: 40px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        
+        <div style="background: var(--glass-bg); padding: 25px; border-radius: var(--glass-radius); border: 1px solid var(--glass-border); backdrop-filter: blur(var(--glass-blur));">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+            <div>
+              <h4 style="color: var(--accent-primary); margin-bottom: 5px;">Garima Aggarwal</h4>
+              <div style="color: var(--accent-primary); font-size: 0.9rem;">★★★★★</div>
+            </div>
+            <div style="color: var(--muted); font-size: 0.8rem;">3 months ago</div>
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.5;">Talented artists who deliver outstanding work. The studio's hygiene and professionalism are top-notch. Highly recommended!</p>
+        </div>
+
+        <div style="background: var(--glass-bg); padding: 25px; border-radius: var(--glass-radius); border: 1px solid var(--glass-border); backdrop-filter: blur(var(--glass-blur));">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+            <div>
+              <h4 style="color: var(--accent-primary); margin-bottom: 5px;">Priyanka Arora</h4>
+              <div style="color: var(--accent-primary); font-size: 0.9rem;">★★★★★</div>
+            </div>
+            <div style="color: var(--muted); font-size: 0.8rem;">3 months ago</div>
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.5;">Artists pour their heart and soul into every piece. My tattoo is a masterpiece that I'll love forever.</p>
+        </div>
+
+        <div style="background: var(--glass-bg); padding: 25px; border-radius: var(--glass-radius); border: 1px solid var(--glass-border); backdrop-filter: blur(var(--glass-blur));">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+            <div>
+              <h4 style="color: var(--accent-primary); margin-bottom: 5px;">Vikas Singh</h4>
+              <div style="color: var(--accent-primary); font-size: 0.9rem;">★★★★★</div>
+            </div>
+            <div style="color: var(--muted); font-size: 0.8rem;">3 months ago</div>
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.5;">Unique blend of artistic brilliance and hygienic professionalism. Premium-quality ink and safety protocols truly set them apart.</p>
+        </div>
+
+        <div style="background: var(--glass-bg); padding: 25px; border-radius: var(--glass-radius); border: 1px solid var(--glass-border); backdrop-filter: blur(var(--glass-blur));">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+            <div>
+              <h4 style="color: var(--accent-primary); margin-bottom: 5px;">Bhumika Ridlan</h4>
+              <div style="color: var(--accent-primary); font-size: 0.9rem;">★★★★★</div>
+            </div>
+            <div style="color: var(--muted); font-size: 0.8rem;">5 months ago</div>
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.5;">Getting a tattoo is permanent, so you need the right artist. Apex delivers beyond expectations. The detailing and artistic vision are unreal.</p>
+        </div>
+
+        <div style="background: var(--glass-bg); padding: 25px; border-radius: var(--glass-radius); border: 1px solid var(--glass-border); backdrop-filter: blur(var(--glass-blur));">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+            <div>
+              <h4 style="color: var(--accent-primary); margin-bottom: 5px;">Raju Raju</h4>
+              <div style="color: var(--accent-primary); font-size: 0.9rem;">★★★★★</div>
+            </div>
+            <div style="color: var(--muted); font-size: 0.8rem;">4 months ago</div>
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.5;">Awesome experience with Apex Tattooz. The tattoo turned out perfect, and they made sure I was comfortable every step of the way.</p>
+        </div>
+
+        <div style="background: var(--glass-bg); padding: 25px; border-radius: var(--glass-radius); border: 1px solid var(--glass-border); backdrop-filter: blur(var(--glass-blur));">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+            <div>
+              <h4 style="color: var(--accent-primary); margin-bottom: 5px;">Gauri</h4>
+              <div style="color: var(--accent-primary); font-size: 0.9rem;">★★★★★</div>
+            </div>
+            <div style="color: var(--muted); font-size: 0.8rem;">3 months ago</div>
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.5;">They fixed my old tattoo disaster. Didn't shame me, just said we got you. Now have a majestic phoenix covering old mistakes.</p>
+        </div>
+        
+      </div>
+    </div>
+
   </section>
+
+  <script>
+    function expandReview1() {
+      document.getElementById('review1').style.display = 'none';
+      document.getElementById('review1-full').style.display = 'block';
+    }
+    
+    function collapseReview1() {
+      document.getElementById('review1').style.display = 'block';
+      document.getElementById('review1-full').style.display = 'none';
+    }
+    
+    function expandReview2() {
+      document.getElementById('review2').style.display = 'none';
+      document.getElementById('review2-full').style.display = 'block';
+    }
+    
+    function collapseReview2() {
+      document.getElementById('review2').style.display = 'block';
+      document.getElementById('review2-full').style.display = 'none';
+    }
+    
+    function showMoreReviews() {
+      const additionalReviews = document.getElementById('additionalReviews');
+      const btn = document.getElementById('moreReviewsBtn');
+      
+      if (additionalReviews.style.display === 'none') {
+        additionalReviews.style.display = 'block';
+        btn.textContent = 'Show Less Reviews';
+      } else {
+        additionalReviews.style.display = 'none';
+        btn.textContent = 'Read More Reviews';
+      }
+    }
+  </script>
 
   <!-- STUDIO LOCATION SECTION -->
   <section id="location" class="container" style="margin-bottom: 80px;">
