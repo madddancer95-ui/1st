@@ -378,6 +378,32 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
       color: var(--accent-primary);
     }
 
+    .size-visual {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .size-square {
+      width: 60px;
+      height: 60px;
+      border: 2px solid var(--accent-primary);
+      margin: 10px auto;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-primary);
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+    }
+
+    .size-visual-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+
     /* Results Panel */
     .results-panel {
       text-align: center;
@@ -547,8 +573,9 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
               <label class="form-label" for="tattoo-style">Tattoo Style</label>
               <select class="form-select" id="tattoo-style" required>
                 <option value="">Select tattoo style</option>
-                <option value="simple" data-price="299">Simple Design - ₹299/inch</option>
-                <option value="complex" data-price="399">Complex/Color Design - ₹399/inch</option>
+                <option value="simple" data-price="299">Simple Design - ₹299/inch (Black & Grey, Line work)</option>
+                <option value="complex" data-price="399">Complex/Color Design - ₹399/inch (Detailed, Shading)</option>
+                <option value="premium" data-price="599">Premium Design - ₹599/inch (Realism, Full Color)</option>
               </select>
             </div>
 
@@ -557,6 +584,10 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
               <div class="slider-container">
                 <input type="range" class="size-slider" id="size-slider" min="1" max="12" value="3" step="0.5">
                 <div class="size-display" id="size-display">3 inches</div>
+                <div class="size-visual">
+                  <div class="size-square" id="size-square">3"</div>
+                  <div class="size-visual-label">Approximate visual reference</div>
+                </div>
               </div>
             </div>
 
@@ -579,13 +610,24 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
               <label class="form-label" for="examples">Design Examples (Reference)</label>
               <select class="form-select" id="examples">
                 <option value="">Select design type for reference</option>
-                <option value="butterfly">Butterfly (2×2 in) - Simple</option>
-                <option value="dragon">Dragon (4×3 in) - Complex</option>
-                <option value="rose">Rose (3×3 in) - Simple</option>
-                <option value="mandala">Mandala (6×6 in) - Complex</option>
-                <option value="minimalist">Minimalist Design</option>
-                <option value="portrait">Portrait Work - Complex</option>
-                <option value="custom">Custom Design</option>
+                <optgroup label="Simple Designs (₹299/inch)">
+                  <option value="butterfly">🦋 Small Butterfly (2×2 in) - ₹1,196</option>
+                  <option value="rose">🌹 Simple Rose (3×3 in) - ₹2,691</option>
+                  <option value="text">💬 Name/Text (varies) - From ₹597</option>
+                  <option value="minimalist">✨ Minimalist Symbol - From ₹897</option>
+                </optgroup>
+                <optgroup label="Complex Designs (₹399/inch)">
+                  <option value="mandala">🕸️ Mandala (6×6 in) - ₹14,364</option>
+                  <option value="dragon">🐲 Dragon (5×4 in) - ₹7,980</option>
+                  <option value="geometric">🔺 Geometric Pattern (4×4 in) - ₹6,384</option>
+                  <option value="traditional">⚡ Traditional Design - From ₹3,192</option>
+                </optgroup>
+                <optgroup label="Premium Designs (₹599/inch)">
+                  <option value="portrait">👤 Portrait Work (6×8 in) - ₹28,752</option>
+                  <option value="realism">🎨 Color Realism (8×6 in) - ₹28,752</option>
+                  <option value="coverup">🔄 Cover-up Work - Quote required</option>
+                  <option value="sleeve">💪 Sleeve Work - From ₹50,000</option>
+                </optgroup>
               </select>
             </div>
 
@@ -888,11 +930,72 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
     sizeSlider.addEventListener('input', function() {
       currentCalculation.size = parseFloat(this.value);
       sizeDisplay.textContent = `${currentCalculation.size} inches`;
+      
+      // Update visual size indicator
+      const sizeSquare = document.getElementById('size-square');
+      const size = currentCalculation.size;
+      const visualSize = Math.min(Math.max(30, size * 10), 120); // Scale between 30px and 120px
+      sizeSquare.style.width = `${visualSize}px`;
+      sizeSquare.style.height = `${visualSize}px`;
+      sizeSquare.textContent = `${size}"`;
+      
+      calculatePrice();
+    });
+
+    // Smart design auto-selector based on examples
+    examplesSelect.addEventListener('change', function() {
+      const selectedExample = this.value;
+      
+      // Auto-select appropriate style based on example
+      if (selectedExample) {
+        const simpleDesigns = ['butterfly', 'rose', 'text', 'minimalist'];
+        const complexDesigns = ['mandala', 'dragon', 'geometric', 'traditional'];
+        const premiumDesigns = ['portrait', 'realism', 'coverup', 'sleeve'];
+        
+        if (simpleDesigns.includes(selectedExample)) {
+          styleSelect.value = 'simple';
+        } else if (complexDesigns.includes(selectedExample)) {
+          styleSelect.value = 'complex';
+        } else if (premiumDesigns.includes(selectedExample)) {
+          styleSelect.value = 'premium';
+        }
+        
+        // Auto-adjust size based on example
+        const sizeMappings = {
+          'butterfly': 2,
+          'rose': 3,
+          'text': 2.5,
+          'minimalist': 2,
+          'mandala': 6,
+          'dragon': 4.5,
+          'geometric': 4,
+          'traditional': 4,
+          'portrait': 7,
+          'realism': 7,
+          'coverup': 5,
+          'sleeve': 10
+        };
+        
+        if (sizeMappings[selectedExample]) {
+          sizeSlider.value = sizeMappings[selectedExample];
+          currentCalculation.size = sizeMappings[selectedExample];
+          sizeDisplay.textContent = `${currentCalculation.size} inches`;
+          
+          // Update visual
+          const sizeSquare = document.getElementById('size-square');
+          const size = currentCalculation.size;
+          const visualSize = Math.min(Math.max(30, size * 10), 120);
+          sizeSquare.style.width = `${visualSize}px`;
+          sizeSquare.style.height = `${visualSize}px`;
+          sizeSquare.textContent = `${size}"`;
+        }
+      }
+      
       calculatePrice();
     });
 
     // Update calculations on any change
-    [styleSelect, examplesSelect, serviceTypeSelect, placementSelect].forEach(element => {
+    [styleSelect, serviceTypeSelect, placementSelect].forEach(element => {
       element.addEventListener('change', calculatePrice);
     });
 
@@ -942,7 +1045,8 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
         if (selectedStyle) {
           const styleNames = {
             'simple': 'Simple Design',
-            'complex': 'Complex/Color Design'
+            'complex': 'Complex/Color Design',
+            'premium': 'Premium Design'
           };
           breakdownText += ` (${styleNames[selectedStyle]})`;
         }
@@ -965,7 +1069,8 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
 
       const styleNames = {
         'simple': 'Simple Design',
-        'complex': 'Complex/Color Design'
+        'complex': 'Complex/Color Design',
+        'premium': 'Premium Design'
       };
 
       let message = `Hi Apex Tattooz! I used your pricing calculator and got this estimate:%0A%0A`;
