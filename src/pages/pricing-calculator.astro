@@ -1,6 +1,35 @@
 ---
-const title = "Tattoo Price Calculator Delhi | Instant Quote DelhiTattooShop.com";
-const description = "Get instant tattoo pricing for Delhi NCR. Professional tattoo price calculator with transparent rates. Calculate your tattoo cost online - Simple ₹299/inch, Detailed ₹399/inch, Premium ₹599/inch.";
+// Page ownership: retained calculator URL for Delhi clients deciding approximate
+// tattoo size and budget. Evidence: Apex's official pricing page, checked 4 Oct 2026.
+// Nearest overlap: https://apextattooz.com/tattoo-price-in-delhi/ and this site's
+// homepage pricing section. This repair preserves an existing customer journey;
+// it is not justification for another pricing hub or a new SEO landing page.
+const title = "Tattoo Price Calculator Delhi | Delhi Tattoo Shop by Apex Tattooz";
+const description = "Estimate your tattoo budget using width × height in square inches. ₹699 for the first square inch, then ₹299, ₹399 or ₹499 per additional square inch. Your artist confirms the quote.";
+const pricingSource = "https://apextattooz.com/tattoo-price-in-delhi/";
+const calculatorSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Delhi Tattoo Shop Tattoo Price Calculator",
+  "url": "https://www.delhitattooshop.com/pricing-calculator",
+  "description": description,
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "JavaScript is required for the interactive estimate.",
+  "isAccessibleForFree": true,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Apex Tattooz",
+    "url": "https://apextattooz.com/"
+  }
+};
+const examples = [
+  { size: "1 × 1 in", area: 1, simple: 699, detailed: 699, intricate: 699 },
+  { size: "2 × 1 in", area: 2, simple: 998, detailed: 1098, intricate: 1198 },
+  { size: "2 × 2 in", area: 4, simple: 1596, detailed: 1896, intricate: 2196 },
+  { size: "3 × 3 in", area: 9, simple: 3091, detailed: 3891, intricate: 4691 }
+];
+const rupees = (value: number) => `₹${value.toLocaleString('en-IN')}`;
 ---
 
 <!DOCTYPE html>
@@ -10,39 +39,19 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{title}</title>
   <meta name="description" content={description}>
-  <meta name="keywords" content="tattoo price delhi, tattoo cost calculator, tattoo rates Delhi NCR, tattoo pricing India, cheap tattoo delhi, best tattoo price delhi, tattoo price per inch delhi, tattoo cost estimation delhi, affordable tattoo delhi, tattoo price list delhi">
-  
-  <!-- Enhanced SEO Meta Tags -->
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="googlebot" content="index, follow">
-  <meta name="language" content="en">
-  <meta name="revisit-after" content="3 days">
-  <meta name="rating" content="general">
-  
-  <!-- Social Meta -->
-  <link rel="canonical" href="https://delhitattooshop.com/pricing-calculator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://www.delhitattooshop.com/pricing-calculator">
   <meta property="og:type" content="website">
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
-  <meta property="og:url" content="https://delhitattooshop.com/pricing-calculator">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://www.delhitattooshop.com/pricing-calculator">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content={title}>
   <meta name="twitter:description" content={description}>
-  
-  <!-- Geo Meta -->
-  <meta name="geo.region" content="IN-DL">
-  <meta name="geo.placename" content="Delhi NCR, India">
-  <meta name="geo.position" content="28.6692;77.1473">
-  
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Google Tag Manager -->
   <script src="/gtm.js" is:inline></script>
-  
-  <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDGJB534KV" is:inline></script>
   <script is:inline>
     window.dataLayer = window.dataLayer || [];
@@ -50,132 +59,8 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
     gtag('js', new Date());
     gtag('config', 'G-JDGJB534KV');
   </script>
-  
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(calculatorSchema)} />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Tattoo Price Calculator Delhi NCR",
-    "provider": {
-      "@type": "TattooParlor",
-      "name": "DelhiTattooShop.com",
-      "url": "https://delhitattooshop.com/",
-      "telephone": "+91-7217665761",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "GTB Nagar",
-        "addressLocality": "Delhi",
-        "addressRegion": "Delhi",
-        "postalCode": "110009",
-        "addressCountry": "IN"
-      }
-    },
-    "description": "Professional tattoo price calculator for Delhi NCR with transparent pricing. Get instant quotes for tattoo work.",
-    "serviceType": "Tattoo Pricing Calculator",
-    "areaServed": "Delhi NCR, India",
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Simple Tattoo Design",
-        "price": "299",
-        "priceCurrency": "INR",
-        "description": "Per inch pricing for simple black and grey tattoos"
-      },
-      {
-        "@type": "Offer", 
-        "name": "Complex/Color Tattoo Design",
-        "price": "399",
-        "priceCurrency": "INR",
-        "description": "Per inch pricing for complex and colored tattoos"
-      },
-      {
-        "@type": "Offer",
-        "name": "Tattoo Removal - Small", 
-        "price": "699",
-        "priceCurrency": "INR",
-        "description": "Tattoo removal for designs up to 2 square inches"
-      },
-      {
-        "@type": "Offer",
-        "name": "Tattoo Removal - Medium", 
-        "price": "999",
-        "priceCurrency": "INR",
-        "description": "Tattoo removal for designs 3-5 square inches"
-      },
-      {
-        "@type": "Offer",
-        "name": "Tattoo Removal - Large", 
-        "price": "1499",
-        "priceCurrency": "INR",
-        "description": "Tattoo removal for designs above 5 square inches"
-      }
-    ]
-  }
-  </script>
-
-  <!-- Enhanced Pricing Calculator Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Tattoo Price Calculator - Delhi NCR",
-    "url": "https://www.delhitattooshop.com/pricing-calculator",
-    "description": "Free online tattoo price calculator for Delhi NCR. Get instant pricing estimates for all tattoo styles with transparent per-inch rates.",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "INR",
-      "description": "Free tattoo price calculator tool"
-    },
-    "featureList": [
-      "Instant tattoo price calculation",
-      "Size-based pricing estimation",
-      "Style-specific rate calculation", 
-      "Multiple pricing tiers",
-      "Direct booking integration"
-    ]
-  }
-  </script>
-
-  <!-- FAQ Schema for Pricing -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much does a tattoo cost in Delhi?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tattoo prices in Delhi start from ₹299 per inch for simple designs, ₹399 per inch for detailed work, and ₹599 per inch for premium art like realism and portraits."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is tattoo pricing calculated?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tattoo pricing is calculated per inch based on design complexity: Simple (₹299/inch), Detailed (₹399/inch), Premium (₹599/inch). Use our calculator for instant estimates."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Are there any hidden costs for tattoos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No hidden costs! Our transparent pricing includes consultation, design, tattooing, and aftercare guidance. Touch-ups within 30 days are included."
-        }
-      }
-    ]
-  }
-  </script>
-
   <style>
     :root {
       --accent-primary: #ffffff;
@@ -552,539 +437,166 @@ const description = "Get instant tattoo pricing for Delhi NCR. Professional tatt
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4DMPN4P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-  <!-- Glass Header -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4DMPN4P" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
   <header class="header-simple">
     <div class="glass-header">
       <a href="/" class="brand">DelhiTattooShop</a>
       <a href="/" class="back-home">← Back to Home</a>
     </div>
   </header>
-
-  <!-- Main Content -->
   <main class="main-content">
     <div class="container">
-      <!-- Page Title -->
       <div class="page-title">
         <h1>Tattoo Price Calculator</h1>
-        <p>Get instant pricing for your tattoo in Delhi NCR. Transparent rates, no hidden costs.</p>
+        <p>Plan your tattoo budget with Apex Tattooz. ₹699 for the first square inch, then an additional-area rate. Serving clients across Delhi.</p>
       </div>
-
-      <!-- Calculator Section -->
       <div class="calculator-section">
-        <!-- Calculator Panel -->
         <div class="calculator-panel">
           <h2 class="calculator-title">Calculate Your Tattoo Price</h2>
-          
           <form id="pricing-calculator">
             <div class="form-group">
-              <label class="form-label" for="tattoo-style">Tattoo Style</label>
+              <label class="form-label" for="tattoo-style">Design Complexity</label>
               <select class="form-select" id="tattoo-style" required>
-                <option value="">Select tattoo style</option>
-                <option value="simple" data-price="299">Simple Design - ₹299/inch (Black & Grey, Line work)</option>
-                <option value="complex" data-price="399">Complex/Color Design - ₹399/inch (Detailed, Shading)</option>
-                <option value="premium" data-price="599">Premium Design - ₹599/inch (Realism, Full Color)</option>
+                <option value="299">Simple / minimalist — ₹299 per additional sq in</option>
+                <option value="399">Detailed — ₹399 per additional sq in</option>
+                <option value="499">Intricate — ₹499 per additional sq in</option>
               </select>
             </div>
-
             <div class="form-group">
-              <label class="form-label" for="size-slider">Tattoo Size (inches)</label>
-              <div class="slider-container">
-                <input type="range" class="size-slider" id="size-slider" min="1" max="12" value="3" step="0.5">
-                <div class="size-display" id="size-display">3 inches</div>
-                <div class="size-visual">
-                  <div class="size-square" id="size-square">3"</div>
-                  <div class="size-visual-label">Approximate visual reference</div>
-                </div>
-              </div>
+              <label class="form-label" for="tattoo-width">Tattoo Width (inches)</label>
+              <input class="form-input" id="tattoo-width" type="number" min="0.01" step="any" value="1" inputmode="decimal" required aria-describedby="size-help">
             </div>
-
+            <div class="form-group">
+              <label class="form-label" for="tattoo-height">Tattoo Height (inches)</label>
+              <input class="form-input" id="tattoo-height" type="number" min="0.01" step="any" value="1" inputmode="decimal" required aria-describedby="size-help">
+              <p class="price-note" id="size-help">Width × height gives square inches. A 2 × 2 inch design covers 4 square inches. Estimates below 1 square inch retain the ₹699 minimum.</p>
+            </div>
             <div class="form-group">
               <label class="form-label" for="placement">Tattoo Placement</label>
               <select class="form-select" id="placement">
                 <option value="">Select placement (optional)</option>
-                <option value="arm">Arm</option>
-                <option value="shoulder">Shoulder</option>
-                <option value="back">Back</option>
-                <option value="chest">Chest</option>
-                <option value="leg">Leg</option>
-                <option value="wrist">Wrist</option>
-                <option value="neck">Neck</option>
-                <option value="other">Other</option>
+                <option>Arm</option><option>Shoulder</option><option>Back</option><option>Chest</option><option>Leg</option><option>Wrist</option><option>Neck</option><option>Other</option>
               </select>
             </div>
-
             <div class="form-group">
-              <label class="form-label" for="examples">Design Examples (Reference)</label>
+              <label class="form-label" for="examples">Size Examples (Reference)</label>
               <select class="form-select" id="examples">
-                <option value="">Select design type for reference</option>
-                <optgroup label="Simple Designs (₹299/inch)">
-                  <option value="butterfly">Small Butterfly (2×2 in) - ₹1,196</option>
-                  <option value="rose">Simple Rose (3×3 in) - ₹2,691</option>
-                  <option value="text">Name/Text (varies) - From ₹597</option>
-                  <option value="minimalist">Minimalist Symbol - From ₹897</option>
-                </optgroup>
-                <optgroup label="Complex Designs (₹399/inch)">
-                  <option value="mandala">Mandala (6×6 in) - ₹14,364</option>
-                  <option value="dragon">Dragon (5×4 in) - ₹7,980</option>
-                  <option value="geometric">Geometric Pattern (4×4 in) - ₹6,384</option>
-                  <option value="traditional">Traditional Design - From ₹3,192</option>
-                </optgroup>
-                <optgroup label="Premium Designs (₹599/inch)">
-                  <option value="portrait">Portrait Work (6×8 in) - ₹28,752</option>
-                  <option value="realism">Color Realism (8×6 in) - ₹28,752</option>
-                  <option value="coverup">Cover-up Work - Quote required</option>
-                  <option value="sleeve">Sleeve Work - From ₹50,000</option>
-                </optgroup>
+                <option value="">Choose dimensions to compare</option>
+                {examples.map(example => <option value={example.size}>{example.size} — {example.area} square inches</option>)}
               </select>
             </div>
-
-            <div class="form-group">
-              <label class="form-label" for="service-type">Service Type</label>
-              <select class="form-select" id="service-type">
-                <option value="new">New Tattoo</option>
-                <option value="removal">Tattoo Removal</option>
-              </select>
-            </div>
+            <p class="price-note" id="calculator-error" aria-live="polite"></p>
+            <button class="btn-primary btn-secondary" type="submit">Update Estimate</button>
           </form>
+          <noscript><p class="price-note">The calculator needs JavaScript. Call <a href="tel:+917217665761">+91 72176 65761</a> to discuss a quote.</p></noscript>
         </div>
-
-        <!-- Results Panel -->
         <div class="calculator-panel results-panel">
           <h2 class="calculator-title">Your Estimated Price</h2>
-          
-          <div class="price-display">
-            <div class="estimated-price" id="total-price">₹897</div>
-            <div class="price-breakdown" id="price-breakdown">
-              3 inches × ₹299 (Simple Design)
-            </div>
-            <div class="price-note">
-              *Final price may vary based on design consultation
-            </div>
+          <div class="price-display" aria-live="polite" aria-atomic="true">
+            <div class="estimated-price" id="total-price">₹699</div>
+            <div class="price-breakdown" id="area-display">1 × 1 inch = 1 sq in</div>
+            <div class="price-breakdown" id="price-breakdown">₹699 for the first square inch; no additional area.</div>
+            <div class="price-note">Your artist confirms the design, complexity and final quote before booking.</div>
           </div>
-
           <div class="action-buttons">
-            <button class="btn-primary" id="get-quote-btn">
-              <i class="fab fa-whatsapp"></i>
-              Get Instant Quote
-            </button>
-            <a href="tel:+917217665761" class="btn-primary btn-secondary">
-              <i class="fas fa-phone"></i>
-              Call Now
-            </a>
+            <a class="btn-primary" id="get-quote-btn" href="https://wa.me/917217665761?text=Hi%20Apex%20Tattooz%2C%20I%20would%20like%20to%20discuss%20a%20tattoo%20quote." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Discuss Your Quote</a>
+            <a class="btn-primary btn-secondary" href="tel:+917217665761"><i class="fas fa-phone" aria-hidden="true"></i> Call Now</a>
           </div>
-
-          <div class="price-note" style="margin-top: 20px;">
-            <strong>✅ What's Included:</strong><br>
-            • Free consultation<br>
-            • Design sketch<br>
-            • Aftercare kit<br>
-            • Touch-up (if needed)
-          </div>
+          <div class="price-note" style="margin-top: 20px;">Formula: ₹699 + (area above the first square inch × the additional-area rate). WhatsApp opens a draft for you to review and send.</div>
         </div>
       </div>
-
-      <!-- Comprehensive Pricing Breakdown -->
       <div style="background: rgba(255,255,255,0.03); border-radius: 20px; padding: 3rem; margin: 3rem 0; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
-        <h2 style="text-align: center; color: var(--accent-primary); font-size: 2rem; margin-bottom: 2rem;">Complete Pricing Breakdown</h2>
-        <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem;">
-          100% transparent pricing with no hidden costs. Here's exactly what you pay and what's included in every category.
-        </p>
-
-        <!-- Pricing Tiers -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-          <!-- Simple Pricing -->
-          <div class="calculator-panel" style="border: 2px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.05);">
-            <h3 style="color: var(--accent-primary); text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
-              Simple Design
-            </h3>
-            <div style="text-align: center; margin-bottom: 1.5rem;">
-              <span style="font-size: 2.5rem; font-weight: bold; color: var(--accent-primary);">₹299</span>
-              <span style="color: var(--text-secondary); display: block; font-size: 1rem;">per inch</span>
-            </div>
-            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">What's Included:</h4>
-            <ul style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
-              <li>✓ Basic black & grey designs</li>
-              <li>✓ Simple line work</li>
-              <li>✓ Minimal shading</li>
-              <li>✓ Text and small symbols</li>
-              <li>✓ FREE touch-up within 30 days</li>
-              <li>✓ Free aftercare kit (₹1,200 value)</li>
-            </ul>
-            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">Perfect For:</h4>
-            <ul style="color: var(--text-secondary); line-height: 1.6;">
-              <li>• First-time tattoos</li>
-              <li>• Minimalist designs</li>
-              <li>• Names and quotes</li>
-              <li>• Small symbols</li>
-            </ul>
-          </div>
-
-          <!-- Detailed Pricing -->
-          <div class="calculator-panel" style="border: 2px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.08);">
-            <div style="background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1)); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); text-align: center;">Most Popular</div>
-            <h3 style="color: var(--accent-primary); text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
-              Detailed Design
-            </h3>
-            <div style="text-align: center; margin-bottom: 1.5rem;">
-              <span style="font-size: 2.5rem; font-weight: bold; color: var(--accent-primary);">₹399</span>
-              <span style="color: var(--text-secondary); display: block; font-size: 1rem;">per inch</span>
-            </div>
-            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">What's Included:</h4>
-            <ul style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
-              <li>✓ Detailed black & grey work</li>
-              <li>✓ Complex shading techniques</li>
-              <li>✓ Geometric patterns</li>
-              <li>✓ Portrait work (black & grey)</li>
-              <li>✓ Multiple design elements</li>
-              <li>✓ FREE touch-up within 45 days</li>
-              <li>✓ Free aftercare kit (₹1,200 value)</li>
-            </ul>
-            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">Perfect For:</h4>
-            <ul style="color: var(--text-secondary); line-height: 1.6;">
-              <li>• Mandala designs</li>
-              <li>• Portrait tattoos</li>
-              <li>• Geometric art</li>
-              <li>• Traditional designs</li>
-            </ul>
-          </div>
-
-          <!-- Premium Pricing -->
-          <div class="calculator-panel" style="border: 2px solid rgba(255,255,255,0.5); background: rgba(255,255,255,0.12);">
-            <h3 style="color: var(--accent-primary); text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
-              Premium Design
-            </h3>
-            <div style="text-align: center; margin-bottom: 1.5rem;">
-              <span style="font-size: 2.5rem; font-weight: bold; color: var(--accent-primary);">₹599</span>
-              <span style="color: var(--text-secondary); display: block; font-size: 1rem;">per inch</span>
-            </div>
-            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">What's Included:</h4>
-            <ul style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
-              <li>✓ Full color artwork</li>
-              <li>✓ Photorealistic portraits</li>
-              <li>✓ Complex color blending</li>
-              <li>✓ Cover-up work</li>
-              <li>✓ Custom art creation</li>
-              <li>✓ Multiple sessions included</li>
-              <li>✓ FREE touch-up within 60 days</li>
-              <li>✓ Premium aftercare kit (₹1,800 value)</li>
-            </ul>
-            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">Perfect For:</h4>
-            <ul style="color: var(--text-secondary); line-height: 1.6;">
-              <li>• Color realism</li>
-              <li>• Japanese traditional</li>
-              <li>• Neo-traditional style</li>
-              <li>• Large detailed pieces</li>
-            </ul>
-          </div>
+        <h2 style="text-align: center; color: var(--accent-primary); font-size: 2rem; margin-bottom: 2rem;">Pricing Breakdown</h2>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem;">The first square inch is ₹699. These rates apply to each additional square inch. Your artist confirms the appropriate tier.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 2rem; margin-bottom: 3rem;">
+          {[
+            {name: 'Simple / Minimalist', rate: 299, shade: '0.05', border: '0.3', total: 1596},
+            {name: 'Detailed Design', rate: 399, shade: '0.08', border: '0.4', total: 1896},
+            {name: 'Intricate Design', rate: 499, shade: '0.12', border: '0.5', total: 2196}
+          ].map(tier => <div class="calculator-panel" style={`border: 2px solid rgba(255,255,255,${tier.border}); background: rgba(255,255,255,${tier.shade});`}>
+            <h3 style="color: var(--accent-primary); text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem;">{tier.name}</h3>
+            <div style="text-align: center; margin-bottom: 1.5rem;"><span style="font-size: 2.5rem; font-weight: bold; color: var(--accent-primary);">₹{tier.rate}</span><span style="color: var(--text-secondary); display: block; font-size: 1rem;">per additional square inch</span></div>
+            <p style="color: var(--text-secondary); line-height: 1.6;">A 2 × 2 inch design estimates to {rupees(tier.total)} at this tier, including the ₹699 first square inch.</p>
+          </div>)}
         </div>
-
-
-        <!-- What's Always Included -->
-        <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px);">
-          <h3 style="text-align: center; color: var(--accent-primary); margin-bottom: 2rem;">
-            What's Always Included (No Extra Cost)
-          </h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: center;">
-            <div>
-              <i class="fas fa-comments" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.5rem;"></i>
-              <h4 style="color: var(--accent-primary); font-size: 1rem; margin-bottom: 0.5rem;">Free Consultation</h4>
-              <p style="color: var(--text-secondary); font-size: 0.9rem;">Worth ₹1,000</p>
-            </div>
-            <div>
-              <i class="fas fa-palette" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.5rem;"></i>
-              <h4 style="color: var(--accent-primary); font-size: 1rem; margin-bottom: 0.5rem;">Custom Design</h4>
-              <p style="color: var(--text-secondary); font-size: 0.9rem;">Worth ₹2,500</p>
-            </div>
-            <div>
-              <i class="fas fa-first-aid" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.5rem;"></i>
-              <h4 style="color: var(--accent-primary); font-size: 1rem; margin-bottom: 0.5rem;">Aftercare Kit</h4>
-              <p style="color: var(--text-secondary); font-size: 0.9rem;">Worth ₹1,200</p>
-            </div>
-            <div>
-              <i class="fas fa-phone-alt" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.5rem;"></i>
-              <h4 style="color: var(--accent-primary); font-size: 1rem; margin-bottom: 0.5rem;">24/7 Support</h4>
-              <p style="color: var(--text-secondary); font-size: 0.9rem;">Priceless</p>
-            </div>
-            <div>
-              <i class="fas fa-redo" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.5rem;"></i>
-              <h4 style="color: var(--accent-primary); font-size: 1rem; margin-bottom: 0.5rem;">FREE Touch-ups</h4>
-              <p style="color: var(--text-secondary); font-size: 0.9rem;">Worth ₹1,500</p>
-            </div>
-            <div>
-              <i class="fas fa-certificate" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.5rem;"></i>
-              <h4 style="color: var(--accent-primary); font-size: 1rem; margin-bottom: 0.5rem;">Quality Guarantee</h4>
-              <p style="color: var(--text-secondary); font-size: 0.9rem;">Priceless</p>
-            </div>
-          </div>
-          <div style="text-align: center; margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
-            <h4 style="color: var(--accent-primary); margin-bottom: 0.5rem;">Total Value of Included Services</h4>
-            <span style="font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">₹6,200+ FREE with every tattoo</span>
-          </div>
-        </div>
-
-        <!-- Payment Options -->
-        <div style="text-align: center; margin-top: 3rem;">
-          <h3 style="color: var(--accent-primary); margin-bottom: 2rem;">Flexible Payment Options</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-            <div class="calculator-panel" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);">
-              <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">
-                <i class="fas fa-money-bill-wave"></i> Cash Payment
-              </h4>
-              <p style="color: var(--text-secondary);">5% discount on total bill</p>
-            </div>
-            <div class="calculator-panel" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);">
-              <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">
-                <i class="fas fa-mobile-alt"></i> UPI/Digital
-              </h4>
-              <p style="color: var(--text-secondary);">Instant payment, no extra charges</p>
-            </div>
-            <div class="calculator-panel" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);">
-              <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">
-                <i class="fas fa-credit-card"></i> Card Payment
-              </h4>
-              <p style="color: var(--text-secondary);">All major cards accepted</p>
-            </div>
-            <div class="calculator-panel" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);">
-              <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">
-                <i class="fas fa-calendar-alt"></i> EMI Options
-              </h4>
-              <p style="color: var(--text-secondary);">Available for tattoos above ₹10,000</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Minimal Security Note -->
-        <div style="text-align: center; margin-top: 2rem; padding: 8px 0; color: rgba(255,255,255,0.6); font-size: 0.75rem;">
-          🔒 SSL Secured • Safe Payments • Data Protected
-        </div>
+        <p class="price-note">Pricing source: <a href={pricingSource} style="color: inherit;">Apex Tattooz’s official price guide</a>, checked 4 October 2026. This calculator covers new tattoos. Removal is assessed separately and priced per session; see the official guide and discuss suitability with a qualified provider.</p>
       </div>
-
-      <!-- Features Grid -->
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-title">Transparent Pricing</div>
-          <div class="feature-desc">No hidden costs. What you see is what you pay.</div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-title">Instant Quotes</div>
-          <div class="feature-desc">Get your pricing immediately via WhatsApp.</div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-title">All Styles Covered</div>
-          <div class="feature-desc">From simple designs to premium artwork.</div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-title">Hygiene Guaranteed</div>
-          <div class="feature-desc">Hospital-grade sterilization standards.</div>
-        </div>
+        <div class="feature-card"><div class="feature-title">Planning Estimate</div><div class="feature-desc">Measure width and height, then compare the additional-area rates.</div></div>
+        <div class="feature-card"><div class="feature-title">Artist Confirmation</div><div class="feature-desc">Share your reference and placement to confirm a final quote.</div></div>
+        <div class="feature-card"><div class="feature-title">Touch-up Guidance</div><div class="feature-desc">Apex’s published policy states free lifetime touch-ups. Confirm the details with the studio.</div></div>
+        <div class="feature-card"><div class="feature-title">By Apex Tattooz</div><div class="feature-desc">Serving clients across Delhi. <a href="/visit-studio" style="color: inherit;">Plan your studio visit.</a></div></div>
       </div>
     </div>
   </main>
-
   <script>
-    // Calculator Logic
-    const styleSelect = document.getElementById('tattoo-style');
-    const sizeSlider = document.getElementById('size-slider');
-    const sizeDisplay = document.getElementById('size-display');
-    const placementSelect = document.getElementById('placement');
-    const examplesSelect = document.getElementById('examples');
-    const serviceTypeSelect = document.getElementById('service-type');
-    const totalPriceDisplay = document.getElementById('total-price');
-    const priceBreakdownDisplay = document.getElementById('price-breakdown');
-    const getQuoteBtn = document.getElementById('get-quote-btn');
+    import { estimateTattooPrice } from '../lib/tattoo-pricing.mjs';
 
-    let currentCalculation = {
-      basePrice: 299,
-      size: 3,
-      style: '',
-      placement: '',
-      examples: '',
-      serviceType: 'new',
-      total: 897
-    };
+    const form = document.getElementById('pricing-calculator') as HTMLFormElement;
+    const widthInput = document.getElementById('tattoo-width') as HTMLInputElement;
+    const heightInput = document.getElementById('tattoo-height') as HTMLInputElement;
+    const styleSelect = document.getElementById('tattoo-style') as HTMLSelectElement;
+    const placementSelect = document.getElementById('placement') as HTMLSelectElement;
+    const areaDisplay = document.getElementById('area-display')!;
+    const totalDisplay = document.getElementById('total-price')!;
+    const breakdownDisplay = document.getElementById('price-breakdown')!;
+    const errorDisplay = document.getElementById('calculator-error')!;
+    const quoteLink = document.getElementById('get-quote-btn') as HTMLAnchorElement;
+    const formatNumber = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 4 });
+    const formatRupees = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2, minimumFractionDigits: 0 });
+    const tierNames: Record<number, string> = { 299: 'Simple / minimalist', 399: 'Detailed', 499: 'Intricate' };
 
-    // Update size display
-    sizeSlider.addEventListener('input', function() {
-      currentCalculation.size = parseFloat(this.value);
-      sizeDisplay.textContent = `${currentCalculation.size} inches`;
-      
-      // Update visual size indicator
-      const sizeSquare = document.getElementById('size-square');
-      const size = currentCalculation.size;
-      const visualSize = Math.min(Math.max(30, size * 10), 120); // Scale between 30px and 120px
-      sizeSquare.style.width = `${visualSize}px`;
-      sizeSquare.style.height = `${visualSize}px`;
-      sizeSquare.textContent = `${size}"`;
-      
-      calculatePrice();
-    });
-
-    // Smart design auto-selector based on examples
-    examplesSelect.addEventListener('change', function() {
-      const selectedExample = this.value;
-      
-      // Auto-select appropriate style based on example
-      if (selectedExample) {
-        const simpleDesigns = ['butterfly', 'rose', 'text', 'minimalist'];
-        const complexDesigns = ['mandala', 'dragon', 'geometric', 'traditional'];
-        const premiumDesigns = ['portrait', 'realism', 'coverup', 'sleeve'];
-        
-        if (simpleDesigns.includes(selectedExample)) {
-          styleSelect.value = 'simple';
-        } else if (complexDesigns.includes(selectedExample)) {
-          styleSelect.value = 'complex';
-        } else if (premiumDesigns.includes(selectedExample)) {
-          styleSelect.value = 'premium';
-        }
-        
-        // Auto-adjust size based on example
-        const sizeMappings = {
-          'butterfly': 2,
-          'rose': 3,
-          'text': 2.5,
-          'minimalist': 2,
-          'mandala': 6,
-          'dragon': 4.5,
-          'geometric': 4,
-          'traditional': 4,
-          'portrait': 7,
-          'realism': 7,
-          'coverup': 5,
-          'sleeve': 10
-        };
-        
-        if (sizeMappings[selectedExample]) {
-          sizeSlider.value = sizeMappings[selectedExample];
-          currentCalculation.size = sizeMappings[selectedExample];
-          sizeDisplay.textContent = `${currentCalculation.size} inches`;
-          
-          // Update visual
-          const sizeSquare = document.getElementById('size-square');
-          const size = currentCalculation.size;
-          const visualSize = Math.min(Math.max(30, size * 10), 120);
-          sizeSquare.style.width = `${visualSize}px`;
-          sizeSquare.style.height = `${visualSize}px`;
-          sizeSquare.textContent = `${size}"`;
-        }
-      }
-      
-      calculatePrice();
-    });
-
-    // Update calculations on any change
-    [styleSelect, serviceTypeSelect, placementSelect].forEach(element => {
-      element.addEventListener('change', calculatePrice);
-    });
-
-    function calculatePrice() {
-      const serviceType = serviceTypeSelect.value;
-      const selectedStyle = styleSelect.value;
-      
-      if (serviceType === 'removal') {
-        // Tattoo Removal Pricing (based on square inches)
-        const squareInches = currentCalculation.size * currentCalculation.size;
-        let removalPrice = 0;
-        
-        if (squareInches <= 2) {
-          removalPrice = 699; // Small (up to 2 sq in)
-        } else if (squareInches <= 5) {
-          removalPrice = 999; // Medium (3-5 sq in)
-        } else {
-          removalPrice = 1499; // Large (above 5 sq in)
-        }
-        
-        currentCalculation.total = removalPrice;
-        totalPriceDisplay.textContent = `₹${currentCalculation.total.toLocaleString()}`;
-        
-        let sizeCategory = '';
-        if (squareInches <= 2) sizeCategory = 'Small';
-        else if (squareInches <= 5) sizeCategory = 'Medium';
-        else sizeCategory = 'Large';
-        
-        priceBreakdownDisplay.textContent = `${sizeCategory} tattoo removal (${squareInches.toFixed(1)} sq in)`;
-        
-      } else {
-        // New Tattoo Pricing
-        if (selectedStyle) {
-          const styleOption = styleSelect.querySelector(`option[value="${selectedStyle}"]`);
-          currentCalculation.basePrice = parseInt(styleOption.dataset.price);
-          currentCalculation.style = selectedStyle;
-        }
-
-        // Calculate total for new tattoo
-        const pricePerInch = currentCalculation.basePrice;
-        currentCalculation.total = Math.round(pricePerInch * currentCalculation.size);
-
-        // Update displays
-        totalPriceDisplay.textContent = `₹${currentCalculation.total.toLocaleString()}`;
-        
-        let breakdownText = `${currentCalculation.size} inches × ₹${pricePerInch}`;
-        if (selectedStyle) {
-          const styleNames = {
-            'simple': 'Simple Design',
-            'complex': 'Complex/Color Design',
-            'premium': 'Premium Design'
-          };
-          breakdownText += ` (${styleNames[selectedStyle]})`;
-        }
-        
-        priceBreakdownDisplay.textContent = breakdownText;
-      }
-
-      // Store current calculation for quote
-      currentCalculation.placement = placementSelect.value;
-      currentCalculation.examples = examplesSelect.value;
-      currentCalculation.serviceType = serviceType;
-    }
-
-    // WhatsApp Quote Generation
-    getQuoteBtn.addEventListener('click', function() {
-      if (currentCalculation.serviceType === 'new' && !currentCalculation.style) {
-        alert('Please select a tattoo style first!');
+    function updateEstimate() {
+      const estimate = estimateTattooPrice(widthInput.valueAsNumber, heightInput.valueAsNumber, Number(styleSelect.value));
+      if (!estimate || !widthInput.validity.valid || !heightInput.validity.valid) {
+        errorDisplay.textContent = 'Enter a valid width and height greater than zero to see an estimate.';
+        areaDisplay.textContent = 'Add your dimensions';
+        totalDisplay.textContent = '—';
+        breakdownDisplay.textContent = 'Your estimate will appear here.';
+        quoteLink.setAttribute('aria-disabled', 'true');
+        quoteLink.removeAttribute('href');
         return;
       }
 
-      const styleNames = {
-        'simple': 'Simple Design',
-        'complex': 'Complex/Color Design',
-        'premium': 'Premium Design'
-      };
+      const { width, height, area, additionalArea, additionalRate, totalInr } = estimate;
+      errorDisplay.textContent = '';
+      quoteLink.removeAttribute('aria-disabled');
+      areaDisplay.textContent = `${formatNumber.format(width)} × ${formatNumber.format(height)} inches = ${formatNumber.format(area)} sq in`;
+      totalDisplay.textContent = formatRupees.format(totalInr);
+      breakdownDisplay.textContent = additionalArea > 0
+        ? `₹699 + ${formatNumber.format(additionalArea)} additional sq in × ₹${additionalRate}`
+        : '₹699 minimum, covering the first square inch.';
 
-      let message = `Hi Apex Tattooz! I used your pricing calculator and got this estimate:%0A%0A`;
-      message += `💰 *Estimated Price: ₹${currentCalculation.total.toLocaleString()}*%0A%0A`;
-      message += `📋 *Details:*%0A`;
-      
-      if (currentCalculation.serviceType === 'removal') {
-        message += `• Service: Tattoo Removal%0A`;
-        message += `• Size: ${currentCalculation.size} inches%0A`;
-      } else {
-        message += `• Service: New Tattoo%0A`;
-        message += `• Style: ${styleNames[currentCalculation.style]}%0A`;
-        message += `• Size: ${currentCalculation.size} inches%0A`;
-        
-        if (currentCalculation.examples) {
-          message += `• Design Type: ${currentCalculation.examples}%0A`;
-        }
-        
-        if (currentCalculation.placement) {
-          message += `• Placement: ${currentCalculation.placement}%0A`;
-        }
+      const message = [
+        'Hi Apex Tattooz! I used the Delhi Tattoo Shop price calculator.',
+        `Starting estimate: ${formatRupees.format(totalInr)}`,
+        `Size: ${width} × ${height} inches (${formatNumber.format(area)} square inches)`,
+        `Complexity: ${tierNames[additionalRate]}`,
+        `Rate: ₹699 first square inch, then ₹${additionalRate} per additional square inch.`,
+        placementSelect.value ? `Placement: ${placementSelect.value}` : '',
+        'Please review my design and confirm the size, complexity, final price, touch-up details and booking availability.'
+      ].filter(Boolean).join('\n');
+      quoteLink.href = `https://wa.me/917217665761?text=${encodeURIComponent(message)}`;
+    }
+
+    form.addEventListener('submit', (event) => { event.preventDefault(); updateEstimate(); });
+    [widthInput, heightInput].forEach((input) => input.addEventListener('input', updateEstimate));
+    [styleSelect, placementSelect].forEach((select) => select.addEventListener('change', updateEstimate));
+    quoteLink.addEventListener('click', (event) => {
+      if (quoteLink.getAttribute('aria-disabled') === 'true') {
+        event.preventDefault();
+        form.reportValidity();
       }
-      
-      message += `%0A✨ Please confirm this pricing from your main site (apextattooz.com) and let me know about booking availability. Thank you!`;
-
-      const whatsappURL = `https://wa.me/917217665761?text=${message}`;
-      window.open(whatsappURL, '_blank');
     });
-
-    // Initialize calculator
-    calculatePrice();
+    const examplesSelect = document.getElementById('examples') as HTMLSelectElement;
+    examplesSelect.addEventListener('change', () => {
+      const dimensions = examplesSelect.value.match(/^(\d+) × (\d+)/);
+      if (!dimensions) return;
+      widthInput.value = dimensions[1];
+      heightInput.value = dimensions[2];
+      updateEstimate();
+    });
+    updateEstimate();
   </script>
 </body>
 </html>

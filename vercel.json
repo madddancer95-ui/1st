@@ -1,7 +1,10 @@
 {
   "version": 2,
-  "name": "delhitattooshop-live", 
-  "alias": ["delhitattooshop.com", "www.delhitattooshop.com"],
+  "name": "delhitattooshop-live",
+  "alias": [
+    "delhitattooshop.com",
+    "www.delhitattooshop.com"
+  ],
   "redirects": [
     {
       "source": "/:path*",
@@ -19,14 +22,15 @@
     "env": {
       "VERCEL_FORCE_REBUILD": "99",
       "BUILD_TIMESTAMP": "2025-09-08-04-30-FINAL-FORCE",
-      "DOMAIN_TRANSFER": "LIVE_NOW", 
+      "DOMAIN_TRANSFER": "LIVE_NOW",
       "CACHE_BUST": "NUCLEAR_REBUILD",
       "NODE_ENV": "production"
     }
   },
   "git": {
     "deploymentEnabled": {
-      "main": true
+      "main": true,
+      "codex/delhi-foundation": false
     }
   },
   "github": {
