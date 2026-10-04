@@ -25,6 +25,7 @@
 - Preserve existing photographs and contact journeys. Do not submit enquiry forms or send messages just to test a link.
 - This repository already tracks `.vercel/output`; if committing generated files, regenerate from the same reviewed source. Do not edit generated HTML as the source of truth.
 - The Vercel account was observed on Hobby on 4 October 2026. Vercel restricts that plan to personal, non-commercial use. Resolve the hosting arrangement before releasing this business-site update; do not purchase a plan or change billing without the owner's specific authorization.
+- The owner subsequently chose to keep the current free Vercel plan for now and consider a paid plan only if needed. Preserve that preference and do not change billing. The commercial-use eligibility concern remains documented; it is a policy condition, not a traffic-capacity test or a claimed technical inability to deploy.
 - The `codex/delhi-foundation` branch intentionally disables automatic Vercel deployments while current business facts and hosting are being reconciled. Main deployment behaviour is unchanged.
 
 ## Evidence and remaining work

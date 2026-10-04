@@ -55,6 +55,8 @@ Existing analytics tags remain. Event receipt, deduplication, enquiry attributio
 
 Production remains on `main`. The `codex/delhi-foundation` branch has automatic Vercel deployment disabled. Do not merge or deploy until the commercial hosting arrangement is resolved: [Vercel Hobby is restricted to personal, non-commercial use](https://vercel.com/docs/plans/hobby). No paid plan is authorized by this document.
 
+The owner prefers to keep the current free Vercel plan for now and consider a paid plan if needed. No billing changes have been made. The eligibility issue remains a published policy condition rather than an observed traffic or performance failure.
+
 Original production source commit: `ca34a888ac74d1c7d8de9b2e6e0bccbcfb2cc0dc`. A full Git bundle was saved outside the repository before edits. The repository already tracks `.vercel/output`; regenerated files accompany their reviewed source. If a release needs recovery, revert the change and rebuild, or restore the previously verified production deployment after checking the hosting arrangement. Do not reset unrelated work.
 
 Before release, verify the hosting runtime, redirects, canonical headers/HTML, images, contact links, and mobile interactions. After release, check Search Console indexing and enquiry delivery. No rankings, traffic share or booking outcomes are guaranteed.
