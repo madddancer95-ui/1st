@@ -1,4 +1,5 @@
 ---
+import SiteAnalytics from "../components/SiteAnalytics.astro";
 // Original homepage presentation preserved; factual source: Apex's official
 // homepage/contact/pricing pages, checked 4 October 2026. Clients across Delhi.
 const title = "Tattoo Studio in Delhi | Delhi Tattoo Shop by Apex Tattooz";
@@ -86,17 +87,10 @@ const businessSchema = {
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
 
-  <!-- Google Tag Manager -->
+  <!-- Retained for the owner's existing Search Console GTM verification. -->
   <script src="/gtm.js" is:inline></script>
+  <SiteAnalytics />
 
-  <!-- Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDGJB534KV" is:inline></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JDGJB534KV');
-  </script>
 
   <!-- Core Web Vitals Optimization -->
   <meta name="theme-color" content="#000000">
@@ -244,6 +238,7 @@ const businessSchema = {
       border-radius: 999px;
       opacity: 0.7;
       animation: shimmer 3s ease-in-out infinite;
+      pointer-events: none;
     }
     
     @keyframes shimmer {
@@ -300,8 +295,51 @@ const businessSchema = {
       
       .menu-toggle {
         display: flex;
+        flex: 0 0 auto;
+        min-width: 44px;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
       }
-      
+
+      .glass-header {
+        gap: 12px;
+        padding: 14px 20px;
+        flex-wrap: wrap;
+        max-height: calc(100dvh - 24px);
+        overflow-y: auto;
+      }
+
+      .brand {
+        flex: 1;
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .menu-toggle {
+        order: 2;
+      }
+
+      .glass-header.menu-open {
+        border-radius: var(--glass-radius);
+      }
+
+      .header-nav {
+        order: 3;
+        flex-basis: 100%;
+      }
+
+      .glass-header.menu-open .header-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .header-nav a {
+        display: block;
+        padding: 12px 8px;
+      }
+
       .apex-header {
         position: fixed !important;
         top: 0 !important;
@@ -309,14 +347,17 @@ const businessSchema = {
         right: 0 !important;
         z-index: 1000 !important;
         padding: 12px 0 !important;
+        border-radius: 0;
       }
       
       .top-section-container {
-        padding-top: 0 !important;
-        margin-top: -85px !important;
-        padding-bottom: 85px !important;
-        min-height: calc(100vh + 85px) !important;
-        height: calc(100vh + 85px) !important;
+        padding-top: 100px;
+        min-height: 100svh;
+        height: auto;
+      }
+
+      #apex-page section[id] {
+        scroll-margin-top: 100px;
       }
     }
     
@@ -428,7 +469,7 @@ const businessSchema = {
     
     .badges {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
       gap: 16px;
       margin: 42px 0 52px 0;
     }
@@ -560,7 +601,7 @@ const businessSchema = {
     /* Artist Grid */
     .artist-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
       gap: 24px;
       margin-top: 32px;
     }
@@ -659,7 +700,7 @@ const businessSchema = {
     /* Feature Grid */
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
       gap: 32px;
     }
     
@@ -683,7 +724,7 @@ const businessSchema = {
     /* Pricing Section */
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
       gap: 24px;
       margin-top: 32px;
     }
@@ -765,7 +806,7 @@ const businessSchema = {
     /* Services Grid */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
       gap: 24px;
       margin-top: 32px;
     }
@@ -800,7 +841,7 @@ const businessSchema = {
     /* Gallery Section */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
       gap: 16px;
       margin-top: 32px;
     }
@@ -856,8 +897,31 @@ const businessSchema = {
       margin: 0;
     }
     
+    .two-column-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
+      .hero-wrap {
+        min-height: calc(100svh - 100px);
+        height: auto;
+        padding: 24px 0;
+      }
+
+      .glass-hero {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .two-column-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      #apex-page .container {
+        overflow-wrap: anywhere;
+      }
+
       .top-section-video {
         position: absolute;
         top: 50%;
@@ -905,7 +969,7 @@ const businessSchema = {
       }
       
       .artist-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
         gap: 20px;
       }
       
@@ -917,9 +981,7 @@ const businessSchema = {
 </head>
 
 <body id="apex-page">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4DMPN4P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4DMPN4P" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
 
   <!-- Header + Hero Container -->
   <div class="top-section-container">
@@ -947,7 +1009,11 @@ const businessSchema = {
             <span>DelhiTattooShop.com</span>
           </div>
 
-          <nav class="header-nav" role="navigation" aria-label="Main navigation">
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="main-navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+
+          <nav id="main-navigation" class="header-nav" role="navigation" aria-label="Main navigation">
             <a href="#home">Home</a>
             <a href="#gallery">Gallery</a>
             <a href="#services">Services</a>
@@ -960,10 +1026,6 @@ const businessSchema = {
               <span>🔒</span>
             </div>
           </nav>
-
-          <button class="menu-toggle" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-          </button>
         </div>
       </header>
     </div>
@@ -991,7 +1053,7 @@ const businessSchema = {
           </div>
 
           <div class="hero-ctas" role="group" aria-label="Contact Actions">
-            <a class="btn-solid"
+            <a data-enquiry-placement="hero" class="btn-solid"
                href="https://wa.me/917217665761?text=Hi%20DelhiTattooShop%2C%20I%27m%20interested%20in%20a%20tattoo%20-%20please%20advise%20pricing%20and%20availability."
                target="_blank"
                rel="noopener noreferrer"
@@ -1170,7 +1232,7 @@ const businessSchema = {
     </header>
 
     <!-- Studio Story Grid -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; align-items: center;">
+    <div class="two-column-grid" style="display: grid; gap: 30px; margin-bottom: 40px; align-items: center;">
 
       <!-- Our Story -->
       <div style="background: rgba(255,255,255,0.03); padding: 35px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px);">
@@ -1197,7 +1259,7 @@ const businessSchema = {
     <!-- Specializations & Services -->
     <div style="text-align: center; margin-bottom: 40px;">
       <h3 style="color: rgba(255,255,255,0.9); margin-bottom: 25px; font-size: 1.3rem;">Explore Tattoo Styles</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 20px;">
 
         <div style="background: rgba(255,255,255,0.03); padding: 25px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px);">
           <div style="color: rgba(255,255,255,0.9); font-size: 1.5rem; margin-bottom: 10px;">🎨</div>
@@ -1259,7 +1321,7 @@ const businessSchema = {
           <li>Artist confirms the final quote</li>
           <li>Ask about lifetime touch-ups</li>
         </ul>
-        <a href="https://wa.me/917217665761?text=Hi%20Apex%20Tattooz%2C%20please%20help%20me%20confirm%20the%20size%2C%20complexity%20and%20quote%20for%20my%20tattoo." class="btn-solid">Discuss Simple Design</a>
+        <a data-enquiry-placement="pricing" href="https://wa.me/917217665761?text=Hi%20Apex%20Tattooz%2C%20please%20help%20me%20confirm%20the%20size%2C%20complexity%20and%20quote%20for%20my%20tattoo." class="btn-solid">Discuss Simple Design</a>
       </div>
 
       <div class="pricing-card popular">
@@ -1278,7 +1340,7 @@ const businessSchema = {
           <li>Artist confirms the final quote</li>
           <li>Ask about lifetime touch-ups</li>
         </ul>
-        <a href="https://wa.me/917217665761?text=Hi%20Apex%20Tattooz%2C%20please%20help%20me%20confirm%20the%20size%2C%20complexity%20and%20quote%20for%20my%20tattoo." class="btn-solid">Discuss Detailed Design</a>
+        <a data-enquiry-placement="pricing" href="https://wa.me/917217665761?text=Hi%20Apex%20Tattooz%2C%20please%20help%20me%20confirm%20the%20size%2C%20complexity%20and%20quote%20for%20my%20tattoo." class="btn-solid">Discuss Detailed Design</a>
       </div>
 
       <div class="pricing-card">
@@ -1297,7 +1359,7 @@ const businessSchema = {
           <li>Artist confirms the final quote</li>
           <li>Ask about lifetime touch-ups</li>
         </ul>
-        <a href="https://wa.me/917217665761?text=Hi%20Apex%20Tattooz%2C%20please%20help%20me%20confirm%20the%20size%2C%20complexity%20and%20quote%20for%20my%20tattoo." class="btn-solid">Discuss Intricate Design</a>
+        <a data-enquiry-placement="pricing" href="https://wa.me/917217665761?text=Hi%20Apex%20Tattooz%2C%20please%20help%20me%20confirm%20the%20size%2C%20complexity%20and%20quote%20for%20my%20tattoo." class="btn-solid">Discuss Intricate Design</a>
       </div>
     </div>
 
@@ -1395,10 +1457,10 @@ const businessSchema = {
     <p class="section-sub">Talk through your idea and confirm an appointment with Apex Tattooz</p>
 
     <div style="text-align: center; margin-top: 2rem;">
-      <a class="btn-solid" href="https://wa.me/917217665761?text=Hi! I want to book a tattoo appointment" style="margin-right: 1rem;">
+      <a data-enquiry-placement="consultation" class="btn-solid" href="https://wa.me/917217665761?text=Hi! I want to book a tattoo appointment" style="margin-right: 1rem;">
         WhatsApp Booking
       </a>
-      <a class="btn-solid btn-secondary" href="tel:+917217665761">
+      <a data-enquiry-placement="consultation" class="btn-solid btn-secondary" href="tel:+917217665761">
         Call Now
       </a>
     </div>
@@ -1418,7 +1480,7 @@ const businessSchema = {
     </header>
 
     <!-- Featured Reviews -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px;">
+    <div class="two-column-grid" style="display: grid; gap: 30px; margin-bottom: 40px;">
 
       <!-- Featured Review 1 -->
       <div style="background: var(--glass-bg); padding: 30px; border-radius: var(--glass-radius); border: 1px solid var(--glass-border); backdrop-filter: blur(var(--glass-blur));">
@@ -1469,7 +1531,7 @@ const businessSchema = {
 
     <!-- Hidden Additional Reviews -->
     <div id="additionalReviews" style="display: none !important; margin-top: 40px;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px;">
 
         <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px);">
           <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
@@ -1590,7 +1652,7 @@ const businessSchema = {
       <p class="section-sub">Plan a visit from anywhere in Delhi. Confirm your appointment before travelling.<br>Shop No. 52, Basement, Mall Road, Kingsway Camp, Near Metro Gate No. 3, GTB Nagar, New Delhi 110009</p>
     </header>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; align-items: center;">
+    <div class="two-column-grid" style="display: grid; gap: 40px; margin-bottom: 40px; align-items: center;">
       <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
         <h3 style="color: rgba(255,255,255,0.9); margin-bottom: 20px; font-size: 1.3rem;">📍 Studio Details</h3>
         <div style="color: rgba(255,255,255,0.7); line-height: 1.8;">
@@ -1630,7 +1692,7 @@ const businessSchema = {
       <p class="section-sub">Professional business with multiple contact methods for your convenience<br>Choose the best way to connect with our team</p>
     </header>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 25px;">
 
       <!-- Phone Contact -->
       <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); text-align: center;">
@@ -1638,7 +1700,7 @@ const businessSchema = {
         <h3 style="color: rgba(255,255,255,0.9); margin-bottom: 10px; font-size: 1.1rem;">Phone</h3>
         <p style="color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 8px; font-weight: 600;">+91-721-766-5761</p>
         <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 15px;">Confirm your appointment before visiting</p>
-        <a href="tel:+917217665761" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px;">Call Now</a>
+        <a data-enquiry-placement="contact" href="tel:+917217665761" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px;">Call Now</a>
       </div>
 
       <!-- Email Contact -->
@@ -1647,7 +1709,7 @@ const businessSchema = {
         <h3 style="color: rgba(255,255,255,0.9); margin-bottom: 10px; font-size: 1.1rem;">Email</h3>
         <p style="color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 8px; font-weight: 600;">contact@apextattooz.com</p>
         <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 15px;">For detailed inquiries & bookings</p>
-        <a href="mailto:contact@apextattooz.com?subject=Tattoo Inquiry" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px;">Send Email</a>
+        <a data-enquiry-placement="contact" href="mailto:contact@apextattooz.com?subject=Tattoo Inquiry" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px;">Send Email</a>
       </div>
 
       <!-- Visit Studio -->
@@ -1664,7 +1726,7 @@ const businessSchema = {
     <!-- Business Hours & Additional Info -->
     <div style="text-align: center; margin-top: 40px; padding: 25px; background: rgba(255,255,255,0.03); border-radius: 15px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px);">
       <h3 style="color: rgba(255,255,255,0.9); margin-bottom: 20px; font-size: 1.2rem;">📅 BUSINESS INFORMATION</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; color: rgba(255,255,255,0.7); text-align: left;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 20px; color: rgba(255,255,255,0.7); text-align: left;">
         <div>
           <p style="margin-bottom: 8px;"><strong style="color: rgba(255,255,255,0.9);">Operating Hours:</strong></p>
           <p style="font-size: 0.9rem;">Contact the studio to confirm opening hours</p>
@@ -1711,6 +1773,50 @@ const businessSchema = {
   </footer>
 
   <script>
+    const menuButton = document.querySelector<HTMLButtonElement>('.menu-toggle');
+    const menuHeader = document.querySelector<HTMLElement>('.glass-header');
+    const mainNavigation = document.getElementById('main-navigation');
+    const mobileViewport = window.matchMedia('(max-width: 768px)');
+
+    if (menuButton && menuHeader && mainNavigation) {
+      const setMenuOpen = (open: boolean, returnFocus = false) => {
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        menuHeader.classList.toggle('menu-open', open);
+        if (returnFocus) menuButton.focus();
+      };
+
+      menuButton.addEventListener('click', () => {
+        setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+      });
+
+      mainNavigation.addEventListener('click', (event) => {
+        if (event.target instanceof Element && event.target.closest('a')) {
+          setMenuOpen(false);
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+          setMenuOpen(false, true);
+        }
+      });
+
+      document.addEventListener('pointerdown', (event) => {
+        if (event.target instanceof Node && !menuHeader.contains(event.target)) {
+          setMenuOpen(false);
+        }
+      });
+
+      menuHeader.addEventListener('focusout', (event) => {
+        if (event.relatedTarget instanceof Node && !menuHeader.contains(event.relatedTarget)) {
+          setMenuOpen(false);
+        }
+      });
+
+      mobileViewport.addEventListener('change', () => setMenuOpen(false));
+    }
+
     // Handle video autoplay and fallback
     document.addEventListener('DOMContentLoaded', function() {
       const video = document.getElementById('hero-video');

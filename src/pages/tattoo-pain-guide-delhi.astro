@@ -1,4 +1,5 @@
 ---
+import SiteAnalytics from "../components/SiteAnalytics.astro";
 // Existing page: consultation questions for Delhi clients concerned about discomfort.
 // Preserve the original production layout; omit unsupported pain ratings, client
 // stories and medical advice. Related pages: Apex consultation and price guide.
@@ -32,14 +33,7 @@ const schema = {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  <script src="/gtm.js" is:inline></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDGJB534KV" is:inline></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JDGJB534KV');
-  </script>
+  <SiteAnalytics />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -237,8 +231,8 @@ const schema = {
           <h2 id="booking-heading">Start With a Conversation</h2>
           <p>Welcoming clients from across Delhi. Contact Apex Tattooz to discuss your idea and arrange a studio visit.</p>
           <div style="margin-top: 2rem;">
-            <a href="tel:+917217665761" class="btn btn-primary"><i class="fas fa-phone" aria-hidden="true"></i> Call +91-721-766-5761</a>
-            <a href={whatsappUrl} class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Discuss Your Questions</a>
+            <a data-enquiry-placement="consultation" href="tel:+917217665761" class="btn btn-primary"><i class="fas fa-phone" aria-hidden="true"></i> Call +91-721-766-5761</a>
+            <a data-enquiry-placement="consultation" href={whatsappUrl} class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Discuss Your Questions</a>
           </div>
           <p style="margin-top: 1rem; opacity: 0.9;"><a href="/visit-studio" style="color: white;">See the current studio address and visit details</a></p>
         </div>

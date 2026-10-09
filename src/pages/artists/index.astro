@@ -1,4 +1,5 @@
 ---
+import SiteAnalytics from "../../components/SiteAnalytics.astro";
 const title = "Selected Tattoo Artists at Apex Tattooz | Delhi Tattoo Shop";
 const description = "Meet selected artists featured by Apex Tattooz. Explore the studio's work and contact the team to discuss your tattoo, wherever you are in Delhi.";
 
@@ -94,8 +95,7 @@ const schema = {
   
   <link rel="canonical" href="https://www.delhitattooshop.com/artists">
   
-  <!-- Google Tag Manager -->
-  <script src="/gtm.js" is:inline></script>
+  <SiteAnalytics />
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -532,8 +532,6 @@ const schema = {
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4DMPN4P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div id="apex-page">
     <!-- Header -->
@@ -588,10 +586,10 @@ const schema = {
                   >
                     View Artist Details
                   </button>
-                  <a href={artist.consultationUrl} class="btn-artist" target="_blank" rel="noopener">
+                  <a data-enquiry-placement="artist_card" href={artist.consultationUrl} class="btn-artist" target="_blank" rel="noopener">
                     Book on WhatsApp
                   </a>
-                  <a href="mailto:contact@apextattooz.com" class="btn-artist">
+                  <a data-enquiry-placement="artist_card" href="mailto:contact@apextattooz.com" class="btn-artist">
                     Email the Studio
                   </a>
                 </div>
@@ -620,13 +618,13 @@ const schema = {
           <p style="margin-top: 1rem;">You can explore the shared studio portfolio before your consultation. Ask the team for work relevant to your idea and preferred artist.</p>
           
           <div style="margin-top: 2rem; text-align: center;">
-            <a href={artist.consultationUrl} class="btn-artist btn-primary" target="_blank" rel="noopener">
+            <a data-enquiry-placement="artist_dialog" href={artist.consultationUrl} class="btn-artist btn-primary" target="_blank" rel="noopener">
               Discuss Your Idea with {artist.name}
             </a>
             <a href="/#gallery" class="btn-artist" style="margin-top: 0.75rem;">
               Explore the Studio Portfolio
             </a>
-            <a href="mailto:contact@apextattooz.com" class="btn-artist" style="margin-top: 0.75rem;">
+            <a data-enquiry-placement="artist_dialog" href="mailto:contact@apextattooz.com" class="btn-artist" style="margin-top: 0.75rem;">
               Email the Studio
             </a>
           </div>

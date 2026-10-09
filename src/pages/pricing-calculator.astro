@@ -1,4 +1,5 @@
 ---
+import SiteAnalytics from "../components/SiteAnalytics.astro";
 // Page ownership: retained calculator URL for Delhi clients deciding approximate
 // tattoo size and budget. Evidence: Apex's official pricing page, checked 4 Oct 2026.
 // Nearest overlap: https://apextattooz.com/tattoo-price-in-delhi/ and this site's
@@ -51,14 +52,7 @@ const rupees = (value: number) => `₹${value.toLocaleString('en-IN')}`;
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="/gtm.js" is:inline></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDGJB534KV" is:inline></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JDGJB534KV');
-  </script>
+  <SiteAnalytics />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(calculatorSchema)} />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
   <style>
@@ -409,6 +403,26 @@ const rupees = (value: number) => `₹${value.toLocaleString('en-IN')}`;
     }
 
     /* Mobile Responsiveness */
+    @media (max-width: 480px) {
+      .header-simple {
+        position: sticky;
+      }
+
+      .glass-header {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .back-home {
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+
+      .main-content {
+        padding-top: 24px;
+      }
+    }
+
     @media (max-width: 768px) {
       .calculator-section {
         grid-template-columns: 1fr;
@@ -437,7 +451,6 @@ const rupees = (value: number) => `₹${value.toLocaleString('en-IN')}`;
 </head>
 
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4DMPN4P" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
   <header class="header-simple">
     <div class="glass-header">
       <a href="/" class="brand">DelhiTattooShop</a>
@@ -488,7 +501,7 @@ const rupees = (value: number) => `₹${value.toLocaleString('en-IN')}`;
             <p class="price-note" id="calculator-error" aria-live="polite"></p>
             <button class="btn-primary btn-secondary" type="submit">Update Estimate</button>
           </form>
-          <noscript><p class="price-note">The calculator needs JavaScript. Call <a href="tel:+917217665761">+91 72176 65761</a> to discuss a quote.</p></noscript>
+          <noscript><p class="price-note">The calculator needs JavaScript. Call <a data-enquiry-placement="calculator" href="tel:+917217665761">+91 72176 65761</a> to discuss a quote.</p></noscript>
         </div>
         <div class="calculator-panel results-panel">
           <h2 class="calculator-title">Your Estimated Price</h2>
@@ -499,8 +512,8 @@ const rupees = (value: number) => `₹${value.toLocaleString('en-IN')}`;
             <div class="price-note">Your artist confirms the design, complexity and final quote before booking.</div>
           </div>
           <div class="action-buttons">
-            <a class="btn-primary" id="get-quote-btn" href="https://wa.me/917217665761?text=Hi%20Apex%20Tattooz%2C%20I%20would%20like%20to%20discuss%20a%20tattoo%20quote." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Discuss Your Quote</a>
-            <a class="btn-primary btn-secondary" href="tel:+917217665761"><i class="fas fa-phone" aria-hidden="true"></i> Call Now</a>
+            <a data-enquiry-placement="calculator" class="btn-primary" id="get-quote-btn" href="https://wa.me/917217665761?text=Hi%20Apex%20Tattooz%2C%20I%20would%20like%20to%20discuss%20a%20tattoo%20quote." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Discuss Your Quote</a>
+            <a data-enquiry-placement="calculator" class="btn-primary btn-secondary" href="tel:+917217665761"><i class="fas fa-phone" aria-hidden="true"></i> Call Now</a>
           </div>
           <div class="price-note" style="margin-top: 20px;">Formula: ₹699 + (area above the first square inch × the additional-area rate). WhatsApp opens a draft for you to review and send.</div>
         </div>

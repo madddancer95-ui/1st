@@ -7,6 +7,7 @@
 - The owner has instructed us to obtain current business details from Apex's official website. **Do not visit or operate the Google Business Profile / Google Maps listing.** A subsequent explicit owner instruction can change this restriction.
 - Do not modify the main Apex website as an incidental part of work here.
 - The owner explicitly requires the existing colours, styling and layout to stay the same. **Do not redesign, recolour, or enhance the UI without a subsequent explicit instruction.** Limit this work to accurate content, SEO and functional repairs; reuse the original visual language for necessary new content.
+- On 9 October 2026 the owner explicitly authorized mobile repairs and enquiry tracking while preserving the same colours/design and targeting all Delhi. Responsive sizing, menu behaviour and tracking repairs are in scope; a redesign is not.
 
 ## Content and page ownership
 
@@ -23,6 +24,8 @@
 - Canonical host: `https://www.delhitattooshop.com`. Use `/` for the homepage and no trailing slash for content pages. Keep canonicals, links, sitemap and redirect configuration consistent.
 - Run `npm run build` followed by `node scripts/verify-site.mjs`. Test changed customer interactions in a browser. Schema syntax validation does not verify the truth or eligibility of claims.
 - Preserve existing photographs and contact journeys. Do not submit enquiry forms or send messages just to test a link.
+- `enquiry_click` measures contact intent, not a received enquiry or booking. Use the shared `SiteAnalytics` component once per page and approved `data-enquiry-placement` values. Never add contact messages or form values to event parameters. Keep local/preview visits out of production analytics.
+- The homepage GTM script/noscript installation is retained for Search Console ownership verification (verified in its UI on 9 October). Do not remove it without establishing another working verification method. Its empty container must not acquire a duplicate GA4 configuration or enquiry tag.
 - This repository already tracks `.vercel/output`; if committing generated files, regenerate from the same reviewed source. Do not edit generated HTML as the source of truth.
 - The Vercel account was observed on Hobby on 4 October 2026. Vercel restricts that plan to personal, non-commercial use. Resolve the hosting arrangement before releasing this business-site update; do not purchase a plan or change billing without the owner's specific authorization.
 - The owner subsequently chose to keep the current free Vercel plan for now and consider a paid plan only if needed. Preserve that preference and do not change billing. The commercial-use eligibility concern remains documented; it is a policy condition, not a traffic-capacity test or a claimed technical inability to deploy.

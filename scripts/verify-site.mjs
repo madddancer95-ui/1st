@@ -1,6 +1,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import assert from 'node:assert/strict';
+import { contactMethod, enquiryPayload } from '../src/lib/enquiry-tracking.mjs';
 
 const root = 'dist';
 const origin = 'https://www.delhitattooshop.com';
@@ -11,10 +12,28 @@ const pages = walk('src/pages').filter(file => file.endsWith('.astro')).map(file
 });
 const documents = new Map(pages.map(page => [page.route, readFileSync(page.file, 'utf8')]));
 let schemas = 0;
+let trackedContacts = 0;
 for (const [route, html] of documents) {
   const canonicals = [...html.matchAll(/<link\b[^>]*\brel="canonical"[^>]*\bhref="([^"]+)"[^>]*>/g)].map(match => match[1]);
   assert.deepEqual(canonicals, [origin + route], `Canonical mismatch: ${route}`);
-  assert(!html.includes('https://delhitattooshop.com'), `Old host remains: ${route}`);
+  // The analytics origin allowlist legitimately accepts the redirecting host.
+  // Public links, metadata and JSON-LD must still use the canonical www host.
+  const markup = html.replace(/<script\b(?![^>]*type="application\/ld\+json")[^>]*>[\s\S]*?<\/script>/g, '');
+  assert(!markup.includes('https://delhitattooshop.com'), `Old host remains in public markup: ${route}`);
+  assert.equal([...html.matchAll(/<script\b[^>]*>[\s\S]*?<\/script>/g)].filter(([script]) => script.includes('G-JDGJB534KV')).length, 1, `Expected one shared analytics bootstrap: ${route}`);
+  if (route === '/') {
+    assert(html.includes('src="/gtm.js"'), 'Homepage Search Console GTM verification script missing');
+    assert(html.includes('https://www.googletagmanager.com/ns.html?id=GTM-K4DMPN4P'), 'Homepage Search Console GTM verification iframe missing');
+  } else {
+    assert(!html.includes('GTM-K4DMPN4P') && !html.includes('src="/gtm.js"'), `Unneeded GTM installation remains: ${route}`);
+  }
+  for (const [tag] of html.matchAll(/<a\b[^>]*>/g)) {
+    const attrs = Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value.replaceAll('&amp;', '&')]));
+    if (!contactMethod(attrs.href)) continue;
+    const anchor = { getAttribute: key => attrs[key] ?? null, closest: () => null };
+    assert(enquiryPayload(anchor, route), `Untracked contact link on ${route}: ${attrs.href}`);
+    trackedContacts++;
+  }
   for (const match of html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
     JSON.parse(match[1]);
     schemas++;
@@ -69,4 +88,4 @@ assert(slashRule, 'Built slash redirect missing');
 assert(!new RegExp(slashRule.src).test('/'), 'Slash redirect must preserve homepage');
 assert(new RegExp(slashRule.src).test('/artists/'), 'Slash redirect must accept duplicate page path');
 assert(readFileSync(join(root, 'robots.txt'), 'utf8').includes(`Sitemap: ${origin}/sitemap.xml`));
-console.log(JSON.stringify({ status: 'passed', pages: pages.length, sitemapURLs: urls.length, parsedSchemas: schemas, artistImages: imagePaths.length, checks: ['canonical targets', 'schema JSON syntax', 'internal fragment targets', 'sitemap routes', 'official artist photo sources', '10 permanent legacy redirects', 'built slash redirect', 'robots sitemap host'] }, null, 2));
+console.log(JSON.stringify({ status: 'passed', pages: pages.length, sitemapURLs: urls.length, parsedSchemas: schemas, artistImages: imagePaths.length, trackedContacts, checks: ['canonical targets', 'schema JSON syntax', 'internal fragment targets', 'sitemap routes', 'official artist photo sources', '10 permanent legacy redirects', 'built slash redirect', 'robots sitemap host', 'one analytics bootstrap per page', 'all contact links carry approved tracking fields'] }, null, 2));

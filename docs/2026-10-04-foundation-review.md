@@ -2,6 +2,8 @@
 
 This is a draft for review, not a production release. It serves clients across Delhi from the current Apex Tattooz studio. The main Apex website is outside this change.
 
+Update, 9 October: the owner has now authorized mobile repairs and enquiry tracking. See [the repair review](2026-10-09-mobile-tracking-review.md) for the current implementation, verification and Analytics settings. The mobile/analytics limitations below describe the original 4 October snapshot and are superseded where the repair review reports new evidence.
+
 The owner requires the original colours, styling and layout. This change preserves the production visual language; it does not authorize a redesign or future UI enhancements. Any earlier local design experiment was withdrawn. New content uses existing page patterns, and functional repairs reuse existing controls and styles.
 
 ## Scope
