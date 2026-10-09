@@ -1,32 +1,79 @@
 ---
-import { artistsData } from '../../data/artists/artists-data.js';
+import SiteAnalytics from "../../components/SiteAnalytics.astro";
+const title = "Selected Tattoo Artists at Apex Tattooz | Delhi Tattoo Shop";
+const description = "Meet selected artists featured by Apex Tattooz. Explore the studio's work and contact the team to discuss your tattoo, wherever you are in Delhi.";
 
-const title = "Delhi's Top 8 Tattoo Artists | Expert Team at DelhiTattooShop.com";
-const description = "Meet Delhi's most skilled tattoo artists. Professional artists specializing in realism, blackwork, fine line, Japanese art. Book consultation today.";
+/*
+ * Client decision: choose whom to discuss a tattoo idea with and contact the studio.
+ * Audience: prospective clients across Delhi.
+ * Evidence: names, photos, alt text and biographies from https://apextattooz.com/;
+ * studio contact from https://apextattooz.com/contact/, checked 2026-10-04.
+ * Nearest overlap: Apex's homepage artist section and existing individual artist routes.
+ * Purpose: correct this existing directory and preserve its consultation journey;
+ * this is a selected team introduction, not a ranking or complete roster claim.
+ */
+const artists = [
+  {
+    id: 'maddy',
+    name: 'Maddy',
+    image: 'https://apextattooz.com/wp-content/uploads/2025/07/maddy.jpg',
+    alt: 'Maddy, founder and tattoo artist at Apex Tattooz in Delhi',
+    bio: 'Maddy brings black-and-grey realism, portraits and Japanese influences into custom tattoo designs shaped around your idea and placement.'
+  },
+  {
+    id: 'sahil',
+    name: 'Sahil',
+    image: 'https://apextattooz.com/wp-content/uploads/2025/08/Untitled-2-Recovered-Recovered-Recovered-Recovered.jpg',
+    alt: 'Sahil, also known as Sohil Khan, tattoo artist at Apex Tattooz',
+    bio: 'Sahil, also listed as Sohil Khan, works across delicate fine line, minimalist designs and realism, including cinematic portraits and custom compositions.'
+  },
+  {
+    id: 'tanmay',
+    name: 'Tanmay',
+    image: 'https://apextattooz.com/wp-content/uploads/2026/08/tanmay-portrait-tattoo-artist-delhi.webp',
+    alt: 'Tanmay creating a tattoo at Apex Tattooz in Delhi',
+    bio: 'Tanmay focuses on human and pet portraits, mythological subjects and narrative black-and-grey work, with the reference and body placement guiding each composition.'
+  },
+  {
+    id: 'rohit',
+    name: 'Rohit',
+    image: 'https://apextattooz.com/wp-content/uploads/2026/07/rohit.jpg',
+    alt: 'Rohit creating a tattoo at Apex Tattooz in Delhi',
+    bio: 'Rohit is part of the Apex Tattooz team in GTB Nagar, Delhi. Contact the studio to discuss your tattoo idea and arrange a consultation with him.'
+  }
+].map((artist) => ({
+  ...artist,
+  consultationUrl: `https://wa.me/917217665761?text=${encodeURIComponent(`Hi Apex Tattooz, I would like to discuss my tattoo idea with ${artist.name}. Please share consultation availability.`)}`
+}));
 
-// Get all real artists (excluding template)
-const artists = Object.entries(artistsData)
-  .filter(([key, artist]) => key !== 'artist-slug') // Exclude template
-  .map(([key, artist]) => ({
-    id: key,
-    rank_title: `${artist.title}`,
-    name: artist.name,
-    main_image: artist.profilePhoto,
-    alt: `${artist.name} - ${artist.title}`,
-    short_bio: artist.bio.intro,
-    extended_bio: artist.bio.professional,
-    specialties: artist.specialties,
-    experience: artist.experience,
-    stats: artist.stats,
-    contact: artist.contact,
-    portfolioPhotos: artist.portfolioPhotos,
-    other_buttons: [
-      { label: "View Details", action: "modal" },
-      { label: "Book WhatsApp", href: `https://wa.me/${artist.contact.whatsapp}?text=Hi%2C%20I%27m%20interested%20in%20booking%20with%20${artist.name.replace(' ', '%20')}.%20Please%20share%20availability.` },
-      { label: "Email Artist", href: `mailto:${artist.contact.email}` }
-    ]
-  }))
-  .sort((a, b) => b.stats.yearsExperience - a.stats.yearsExperience); // Sort by experience
+const studio = {
+  '@type': 'Organization',
+  name: 'Apex Tattooz',
+  url: 'https://apextattooz.com/'
+};
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Selected Tattoo Artists at Apex Tattooz',
+  url: 'https://www.delhitattooshop.com/artists',
+  description,
+  publisher: studio,
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: artists.length,
+    itemListOrder: 'https://schema.org/ItemListUnordered',
+    itemListElement: artists.map((artist, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Person',
+        name: artist.name,
+        image: artist.image,
+        worksFor: studio
+      }
+    }))
+  }
+};
 ---
 
 <!DOCTYPE html>
@@ -38,19 +85,17 @@ const artists = Object.entries(artistsData)
   <meta name="description" content={description}>
   
   <!-- SEO Meta Tags -->
-  <meta name="keywords" content="tattoo artists Delhi, professional tattoo artists, best tattoo artists Delhi NCR, realism tattoo artists, blackwork specialists Delhi">
-  <meta name="author" content="DelhiTattooShop.com">
+  <meta name="author" content="Apex Tattooz">
   
   <!-- Open Graph -->
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://delhitattooshop.com/artists">
+  <meta property="og:url" content="https://www.delhitattooshop.com/artists">
   
-  <link rel="canonical" href="https://delhitattooshop.com/artists">
+  <link rel="canonical" href="https://www.delhitattooshop.com/artists">
   
-  <!-- Google Tag Manager -->
-  <script src="/gtm.js" is:inline></script>
+  <SiteAnalytics />
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,30 +103,7 @@ const artists = Object.entries(artistsData)
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Delhi's Top 8 Tattoo Artists",
-    "url": "https://www.delhitattooshop.com/artists",
-    "description": "Meet Delhi's most skilled tattoo artists at DelhiTattooShop.com",
-    "mainEntity": {
-      "@type": "ItemList",
-      "numberOfItems": 8,
-      "itemListElement": [
-        {
-          "@type": "Person",
-          "name": "Maddy (Ravi)",
-          "jobTitle": "Studio Founder & Black & Grey Realism Specialist",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "DelhiTattooShop.com"
-          }
-        }
-      ]
-    }
-  }
-  </script>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
 
   <style>
     :root {
@@ -480,12 +502,36 @@ const artists = Object.entries(artistsData)
     html {
       scroll-behavior: smooth;
     }
+
+    /* Preserve the original overlay appearance while using native dialog controls. */
+    #apex-page dialog.modal {
+      max-width: none;
+      max-height: none;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      color: inherit;
+      overflow-y: auto;
+    }
+
+    #apex-page dialog.modal[open] {
+      display: block;
+    }
+
+    #apex-page dialog.modal::backdrop {
+      background: transparent;
+    }
+
+    #apex-page button.modal-close {
+      border: 0;
+      background: transparent;
+      font-family: inherit;
+      line-height: inherit;
+    }
   </style>
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4DMPN4P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div id="apex-page">
     <!-- Header -->
@@ -495,7 +541,7 @@ const artists = Object.entries(artistsData)
           <a href="/" class="logo-text">DelhiTattooShop.com</a>
           <nav>
             <ul class="nav-menu">
-              <li><a href="/#artists">Artists</a></li>
+              <li><a href="/artists" aria-current="page">Artists</a></li>
               <li><a href="/#services">Services</a></li>
               <li><a href="/#gallery">Gallery</a></li>
               <li><a href="/pricing-calculator">Pricing</a></li>
@@ -517,29 +563,34 @@ const artists = Object.entries(artistsData)
       <div class="container">
         <!-- Page Header -->
         <section class="page-header">
-          <h1 class="page-title">Delhi's Top 8 Tattoo Artists</h1>
-          <p class="page-subtitle">Meet our professional artists, each specializing in unique styles and techniques. Every artist has years of experience creating masterpiece tattoos.</p>
+          <h1 class="page-title">Selected Artists at Apex Tattooz</h1>
+          <p class="page-subtitle">Delhi Tattoo Shop is operated by Apex Tattooz. Meet selected artists Maddy, Sahil, Tanmay and Rohit, and contact the studio to discuss your tattoo idea from anywhere in Delhi.</p>
         </section>
 
         <!-- Artists Grid -->
-        <section class="artist-grid" id="artists-container">
-          {artists.map((artist, index) => (
+        <section class="artist-grid" id="artists-container" aria-label="Selected Apex Tattooz artists">
+          {artists.map((artist) => (
             <div class="artist-card" role="article">
-              <img src={artist.main_image} alt={artist.alt} class="artist-avatar" />
+              <img src={artist.image} alt={artist.alt} class="artist-avatar" width="160" height="160" loading="lazy" decoding="async" />
               <div class="artist-info">
-                <h3 class="artist-name">{artist.name}</h3>
-                <p class="artist-specialty">{artist.specialties.join(' • ')}</p>
-                <p class="artist-experience">{artist.experience} • {artist.stats.yearsExperience}+ Years</p>
+                <h2 class="artist-name">{artist.name}</h2>
+                <p class="artist-specialty">Apex Tattooz</p>
                 
                 <div class="artist-buttons">
-                  <button class="btn-artist btn-primary" onclick={`openModal('${artist.id}')`}>
-                    View Full Profile
+                  <button
+                    type="button"
+                    class="btn-artist btn-primary"
+                    data-modal-open={`modal-${artist.id}`}
+                    aria-controls={`modal-${artist.id}`}
+                    aria-haspopup="dialog"
+                  >
+                    View Artist Details
                   </button>
-                  <a href={artist.other_buttons[1].href} class="btn-artist" target="_blank" rel="noopener">
+                  <a data-enquiry-placement="artist_card" href={artist.consultationUrl} class="btn-artist" target="_blank" rel="noopener">
                     Book on WhatsApp
                   </a>
-                  <a href={artist.other_buttons[2].href} class="btn-artist">
-                    Email {artist.name.split(' ')[0]}
+                  <a data-enquiry-placement="artist_card" href="mailto:contact@apextattooz.com" class="btn-artist">
+                    Email the Studio
                   </a>
                 </div>
               </div>
@@ -558,73 +609,59 @@ const artists = Object.entries(artistsData)
 
     <!-- Modals for each artist -->
     {artists.map((artist) => (
-      <div id={`modal-${artist.id}`} class="modal">
+      <dialog id={`modal-${artist.id}`} class="modal" aria-labelledby={`modal-title-${artist.id}`}>
         <div class="modal-content">
-          <span class="modal-close" onclick={`closeModal('${artist.id}')`}>&times;</span>
-          <h2 class="modal-artist-name">{artist.name}</h2>
-          <p class="modal-bio">{artist.extended_bio}</p>
-          
-          <h4>Specialties:</h4>
-          <div class="specialties-list">
-            {artist.specialties.map((specialty) => (
-              <span class="specialty-tag">{specialty}</span>
-            ))}
-          </div>
-          
-          <p><strong>Experience:</strong> {artist.experience} ({artist.stats.yearsExperience}+ years)</p>
-          <p><strong>Completed Tattoos:</strong> {artist.stats.tattoosCompleted}+</p>
-          <p><strong>Pricing:</strong> Starting from ₹{artist.stats.startingPrice}/inch</p>
-          
-          <h4 style="margin-top: 2rem;">Portfolio Gallery:</h4>
-          <div class="modal-portfolio">
-            {artist.portfolioPhotos.map((photo, index) => (
-              <div class="portfolio-image">
-                <img src={photo.path} alt={photo.description} loading="lazy" />
-              </div>
-            ))}
-          </div>
+          <button type="button" class="modal-close" data-modal-close aria-label={`Close ${artist.name}'s profile`} autofocus>&times;</button>
+          <h2 id={`modal-title-${artist.id}`} class="modal-artist-name">{artist.name}</h2>
+          <p class="modal-bio">{artist.bio}</p>
+          <p>Contact the Apex Tattooz team to discuss your idea, placement, artist availability and a quote for your design.</p>
+          <p style="margin-top: 1rem;">You can explore the shared studio portfolio before your consultation. Ask the team for work relevant to your idea and preferred artist.</p>
           
           <div style="margin-top: 2rem; text-align: center;">
-            <a href={artist.other_buttons[1].href} class="btn-artist btn-primary" target="_blank" rel="noopener">
-              Book with {artist.name.split(' ')[0]} on WhatsApp
+            <a data-enquiry-placement="artist_dialog" href={artist.consultationUrl} class="btn-artist btn-primary" target="_blank" rel="noopener">
+              Discuss Your Idea with {artist.name}
+            </a>
+            <a href="/#gallery" class="btn-artist" style="margin-top: 0.75rem;">
+              Explore the Studio Portfolio
+            </a>
+            <a data-enquiry-placement="artist_dialog" href="mailto:contact@apextattooz.com" class="btn-artist" style="margin-top: 0.75rem;">
+              Email the Studio
             </a>
           </div>
         </div>
-      </div>
+      </dialog>
     ))}
   </div>
 
   <script>
-    // Modal functionality
-    function openModal(artistId) {
-      document.getElementById(`modal-${artistId}`).style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    }
+    document.querySelectorAll<HTMLButtonElement>('[data-modal-open]').forEach((trigger) => {
+      const dialog = document.getElementById(trigger.dataset.modalOpen ?? '');
+      if (!(dialog instanceof HTMLDialogElement)) return;
 
-    function closeModal(artistId) {
-      document.getElementById(`modal-${artistId}`).style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
+      let previousOverflow = '';
 
-    // Close modal when clicking outside
-    window.onclick = function(event) {
-      if (event.target.classList.contains('modal')) {
-        event.target.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-    }
+      trigger.addEventListener('click', () => {
+        if (dialog.open) return;
+        previousOverflow = document.body.style.overflow;
+        // Native modal dialogs keep keyboard focus inside and make the page behind inert.
+        dialog.showModal();
+        document.body.style.overflow = 'hidden';
+      });
 
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        const openModals = document.querySelectorAll('.modal[style*="block"]');
-        openModals.forEach(modal => {
-          modal.style.display = 'none';
-        });
-        document.body.style.overflow = 'auto';
-      }
+      dialog.querySelector<HTMLButtonElement>('[data-modal-close]')?.addEventListener('click', () => {
+        dialog.close();
+      });
+
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+
+      // The native Escape action also fires close, restoring scroll and the opener's focus.
+      dialog.addEventListener('close', () => {
+        document.body.style.overflow = previousOverflow;
+        if (trigger.isConnected) trigger.focus({ preventScroll: true });
+      });
     });
   </script>
 </body>
-</html>/* Force artist page deployment - Sun Sep  7 23:17:36 IST 2025 */
-/* CRITICAL LIVE UPDATE - Sun Sep  7 23:21:50 IST 2025 - Artists page MUST be live on delhitattooshop.com */
+</html>

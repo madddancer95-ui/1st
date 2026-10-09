@@ -2,6 +2,83 @@
 	"version": 3,
 	"routes": [
 		{
+			"src": "^/(.*)/$",
+			"headers": {
+				"Location": "/$1"
+			},
+			"status": 308
+		},
+		{
+			"src": "^/artist/guru-color-tattoo-specialist-delhi$",
+			"headers": {
+				"Location": "/artists"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/artist/maddy-realism-tattoo-artist-delhi$",
+			"headers": {
+				"Location": "/artists"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/artist/ram-blackwork-mythology-tattoo-delhi$",
+			"headers": {
+				"Location": "/artists"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/artist/sharan-japanese-tattoo-master-delhi$",
+			"headers": {
+				"Location": "/artists"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/artists/ravi-mehta$",
+			"headers": {
+				"Location": "/artists"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/connaught-place-tattoo-studio$",
+			"headers": {
+				"Location": "/visit-studio"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/greater-kailash-tattoo$",
+			"headers": {
+				"Location": "/visit-studio"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/karol-bagh-tattoo-shop$",
+			"headers": {
+				"Location": "/visit-studio"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/khan-market-tattoo-studio$",
+			"headers": {
+				"Location": "/visit-studio"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/nehru-place-tattoo-services$",
+			"headers": {
+				"Location": "/visit-studio"
+			},
+			"status": 301
+		},
+		{
 			"handle": "filesystem"
 		},
 		{

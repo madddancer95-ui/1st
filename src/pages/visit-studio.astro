@@ -1,0 +1,261 @@
+---
+import SiteAnalytics from "../components/SiteAnalytics.astro";
+// Page decision: one current appointment destination for clients across Delhi.
+// Evidence: https://apextattooz.com/contact/, checked 4 October 2026.
+// Overlap: homepage contact block and Apex contact page. This page consolidates
+// legacy locality journeys without claiming extra branches or changing the market.
+// Visual template: original production tattoo-pain-guide-delhi page, unchanged CSS.
+const title = 'Visit Apex Tattooz in Delhi | Address & Consultation | Delhi Tattoo Shop';
+const description = 'Plan your tattoo consultation at Apex Tattooz, Shop No. 52, Basement, Mall Road, GTB Nagar. Welcoming clients from across Delhi.';
+const canonical = 'https://www.delhitattooshop.com/visit-studio';
+const studioAddress = 'Shop No. 52, Basement, Mall Road, Kingsway Camp, GTB Nagar, Near Metro Gate No. 3, Delhi - 110009';
+const phone = '+91-721-766-5761';
+const email = 'contact@apextattooz.com';
+const whatsappUrl = `https://wa.me/917217665761?text=${encodeURIComponent('Hi Apex Tattooz, I would like to plan a tattoo consultation at your Mall Road, GTB Nagar studio. Please confirm availability and help me discuss my design, size and placement.')}`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ContactPage',
+      '@id': `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      about: { '@id': 'https://www.delhitattooshop.com/#studio' },
+    },
+    {
+      '@type': 'TattooParlor',
+      '@id': 'https://www.delhitattooshop.com/#studio',
+      name: 'Apex Tattooz',
+      url: 'https://www.delhitattooshop.com/',
+      telephone: '+917217665761',
+      email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Shop No. 52, Basement, Mall Road, Kingsway Camp, near Metro Gate No. 3',
+        addressLocality: 'GTB Nagar',
+        addressRegion: 'Delhi',
+        postalCode: '110009',
+        addressCountry: 'IN',
+      },
+      areaServed: { '@type': 'City', name: 'Delhi' },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <SiteAnalytics />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #ffffff;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .section {
+      padding: 60px 0;
+    }
+    
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #DAA520;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin: 3rem 0;
+    }
+    
+    .pain-chart {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .pain-level {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 10px;
+      border-left: 5px solid;
+    }
+    
+    .pain-level-1 { border-left-color: #28a745; background: rgba(40,167,69,0.1); }
+    .pain-level-2 { border-left-color: #ffc107; background: rgba(255,193,7,0.1); }
+    .pain-level-3 { border-left-color: #fd7e14; background: rgba(253,126,20,0.1); }
+    .pain-level-4 { border-left-color: #dc3545; background: rgba(220,53,69,0.1); }
+    .pain-level-5 { border-left-color: #6f42c1; background: rgba(111,66,193,0.1); }
+    
+    .pain-scale {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-right: 1rem;
+      width: 60px;
+    }
+    
+    .experience-box {
+      background: linear-gradient(135deg, rgba(218,165,32,0.1), rgba(139,69,19,0.1));
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 4px solid #DAA520;
+    }
+    
+    .tip-box {
+      background: rgba(72,201,176,0.1);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 4px solid #48C9B0;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, #8B4513, #A0522D);
+      padding: 60px 0;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 20px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 10px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #28a745, #20c997);
+      color: white;
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .section h2 { font-size: 2rem; }
+      .pain-scale { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="container">
+        <h1 id="page-title">Plan Your Tattoo Visit in Delhi</h1>
+        <p>Delhi Tattoo Shop is a website by Apex Tattooz. Welcoming clients from across Delhi to our Mall Road, GTB Nagar studio.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 id="address-heading">Visit Apex Tattooz</h2>
+        <div class="experience-box" aria-labelledby="address-heading">
+          <h3>Your Appointment Destination</h3>
+          <address style="font-style: normal; margin-top: 1rem;">{studioAddress}</address>
+          <p style="margin-top: 1rem;"><strong>Landmark:</strong> GTB Nagar Metro Gate No. 3</p>
+          <p><strong>Call:</strong> <a data-enquiry-placement="visit_details" href="tel:+917217665761" style="color: white;">{phone}</a></p>
+          <p><strong>Email:</strong> <a data-enquiry-placement="visit_details" href={`mailto:${email}`} style="color: white; overflow-wrap: anywhere;">{email}</a></p>
+          <p style="margin-top: 1rem;">Please contact the studio to confirm your appointment and opening hours before travelling.</p>
+        </div>
+
+        <h2 id="delhi-heading">Clients From All Delhi Are Welcome</h2>
+        <div class="pain-chart" aria-labelledby="delhi-heading">
+          <p>Coming from Connaught Place, Karol Bagh, Khan Market, Greater Kailash, Nehru Place or another part of Delhi? Your studio visit is at the GTB Nagar address shown here.</p>
+          <p style="margin-top: 1rem;">Plan your route to Mall Road, Kingsway Camp, using the full address. Contact us before setting out if you need help identifying the studio entrance or confirming your appointment.</p>
+          <p style="margin-top: 1rem;">Share your preferred day and tattoo idea in advance to discuss availability, the design and the likely session plan with the studio.</p>
+        </div>
+
+        <h2 id="checklist-heading" style="margin-top: 3rem;">Before Your Consultation</h2>
+        <div class="content-grid" aria-labelledby="checklist-heading">
+          <div class="tip-box"><h3>Your Design Direction</h3><p>Share reference images, the meaning behind your tattoo and the styles you are drawn to. References help start the conversation.</p></div>
+          <div class="tip-box"><h3>Placement and Size</h3><p>Tell us where you want the tattoo and its approximate width and height. Include a clear photo if you are discussing a cover-up.</p></div>
+          <div class="tip-box"><h3>Your Budget and Timing</h3><p>Share your budget and preferred dates. Ask the artist to confirm the design, final quote and session plan before booking.</p></div>
+        </div>
+
+        <div class="cta-section" aria-labelledby="booking-heading">
+          <h2 id="booking-heading">Tell Us What You Have in Mind</h2>
+          <p>Discuss your design and arrange your visit with the studio.</p>
+          <div style="margin-top: 2rem;">
+            <a data-enquiry-placement="consultation" href="tel:+917217665761" class="btn btn-primary"><i class="fas fa-phone" aria-hidden="true"></i> Call {phone}</a>
+            <a data-enquiry-placement="consultation" href={whatsappUrl} class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Plan My Consultation</a>
+          </div>
+        </div>
+        <div class="experience-box">
+          <h3>Current Studio Details</h3>
+          <p>Address and contact details checked against <a href="https://apextattooz.com/contact/" style="color: white;">Apex Tattooz’s official contact page</a> on 4 October 2026. Contact the studio to confirm the details for your visit.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer style="background: #1a1a1a; padding: 40px 0; text-align: center; border-top: 1px solid #333;">
+    <div class="container">
+      <p>© {new Date().getFullYear()} DelhiTattooShop.com · A website by Apex Tattooz · Serving Delhi</p>
+      <p style="margin-top: 1rem;">
+        <a href="/" style="color: #DAA520; text-decoration: none; margin: 0 10px;">Home</a>
+        <a href="/artists" style="color: #DAA520; text-decoration: none; margin: 0 10px;">Artists</a>
+        <a href="/pricing-calculator" style="color: #DAA520; text-decoration: none; margin: 0 10px;">Pricing</a>
+        <a href="/visit-studio" style="color: #DAA520; text-decoration: none; margin: 0 10px;">Visit the studio</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

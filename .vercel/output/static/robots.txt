@@ -12,27 +12,20 @@ Allow: /nehru-place-tattoo-services/
 
 # Block admin and development files
 Disallow: /admin/
-Disallow: /.well-known/
 Disallow: /api/
-Disallow: /_astro/
 Disallow: /node_modules/
 
 # Sitemap location
-Sitemap: https://delhitattooshop.com/sitemap.xml
-
-# Crawl delay for bots
-Crawl-delay: 1
+Sitemap: https://www.delhitattooshop.com/sitemap.xml
 
 # Special instructions for search engines
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
-# Block bad bots
+# Existing third-party crawler preferences
 User-agent: SemrushBot
 Disallow: /
 

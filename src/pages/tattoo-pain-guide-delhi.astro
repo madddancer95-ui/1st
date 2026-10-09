@@ -1,43 +1,39 @@
 ---
-const title = "Complete Tattoo Pain Guide Delhi | Does It Really Hurt? | DelhiTattooShop.com";
-const description = "Honest tattoo pain guide by Delhi's top artists. Real pain chart, management tips, and what to expect. No BS, just truth from 15,000+ tattoos done.";
+import SiteAnalytics from "../components/SiteAnalytics.astro";
+// Existing page: consultation questions for Delhi clients concerned about discomfort.
+// Preserve the original production layout; omit unsupported pain ratings, client
+// stories and medical advice. Related pages: Apex consultation and price guide.
+const title = 'Worried About Tattoo Discomfort? Plan Your Consultation | Delhi Tattoo Shop';
+const description = 'Questions to discuss with your tattoo artist about placement, size, session length and breaks. Plan a consultation with Apex Tattooz in Delhi.';
+const canonical = 'https://www.delhitattooshop.com/tattoo-pain-guide-delhi';
+const whatsappUrl = `https://wa.me/917217665761?text=${encodeURIComponent('Hi Apex Tattooz, I am considering a tattoo and would like to discuss the design, placement, session length and breaks before booking a consultation.')}`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${canonical}#webpage`,
+  url: canonical,
+  name: title,
+  description,
+  isPartOf: { '@type': 'WebSite', name: 'Delhi Tattoo Shop', url: 'https://www.delhitattooshop.com/' },
+};
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
   <meta name="description" content={description}>
-  <meta name="keywords" content="tattoo pain Delhi, does tattoo hurt, tattoo pain chart, tattoo pain management Delhi, how much tattoo hurts, tattoo pain levels, Delhi tattoo pain guide, tattoo hurt scale">
-  
-  <!-- Local SEO -->
-  <meta name="geo.region" content="IN-DL">
-  <meta name="geo.placename" content="Delhi NCR, India">
-  
-  <!-- Social Meta -->
-  <link rel="canonical" href="https://delhitattooshop.com/tattoo-pain-guide-delhi/">
+  <link rel="canonical" href={canonical}>
+  <meta property="og:type" content="website">
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
-  <meta property="og:url" content="https://delhitattooshop.com/tattoo-pain-guide-delhi/">
-  
-  <!-- Fonts and Styles -->
+  <meta property="og:url" content={canonical}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  
-  <!-- Google Tag Manager -->
-  <script src="/gtm.js" is:inline></script>
-  
-  <!-- Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDGJB534KV" is:inline></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JDGJB534KV');
-  </script>
-  
+  <SiteAnalytics />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -174,207 +170,83 @@ const description = "Honest tattoo pain guide by Delhi's top artists. Real pain 
     }
   </style>
 </head>
-
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>🔥 The REAL Truth About Tattoo Pain in Delhi</h1>
-      <p>Honest answers from artists who've done 15,000+ tattoos. No sugar-coating, just facts you need to know.</p>
-    </div>
-  </section>
-
-  <!-- Main Content -->
-  <section class="section">
-    <div class="container">
-      <h2>Look, Everyone Asks This Same Question...</h2>
-      
-      <div class="experience-box">
-        <h3>"Bro, how much is this gonna hurt?"</h3>
-        <p>I've been tattooing in Delhi for over a decade now, and you know what? This is literally the FIRST question everyone asks me. Like, before they even ask about the price or design, they wanna know about the pain.</p>
-        
-        <p>And I get it, okay? The fear is real. But here's the thing - I've seen tough-looking guys from Karol Bagh cry over a small wrist tattoo, and then watched this tiny girl from DU get a full back piece without even flinching. So like, it really depends on YOU.</p>
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="container">
+        <h1 id="page-title">Worried About Tattoo Discomfort?</h1>
+        <p>Plan a conversation with Apex Tattooz about your design, placement and session before booking.</p>
       </div>
+    </section>
 
-      <h2>🎯 Delhi Tattoo Pain Chart (Real Talk)</h2>
-      
-      <div class="pain-chart">
-        <p style="margin-bottom: 2rem; font-style: italic;">Based on feedback from 15,000+ clients across Delhi NCR. Your experience may vary, but this is what most people tell us:</p>
-        
-        <div class="pain-level pain-level-1">
-          <div class="pain-scale">1-2</div>
-          <div>
-            <h4>BARELY NOTICEABLE</h4>
-            <p><strong>Body Parts:</strong> Outer arm, outer thigh, calf muscle</p>
-            <p><strong>Feels Like:</strong> Someone scratching you with a pen. Most people are like "That's it?"</p>
-            <p><strong>Delhi Client Says:</strong> "Yaar, I was worried for nothing! This is nothing compared to Delhi traffic stress!"</p>
+    <section class="section">
+      <div class="container">
+        <h2>Bring Your Questions to the Consultation</h2>
+        <div class="experience-box">
+          <h3>Tell your artist what concerns you.</h3>
+          <p>Ask the artist to explain the appointment, discuss your design and agree how you will communicate during the session. You can clarify the plan before deciding on an appointment.</p>
+        </div>
+
+        <h2 id="questions-heading">Five Things to Talk Through</h2>
+        <div class="pain-chart" aria-labelledby="questions-heading">
+          <p style="margin-bottom: 2rem; font-style: italic;">These are conversation prompts, not pain ratings. Keep them handy when you speak with your artist.</p>
+          <div class="pain-level pain-level-1">
+            <div class="pain-scale" aria-hidden="true">01</div>
+            <div><h3>Placement, Size and Detail</h3><p>Show the artist your references, preferred placement and approximate width and height. Ask whether the design needs more space or a different approach at that placement.</p><p><strong>Ask:</strong> Can we compare size and placement options before I decide?</p></div>
+          </div>
+          <div class="pain-level pain-level-2">
+            <div class="pain-scale" aria-hidden="true">02</div>
+            <div><h3>The Session Plan</h3><p>Ask what the appointment will involve, how much time to set aside and whether the project may need more than one session.</p><p><strong>Ask:</strong> What happens from the design discussion to the end of the appointment?</p></div>
+          </div>
+          <div class="pain-level pain-level-3">
+            <div class="pain-scale" aria-hidden="true">03</div>
+            <div><h3>Breaks and Communication</h3><p>Discuss breaks before the session begins. Agree how to ask the artist to pause and how you will let them know if you want to stop or reconsider.</p><p><strong>Ask:</strong> How should I ask for a break, and how will we decide when to continue?</p></div>
+          </div>
+          <div class="pain-level pain-level-4">
+            <div class="pain-scale" aria-hidden="true">04</div>
+            <div><h3>Your Questions and Boundaries</h3><p>Tell the artist which part of the appointment concerns you. Ask for an explanation of anything unfamiliar before agreeing to the design and session plan.</p><p><strong>Ask:</strong> Could you talk me through the part I am unsure about?</p></div>
+          </div>
+          <div class="pain-level pain-level-5">
+            <div class="pain-scale" aria-hidden="true">05</div>
+            <div><h3>The Next Step</h3><p>Ask the studio to confirm your design discussion, quote and appointment details before you book.</p><p><strong>Ask:</strong> What do I need to confirm before choosing an appointment?</p></div>
           </div>
         </div>
-        
-        <div class="pain-level pain-level-2">
-          <div class="pain-scale">3-4</div>
-          <div>
-            <h4>MILD DISCOMFORT</h4>
-            <p><strong>Body Parts:</strong> Forearm, shoulder blade, upper back</p>
-            <p><strong>Feels Like:</strong> Like someone pinching you repeatedly. Annoying but totally manageable.</p>
-            <p><strong>Delhi Client Says:</strong> "It's like sitting in CP traffic - irritating but you can handle it!"</p>
+
+        <h2 id="bring-heading">Bring Your Idea and Your Questions</h2>
+        <div class="tip-box">
+          <h3>A Starting Point for the Artist</h3>
+          <ul style="margin: 1rem 0; line-height: 2; list-style-position: inside;">
+            <li>Reference images and the styles you are considering</li>
+            <li>Your preferred placement and approximate dimensions</li>
+            <li>Your budget and available dates</li>
+            <li>The questions you want to discuss before booking</li>
+          </ul>
+        </div>
+        <div class="experience-box">
+          <h3>Questions About Your Health</h3>
+          <p>For questions about a health condition, medication or whether tattooing is suitable for you, speak with a qualified clinician before booking.</p>
+        </div>
+
+        <div class="cta-section" aria-labelledby="booking-heading">
+          <h2 id="booking-heading">Start With a Conversation</h2>
+          <p>Welcoming clients from across Delhi. Contact Apex Tattooz to discuss your idea and arrange a studio visit.</p>
+          <div style="margin-top: 2rem;">
+            <a data-enquiry-placement="consultation" href="tel:+917217665761" class="btn btn-primary"><i class="fas fa-phone" aria-hidden="true"></i> Call +91-721-766-5761</a>
+            <a data-enquiry-placement="consultation" href={whatsappUrl} class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Discuss Your Questions</a>
           </div>
-        </div>
-        
-        <div class="pain-level pain-level-3">
-          <div class="pain-scale">5-6</div>
-          <div>
-            <h4>MODERATE PAIN</h4>
-            <p><strong>Body Parts:</strong> Wrist, ankle, behind ear, chest</p>
-            <p><strong>Feels Like:</strong> Sharp but manageable. You'll need breaks but it's doable.</p>
-            <p><strong>Delhi Client Says:</strong> "Worse than stubbing toe on bed, but I survived 3 hours!"</p>
-          </div>
-        </div>
-        
-        <div class="pain-level pain-level-4">
-          <div class="pain-scale">7-8</div>
-          <div>
-            <h4>INTENSE PAIN</h4>
-            <p><strong>Body Parts:</strong> Ribs, spine, inner arm, hand, foot</p>
-            <p><strong>Feels Like:</strong> Like someone's digging into your bones. You'll definitely feel it.</p>
-            <p><strong>Delhi Client Says:</strong> "Felt like auto-rickshaw ride on broken Delhi roads - bumpy but worth it!"</p>
-          </div>
-        </div>
-        
-        <div class="pain-level pain-level-5">
-          <div class="pain-scale">9-10</div>
-          <div>
-            <h4>MAXIMUM PAIN</h4>
-            <p><strong>Body Parts:</strong> Inner thigh, armpit, groin area, elbow ditch</p>
-            <p><strong>Feels Like:</strong> Not gonna lie - this hurts like hell. But it's still doable with breaks.</p>
-            <p><strong>Delhi Client Says:</strong> "Worse than standing in Rajouri Garden metro during rush hour, but my tattoo looks SICK!"</p>
-          </div>
+          <p style="margin-top: 1rem; opacity: 0.9;"><a href="/visit-studio" style="color: white;">See the current studio address and visit details</a></p>
         </div>
       </div>
-
-      <h2>💪 Pain Management Secrets (From 10+ Years in Delhi)</h2>
-      
-      <div class="tip-box">
-        <h3>🌟 BEFORE Your Appointment</h3>
-        <ul style="margin: 1rem 0; line-height: 2;">
-          <li><strong>Eat Well:</strong> Have a proper meal 2 hours before. Low blood sugar = more pain</li>
-          <li><strong>Sleep Properly:</strong> Like, actually get 7-8 hours. Tired body feels more pain</li>
-          <li><strong>Hydrate:</strong> Drink lots of water day before. Delhi heat dehydrates you anyway</li>
-          <li><strong>Avoid Alcohol:</strong> No drinking 24 hours before. It thins blood and makes you bleed more</li>
-          <li><strong>No Painkillers:</strong> Don't take aspirin or ibuprofen - they increase bleeding</li>
-        </ul>
-      </div>
-      
-      <div class="tip-box">
-        <h3>⚡ DURING Your Session</h3>
-        <ul style="margin: 1rem 0; line-height: 2;">
-          <li><strong>Breathe:</strong> Deep breathing actually helps. I tell all my clients this</li>
-          <li><strong>Talk to Us:</strong> Distract yourself. We love chatting about Delhi, Bollywood, whatever</li>
-          <li><strong>Take Breaks:</strong> Don't be a hero. We pause whenever you need it</li>
-          <li><strong>Bring Music/Earphones:</strong> Your favorite playlist makes time fly</li>
-          <li><strong>Squeeze Something:</strong> Stress ball or just make fists. Helps release tension</li>
-        </ul>
-      </div>
-
-      <h2>🤔 Why Some People Handle Pain Better (Delhi Edition)</h2>
-      
-      <div class="experience-box">
-        <p>Look, in my years tattooing people across Delhi - from Punjabi Bagh to Greater Kailash - I've noticed some patterns:</p>
-        
-        <p><strong>The Tough Ones:</strong> Usually people who've played sports, gym regulars, or anyone who's survived Delhi's summer without AC. Like, if you can handle 45°C heat while traveling in DTC bus, you can handle tattoo pain!</p>
-        
-        <p><strong>The Surprising Ones:</strong> Some of the most pain-tolerant clients I've had were college girls getting their first tattoo. Meanwhile, bodybuilders sometimes tap out after 30 minutes. Go figure!</p>
-        
-        <p><strong>Age Factor:</strong> Older clients (30+) usually handle pain better. They've got perspective, you know? Young guys sometimes overthink it.</p>
-      </div>
-
-      <h2>🚫 Biggest Mistakes Delhi Clients Make</h2>
-      
-      <div class="content-grid">
-        <div class="pain-chart">
-          <h3>❌ Coming Hungover</h3>
-          <p>Bro, I can smell the whiskey from yesterday's party. Your pain tolerance is basically zero when hungover. Reschedule, seriously.</p>
-        </div>
-        
-        <div class="pain-chart">
-          <h3>❌ Empty Stomach</h3>
-          <p>You think you're being smart by not eating so you won't puke? Wrong move. Empty stomach = dizzy, nauseous, more pain.</p>
-        </div>
-        
-        <div class="pain-chart">
-          <h3>❌ Overthinking</h3>
-          <p>The guys who watch YouTube videos about "MOST PAINFUL TATTOO SPOTS" and freak themselves out? They always have the worst time.</p>
-        </div>
-      </div>
-
-      <h2>💊 What About Numbing Cream? (Honest Opinion)</h2>
-      
-      <div class="experience-box">
-        <p>Everyone asks about numbing cream, and you know what? I'm gonna give you the real deal here.</p>
-        
-        <p><strong>The Good:</strong> Yeah, it works for about 1-2 hours. Can help with initial anxiety.</p>
-        
-        <p><strong>The Bad:</strong> It wears off during longer sessions. Sometimes makes skin swell. Can affect ink absorption.</p>
-        
-        <p><strong>My Take:</strong> For small tattoos (under 2 hours), go for it if you're really worried. For big pieces? You're gonna have to deal with pain anyway, so might as well get used to it.</p>
-        
-        <p><strong>What We Provide:</strong> We have medical-grade numbing options available. Just ask during consultation.</p>
-      </div>
-
-      <h2>🏆 Success Stories from Delhi Clients</h2>
-      
-      <div class="tip-box">
-        <h3>"I was terrified but it wasn't bad at all!"</h3>
-        <p><em>- Priya, 22, from Lajpat Nagar (First tattoo - small rose on wrist)</em></p>
-        <p>"I was literally shaking when I came in. But the artists were so chill, and honestly? It felt like someone scratching me with a ballpoint pen. I was worried for nothing!"</p>
-      </div>
-      
-      <div class="tip-box">
-        <h3>"Ribs hurt but totally worth it!"</h3>
-        <p><em>- Arjun, 28, from Gurgaon (Full rib piece)</em></p>
-        <p>"Not gonna lie - the ribs were intense. But we took breaks, I brought my playlist, and the artists kept me distracted talking about football. 6 hours later, I had the sickest tattoo ever!"</p>
-      </div>
-
-      <!-- CTA Section -->
-      <div class="cta-section">
-        <h2>Ready to Get Your Tattoo in Delhi?</h2>
-        <p>Stop worrying and start planning! Book a FREE consultation and we'll discuss everything - pain management, design, timeline, the whole thing.</p>
-        
-        <div style="margin-top: 2rem;">
-          <a href="tel:+917217665761" class="btn btn-primary">
-            <i class="fas fa-phone"></i> Call Now: +91 72176 65761
-          </a>
-          <a href="https://wa.me/917217665761?text=Hi%20I%20want%20to%20discuss%20tattoo%20pain%20and%20book%20consultation" class="btn btn-secondary" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp Us
-          </a>
-        </div>
-        
-        <p style="margin-top: 1rem; opacity: 0.9;">
-          <small>Free consultation • Transparent pricing • Hospital-grade safety • Delhi's most experienced artists</small>
-        </p>
-      </div>
-
-      <div class="experience-box">
-        <h3>🎯 Bottom Line</h3>
-        <p>Look, I'm not gonna sugarcoat it - tattoos do hurt. But it's not this unbearable torture that people make it out to be. Like, millions of people get tattoos every year, including your grandma probably!</p>
-        
-        <p>Here in Delhi, we've tattooed everyone from Bollywood celebs to college students to business executives. And you know what they all say after? "It wasn't as bad as I thought!"</p>
-        
-        <p>The anticipation is always worse than the actual thing. Trust me on this one.</p>
-        
-        <p><strong>Come visit our studio in GTB Nagar. Let's have chai, discuss your design, and I'll answer all your questions honestly. No pressure, just real talk about tattoos.</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
+    </section>
+  </main>
   <footer style="background: #1a1a1a; padding: 40px 0; text-align: center; border-top: 1px solid #333;">
     <div class="container">
-      <p>&copy; 2024 DelhiTattooShop.com - Delhi's Most Trusted Tattoo Studio</p>
+      <p>© {new Date().getFullYear()} DelhiTattooShop.com · A website by Apex Tattooz · Serving Delhi</p>
       <p style="margin-top: 1rem;">
         <a href="/" style="color: #DAA520; text-decoration: none; margin: 0 10px;">Home</a>
         <a href="/artists" style="color: #DAA520; text-decoration: none; margin: 0 10px;">Artists</a>
         <a href="/pricing-calculator" style="color: #DAA520; text-decoration: none; margin: 0 10px;">Pricing</a>
+        <a href="/visit-studio" style="color: #DAA520; text-decoration: none; margin: 0 10px;">Visit the studio</a>
       </p>
     </div>
   </footer>
